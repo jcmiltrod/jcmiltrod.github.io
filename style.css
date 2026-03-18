@@ -180,7 +180,7 @@ main { flex: 1; }
 .nav-dropdown__trigger:hover { color: var(--text-primary); }
 .nav-dropdown__arrow { font-size: 0.65rem; }
 .nav-dropdown__menu {
-  display: none;
+  display: none !important;
   position: absolute;
   top: calc(100% + 0.75rem);
   left: 50%;
@@ -194,7 +194,7 @@ main { flex: 1; }
   z-index: 200;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
-.nav-dropdown__menu.open { display: block; }
+.nav-dropdown__menu.open { display: block !important; }
 .nav-dropdown__menu li a {
   display: block;
   padding: 0.6rem 1.25rem;
