@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Today's Waves</title>
-  <meta name="description" content="Get in touch with Today's Waves." />
+  <title>Destinations — Today's Waves</title>
+  <meta name="description" content="Browse posts by destination." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,11 +12,12 @@
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">Today's <em>Waves</em></a>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
+
+        <!-- Destinations dropdown -->
         <div class="nav-dropdown">
-          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown__trigger active" aria-expanded="false" aria-haspopup="true">
             Destinations <span class="nav-dropdown__arrow">▾</span>
           </button>
           <ul class="nav-dropdown__menu" role="menu">
@@ -25,7 +26,9 @@
             <li><a href="destinations.html#china" role="menuitem">China</a></li>
           </ul>
         </div>
-        <a href="contact.html" class="active">Contact</a>
+
+        <a href="contact.html">Contact</a>
+
         <button class="nav-search-btn" id="search-toggle" aria-label="Search">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -42,29 +45,95 @@
   <main>
     <div class="page-hero">
       <div class="container">
-        <p class="eyebrow">Get in Touch</p>
-        <h1>Contact</h1>
+        <p class="eyebrow">Browse by Place</p>
+        <h1>Destinations</h1>
       </div>
     </div>
 
-    <div class="container">
-      <section class="contact-section">
-        <p>
-          Have a question, a tip, or just want to say hello? I'd love to hear from you.
-          Use the form below to send a message — it goes straight to my inbox.
-        </p>
-        <p>
-          Response times may vary while I'm on the road, but I read everything.
-        </p>
-        <a
-          href="https://www.subscribepage.io/fN1ygi"
-          target="_blank"
-          rel="noopener"
-          class="btn"
-        >
-          Open Contact Form →
-        </a>
+    <div class="container container--wide" style="padding-top: 3rem; padding-bottom: 4rem;">
+
+      <!-- Filter bar -->
+      <div class="dest-filter" id="dest-filter">
+        <button class="dest-filter__btn active" data-dest="all">All</button>
+        <button class="dest-filter__btn" data-dest="japan">Japan</button>
+        <button class="dest-filter__btn" data-dest="china">China</button>
+      </div>
+
+      <!-- Japan -->
+      <section class="dest-group" id="japan" data-dest="japan">
+        <h2 class="dest-group__heading">Japan</h2>
+        <div class="post-grid">
+
+          <article class="post-card">
+            <div class="post-card__image">
+              <div class="img-placeholder">[ Photo ]</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-tag">Japan</span>
+                <span class="post-date">2025 — Day 1</span>
+              </div>
+              <h3 class="post-card__title">Landing in Tokyo: First Hours in a City That Never Slows Down</h3>
+              <p class="post-card__excerpt">Nothing prepares you for the scale of Tokyo.</p>
+              <span class="post-card__cta">Read more →</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card__image">
+              <div class="img-placeholder">[ Photo ]</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-tag">Japan</span>
+                <span class="post-date">2025 — Day 4</span>
+              </div>
+              <h3 class="post-card__title">Kyoto at 5am: The City Before the Tourists Arrive</h3>
+              <p class="post-card__excerpt">An early alarm, a quiet bicycle, and the stone lanterns of Fushimi Inari.</p>
+              <span class="post-card__cta">Read more →</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card__image">
+              <div class="img-placeholder">[ Photo ]</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-tag">Japan</span>
+                <span class="post-date">2025 — Day 9</span>
+              </div>
+              <h3 class="post-card__title">Hiroshima: What a City Rebuilt from Silence Sounds Like</h3>
+              <p class="post-card__excerpt">There is a particular quality to the quiet here.</p>
+              <span class="post-card__cta">Read more →</span>
+            </div>
+          </article>
+
+        </div>
       </section>
+
+      <!-- China -->
+      <section class="dest-group" id="china" data-dest="china">
+        <h2 class="dest-group__heading">China</h2>
+        <div class="post-grid">
+
+          <article class="post-card">
+            <div class="post-card__image">
+              <div class="img-placeholder">[ Photo ]</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-tag">China</span>
+                <span class="post-date">Coming soon</span>
+              </div>
+              <h3 class="post-card__title">Posts from China coming soon.</h3>
+              <p class="post-card__excerpt">90 days on the road. Dispatches to follow.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -93,12 +162,15 @@
   </div>
 
   <script>
+    // Mobile nav toggle
     const toggle = document.getElementById('nav-toggle');
     const nav    = document.getElementById('site-nav');
-    toggle.addEventListener('click', () => {
+    if (toggle) toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
+
+    // Destinations dropdown
     const dropTrigger = document.querySelector('.nav-dropdown__trigger');
     const dropMenu    = document.querySelector('.nav-dropdown__menu');
     if (dropTrigger) {
@@ -113,16 +185,41 @@
         }
       });
     }
+
+    // Destination filter buttons
+    const filterBtns = document.querySelectorAll('.dest-filter__btn');
+    const destGroups = document.querySelectorAll('.dest-group');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const dest = btn.dataset.dest;
+        destGroups.forEach(group => {
+          group.style.display = (dest === 'all' || group.dataset.dest === dest) ? '' : 'none';
+        });
+      });
+    });
+
+    // Auto-filter from hash (e.g. destinations.html#japan)
+    if (window.location.hash) {
+      const dest = window.location.hash.replace('#', '');
+      const btn  = document.querySelector(`.dest-filter__btn[data-dest="${dest}"]`);
+      if (btn) btn.click();
+    }
+
+    // Search overlay
     const searchToggle  = document.getElementById('search-toggle');
     const searchOverlay = document.getElementById('search-overlay');
     const searchClose   = document.getElementById('search-close');
     const searchInput   = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
+
     const posts = [
       { title: 'Landing in Tokyo: First Hours in a City That Never Slows Down', url: 'post-template.html', tag: 'Japan' },
       { title: 'Kyoto at 5am: The City Before the Tourists Arrive', url: '#', tag: 'Japan' },
       { title: 'Hiroshima: What a City Rebuilt from Silence Sounds Like', url: '#', tag: 'Japan' },
     ];
+
     function openSearch() {
       searchOverlay.classList.add('open');
       searchOverlay.setAttribute('aria-hidden', false);
@@ -134,9 +231,11 @@
       searchOverlay.classList.remove('open');
       searchOverlay.setAttribute('aria-hidden', true);
     }
+
     searchToggle.addEventListener('click', openSearch);
     searchClose.addEventListener('click', closeSearch);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+
     searchInput.addEventListener('input', () => {
       const q = searchInput.value.trim().toLowerCase();
       searchResults.innerHTML = '';
