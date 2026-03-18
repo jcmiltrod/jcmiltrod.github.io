@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Today's Waves</title>
+  <meta name="description" content="Get in touch with Today's Waves." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Today's <em>Waves</em></a>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Get in Touch</p>
+        <h1>Contact</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="contact-section">
+        <p>
+          Have a question, a tip, or just want to say hello? I'd love to hear from you.
+          Use the form below to send a message — it goes straight to my inbox.
+        </p>
+        <p>
+          Response times may vary while I'm on the road, but I read everything.
+        </p>
+        <a
+          href="https://www.subscribepage.io/fN1ygi"
+          target="_blank"
+          rel="noopener"
+          class="btn"
+        >
+          Open Contact Form →
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        © 2025 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
+        reproduced without permission. Other credited content belongs to its respective owners.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+
+</body>
+</html>
