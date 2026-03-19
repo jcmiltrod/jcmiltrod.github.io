@@ -1,26 +1,559 @@
-Home
-Destinations
-	•	All Destinations
-	•	Hawaii
-	•	Japan
-	•	China
-Follow
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Today's Waves</title>
+  <meta name="description" content="A travel journal following the road through Japan, China, and beyond." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
 
+        <!-- Destinations dropdown -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Destinations
+          </button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
 
+        <a href="#subscribe">Follow</a>
 
-today's waves
-Latest Posts
+        <!-- Search -->
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-Coming Soon
-Posts coming soon. Subscribe to get 'em.
-Howdy, y'all.
-Subscribe →
-follow today's waves
+  <!-- ===================== HERO ===================== -->
+  <section class="hero-canvas-wrap">
+    <div class="hero-canvas-box">
+      <!-- Rainbow blob background -->
+      <div class="hero-bg"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <canvas id="c"></canvas>
+      <div class="hero-canvas-title">today's waves</div>
+    </div>
+  </section>
 
-You can unsubscribe anytime. For more details, review MailerLite's Privacy Policy.
-subscribe
-Home Destinations Follow Contact
-© 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.
-✕
-	•	
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <!-- Post Feed -->
+    <section class="feed-section">
+      <div class="container container--wide">
+
+        <div class="feed-header">
+          <h2>Latest Posts</h2>
+        </div>
+
+        <div class="post-grid">
+
+          <!-- Featured Post -->
+          <article class="post-card post-card--featured">
+            <div class="post-card__image">
+              <img src="https://images.todayswaves.com/placeholder_small.jpg" alt="Today's Waves — coming soon" />
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-tag">Coming Soon</span>
+              </div>
+              <h2 class="post-card__title">Posts coming soon. Subscribe to follow along.</h2>
+              <p class="post-card__excerpt">
+                Howdy, y'all.
+              </p>
+              <a href="#subscribe" class="post-card__cta">Subscribe →</a>
+            </div>
+          </article>
+
+        </div><!-- /.post-grid -->
+
+      </div><!-- /.container -->
+    </section><!-- /.feed-section -->
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <!-- MailerLite embed -->
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+    <style type="text/css">
+    /* LOADER */
+    .ml-form-embedSubmitLoad {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .g-recaptcha {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    height: ;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    .ml-form-embedSubmitLoad:after {
+      content: " ";
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 1px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+    border-color: #FFEED2 #FFEED2 #FFEED2 transparent;
+    animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+    }
+    @keyframes ml-form-embedSubmitLoad {
+      0% {
+      transform: rotate(0deg);
+      }
+      100% {
+      transform: rotate(360deg);
+      }
+    }
+      #mlb2-38569390.ml-form-embedContainer {
+        box-sizing: border-box;
+        display: table;
+        margin: 0 auto;
+        position: static;
+        width: 100% !important;
+      }
+      #mlb2-38569390.ml-form-embedContainer h4,
+      #mlb2-38569390.ml-form-embedContainer p,
+      #mlb2-38569390.ml-form-embedContainer span,
+      #mlb2-38569390.ml-form-embedContainer button {
+        text-transform: none !important;
+        letter-spacing: normal !important;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper {
+        background-color: #FFEED2;
+        border-width: 0px;
+        border-color: transparent;
+        border-radius: 4px;
+        border-style: solid;
+        box-sizing: border-box;
+        display: inline-block !important;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody,
+      #mlb2-38569390.ml-form-embedContainer .ml-form-successBody {
+        padding: 20px 20px 0 20px;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent,
+      #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent {
+        text-align: left;
+        margin: 0 0 20px 0;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4,
+      #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 {
+        color: #1ae456;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        margin: 0 0 10px 0;
+        text-align: center;
+        word-break: break-word;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p,
+      #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p {
+        color: #17c1dc;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0 0 10px 0;
+        text-align: left;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-color: #cccccc;
+        border-radius: 4px !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px !important;
+        height: auto;
+        line-height: 21px !important;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 10px 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit {
+        margin: 0 0 20px 0;
+        float: left;
+        width: 100%;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button {
+        background-color: #000000 !important;
+        border: none !important;
+        border-radius: 4px !important;
+        box-shadow: none !important;
+        color: #FFEED2 !important;
+        cursor: pointer;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 21px !important;
+        height: auto;
+        padding: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading {
+        display: none;
+      }
+      #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover {
+        background-color: #333333 !important;
+      }
+      .ml-error input, .ml-error textarea, .ml-error select {
+        border-color: red!important;
+      }
+      .ml-error .label-description,
+      .ml-error .label-description p,
+      .ml-error label:first-child {
+        color: #ff0000 !important;
+      }
+    </style>
+
+    <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <div class="ml-form-embedContent">
+              <h4>follow today's waves</h4>
+            </div>
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                  </div>
+                </div>
+              </div>
+              <div class="ml-form-embedPermissions">
+                <div class="ml-form-embedPermissionsContent default privacy-policy">
+                  <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                </div>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">subscribe</button>
+                <button disabled="disabled" style="display: none;" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display: none">
+            <div class="ml-form-successContent">
+              <h4>hey!</h4>
+              <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    function ml_webform_success_38569390() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-38569390 .row-success').show();
+      $('.ml-subscribe-form-38569390 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")
+  </script>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Follow</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        © 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
+        reproduced without permission. Other credited content belongs to its respective owners.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input
+        type="search"
+        class="search-input"
+        id="search-input"
+        placeholder="Search posts…"
+        aria-label="Search posts"
+        autocomplete="off"
+      />
+      <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // Destinations dropdown
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu    = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => {
+        const open = dropMenu.classList.toggle('open');
+        dropTrigger.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
+          dropMenu.classList.remove('open');
+          dropTrigger.setAttribute('aria-expanded', false);
+        }
+      });
+    }
+
+    // Search overlay
+    const searchToggle  = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose   = document.getElementById('search-close');
+    const searchInput   = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    // Post index — add entries here as you publish posts
+    const posts = [];
+
+    function openSearch() {
+      searchOverlay.classList.add('open');
+      searchOverlay.setAttribute('aria-hidden', false);
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+      searchInput.focus();
+    }
+    function closeSearch() {
+      searchOverlay.classList.remove('open');
+      searchOverlay.setAttribute('aria-hidden', true);
+    }
+
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (matches.length === 0) {
+        searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>';
+        return;
+      }
+      matches.forEach(p => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`;
+        searchResults.appendChild(li);
+      });
+    });
+  </script>
+
+  <script>
+    /* ── Canvas hero animation (surreal-tw-3) ── */
+    const canvas = document.getElementById('c');
+    const ctx    = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const FADE_IN  = 2000;
+    const FULL     = 6000;
+    const FADE_OUT = 2000;
+    const SILENCE  = 1000;
+    const SLOT     = FADE_IN + FULL + FADE_OUT + SILENCE;
+    const TOTAL    = SLOT * 3;
+
+    const WAVE_COUNT = 7;
+    const CYCLE      = 9000;
+    const WC         = '200,220,255';
+
+    let rings = [], lastRingSpawn = -9999;
+    let arcs  = [], lastArcSpawn  = -9999;
+
+    function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+    function slotAlpha(local) {
+      if (local < 0) return 0;
+      if (local < FADE_IN) return local / FADE_IN;
+      if (local < FADE_IN + FULL) return 1;
+      if (local < FADE_IN + FULL + FADE_OUT) return 1 - (local - FADE_IN - FULL) / FADE_OUT;
+      return 0;
+    }
+
+    function drawRings(timestamp, alpha) {
+      if (alpha <= 0) return;
+      const W = canvas.width, H = canvas.height;
+      const cx = W / 2, cy = H / 2;
+      const maxR = Math.min(W, H) * 0.46;
+      if (timestamp - lastRingSpawn >= 1000) {
+        rings.push({ born: timestamp });
+        lastRingSpawn = timestamp;
+      }
+      rings = rings.filter(r => (timestamp - r.born) < 5200);
+      ctx.globalAlpha = alpha;
+      for (const ring of rings) {
+        const age    = timestamp - ring.born;
+        const p      = age / 5000;
+        const fadeIn = Math.min(1, age / 600);
+        const fadeOut= Math.max(0, 1 - (p - 0.6) / 0.4);
+        const opacity= fadeIn * fadeOut * 0.55;
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(${WC},${opacity})`;
+        ctx.lineWidth   = 1.2;
+        ctx.arc(cx, cy, p * maxR, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function drawSine(timestamp, alpha) {
+      if (alpha <= 0) return;
+      const W = canvas.width, H = canvas.height;
+      const cy = H / 2;
+      ctx.globalAlpha = alpha;
+      for (let i = 0; i < WAVE_COUNT; i++) {
+        const phase    = (i / WAVE_COUNT) * Math.PI * 0.45;
+        const p        = easeInOut(((timestamp / CYCLE + i / WAVE_COUNT) % 1));
+        const spread   = W * 0.28;
+        const currentX = W * 0.18 + (W * 0.64) * p;
+        const amplitude= 34 * Math.sin(p * Math.PI);
+        const fadeIn   = Math.min(1, p * 5);
+        const fadeOut  = Math.max(0, 1 - (p - 0.72) * 4.5);
+        const opacity  = fadeIn * fadeOut * (0.45 - i * 0.04);
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(${WC},${opacity})`;
+        ctx.lineWidth   = 1.1 - i * 0.08;
+        for (let j = 0; j <= 180; j++) {
+          const frac = j / 180;
+          const x    = currentX - spread + frac * spread * 2;
+          const dist = (x - currentX) / spread;
+          const env  = Math.exp(-dist * dist * 2.2);
+          const y    = cy + Math.sin(frac * Math.PI * 2 * 5 + phase + timestamp * 0.0008) * amplitude * env;
+          j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function drawStraighteningArcs(timestamp, alpha) {
+      if (alpha <= 0) return;
+      const W = canvas.width, H = canvas.height;
+      const cy   = H / 2;
+      const maxR = W * 0.5;
+      if (timestamp - lastArcSpawn >= 1400) {
+        arcs.push({ born: timestamp });
+        lastArcSpawn = timestamp;
+      }
+      arcs = arcs.filter(w => (timestamp - w.born) < 6400);
+      ctx.globalAlpha = alpha;
+      for (const w of arcs) {
+        const age    = timestamp - w.born;
+        const p      = age / 6000;
+        const fadeIn = Math.min(1, age / 500);
+        const fadeOut= Math.max(0, 1 - (p - 0.65) / 0.35);
+        const opacity= fadeIn * fadeOut * 0.7;
+        const lx  = W * 0.18 + (W * 0.32) * p;
+        const rL  = p * maxR;
+        const aHL = rL * (1 - Math.pow(p, 1.4));
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(${WC},${opacity})`;
+        ctx.lineWidth   = 1.4;
+        ctx.moveTo(lx, cy - rL);
+        ctx.quadraticCurveTo(lx + aHL, cy, lx, cy + rL);
+        ctx.stroke();
+        const rx  = W * 0.82 - (W * 0.32) * p;
+        const rR  = p * maxR;
+        const aHR = rR * (1 - Math.pow(p, 1.4));
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(${WC},${opacity})`;
+        ctx.lineWidth   = 1.4;
+        ctx.moveTo(rx, cy - rR);
+        ctx.quadraticCurveTo(rx - aHR, cy, rx, cy + rR);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function draw(timestamp) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const t = timestamp % TOTAL;
+      drawRings(timestamp,             slotAlpha(t - SLOT * 0));
+      drawSine(timestamp,              slotAlpha(t - SLOT * 1));
+      drawStraighteningArcs(timestamp, slotAlpha(t - SLOT * 2));
+      requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+  </script>
+
+</body>
+</html>
