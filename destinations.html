@@ -22,6 +22,7 @@
           </button>
           <ul class="nav-dropdown__menu" role="menu">
             <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
             <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
             <li><a href="destinations.html#china" role="menuitem">China</a></li>
           </ul>
@@ -55,9 +56,32 @@
       <!-- Filter bar -->
       <div class="dest-filter" id="dest-filter">
         <button class="dest-filter__btn active" data-dest="all">All</button>
+        <button class="dest-filter__btn" data-dest="hawaii">Hawaii</button>
         <button class="dest-filter__btn" data-dest="japan">Japan</button>
         <button class="dest-filter__btn" data-dest="china">China</button>
       </div>
+
+      <!-- Hawaii -->
+      <section class="dest-group" id="hawaii" data-dest="hawaii">
+        <h2 class="dest-group__heading">Hawaii</h2>
+        <div class="post-grid">
+
+          <article class="post-card">
+            <div class="post-card__image">
+              <div class="img-placeholder">[ Photo ]</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-tag">Hawaii</span>
+                <span class="post-date">Coming soon</span>
+              </div>
+              <h3 class="post-card__title">Posts from Hawaii coming soon.</h3>
+              <p class="post-card__excerpt">Dispatches to follow.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
 
       <!-- Japan -->
       <section class="dest-group" id="japan" data-dest="japan">
@@ -218,6 +242,7 @@
       { title: 'Landing in Tokyo: First Hours in a City That Never Slows Down', url: 'post-template.html', tag: 'Japan' },
       { title: 'Kyoto at 5am: The City Before the Tourists Arrive', url: '#', tag: 'Japan' },
       { title: 'Hiroshima: What a City Rebuilt from Silence Sounds Like', url: '#', tag: 'Japan' },
+      { title: 'Posts from Hawaii coming soon.', url: '#', tag: 'Hawaii' },
     ];
 
     function openSearch() {
