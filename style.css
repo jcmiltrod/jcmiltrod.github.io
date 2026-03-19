@@ -770,11 +770,23 @@ main { flex: 1; }
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 3rem auto;
+  width: 100%;
+  text-align: center;
 }
-.dest-filter__btn {
+.dest-group__heading {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+  border: none;
+}
   background: none;
   border: 1px solid var(--border);
   border-radius: 2rem;
@@ -802,8 +814,8 @@ main { flex: 1; }
   color: var(--text-muted);
   font-weight: 400;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+  border: none;
 }
 
 /* ------------------------------------------------------------
