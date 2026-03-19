@@ -433,7 +433,7 @@ main { flex: 1; }
   font-family: var(--font-mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-weight: 400;
   margin: 0;
 }
