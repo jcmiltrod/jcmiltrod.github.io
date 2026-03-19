@@ -425,9 +425,7 @@ main { flex: 1; }
 .feed-header {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.75rem;
+  justify-content: center;
   margin-bottom: 2.5rem;
 }
 .feed-header h2 {
