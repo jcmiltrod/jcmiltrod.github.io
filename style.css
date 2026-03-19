@@ -2,8 +2,6 @@
    TODAY'S WAVES — Global Stylesheet
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap');
-
 /* ------------------------------------------------------------
    CSS Variables
    ------------------------------------------------------------ */
@@ -21,9 +19,9 @@
   --accent-warm:   #d4a96a;   /* amber gold */
   --accent-cool:   #7ab8c4;   /* sea blue   */
 
-  --font-display:  'Playfair Display', Georgia, serif;
-  --font-body:     'Lora', Georgia, serif;
-  --font-mono:     'DM Mono', 'Courier New', monospace;
+  --font-display:  Helvetica, Arial, sans-serif;
+  --font-body:     Helvetica, Arial, sans-serif;
+  --font-mono:     Helvetica, Arial, sans-serif;
 
   --max-width:     780px;
   --max-width-wide:1100px;
