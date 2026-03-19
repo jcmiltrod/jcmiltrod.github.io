@@ -774,19 +774,8 @@ main { flex: 1; }
   align-items: center;
   margin: 0 auto 3rem auto;
   width: 100%;
-  text-align: center;
 }
-.dest-group__heading {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0;
-  border: none;
-}
+.dest-filter__btn {
   background: none;
   border: 1px solid var(--border);
   border-radius: 2rem;
