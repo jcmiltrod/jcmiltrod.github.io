@@ -797,10 +797,10 @@ main { flex: 1; }
 .dest-group { margin-bottom: 4rem; }
 .dest-group__heading {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-weight: 400;
   margin-bottom: 1.5rem;
   padding-bottom: 0;
@@ -808,7 +808,7 @@ main { flex: 1; }
 }
 
 /* ------------------------------------------------------------
-   Contact Page
+   Contact Page — v2
    ------------------------------------------------------------ */
 .contact-section {
   padding: 4rem 0;
