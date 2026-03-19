@@ -454,7 +454,16 @@ main { flex: 1; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  height: 260px;
+}
+
+.post-card--featured .post-card__image {
+  aspect-ratio: auto;
+  height: 340px;
+  overflow: hidden;
+}
+
+.post-card--featured .post-card__body {
+  padding: 2.5rem;
 }
 
 .post-card {
