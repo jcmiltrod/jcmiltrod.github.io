@@ -132,7 +132,7 @@ main { flex: 1; }
 
 .header-inner .nav-search-btn {
   position: absolute;
-  right: calc(50% - 450px - 11px);
+  right: calc(50% - 450px - 1.5rem + 11px);
 }
 
 .header-inner .nav-toggle {
