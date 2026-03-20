@@ -122,11 +122,15 @@ main { flex: 1; }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   max-width: var(--max-width-wide);
   margin: 0 auto;
   padding: 0.9rem 1.5rem;
+}
+
+.header-inner .nav-search-btn {
+  margin-left: auto;
 }
 
 .site-logo {
