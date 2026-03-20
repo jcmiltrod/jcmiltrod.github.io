@@ -123,19 +123,22 @@ main { flex: 1; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  max-width: 900px;
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0.9rem 0;
+  position: relative;
 }
 
 .header-inner .nav-search-btn {
-  justify-self: end;
+  position: absolute;
+  right: calc(50% - 450px - 11px);
 }
 
 .header-inner .nav-toggle {
   justify-self: start;
   grid-column: 1;
+  padding-left: 1.5rem;
 }
 
 .header-inner .site-nav {
