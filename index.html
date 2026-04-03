@@ -69,17 +69,18 @@
           <!-- Featured Post -->
           <article class="post-card post-card--featured">
             <div class="post-card__image">
-              <img src="https://images.todayswaves.com/bigisle.jpeg" alt="Today's Waves — coming soon" />
+              <img src="https://images.todayswaves.com/hawaii/oahu/waikiki1.jpeg" alt="Waikīkī, Oʻahu" />
             </div>
             <div class="post-card__body">
               <div class="post-card__meta">
-                <span class="post-tag">Coming Soon</span>
+                <span class="post-tag">Hawaii</span>
+                <span class="post-date">March 23–27, 2026</span>
               </div>
-              <h2 class="post-card__title">Posts coming soon. <a href="#subscribe" style="color: inherit; text-decoration: underline;">Subscribe</a> to get 'em.</h2>
+              <h2 class="post-card__title"><a href="oahu.html" style="color: inherit;">Oʻahu</a></h2>
               <p class="post-card__excerpt">
-                Howdy, y'all.
+                All right! Here goes with the blog… My first stop was Oʻahu, Hawaiʻi. I stayed in Honolulu …
               </p>
-              <a href="#subscribe" class="post-card__cta">Subscribe →</a>
+              <a href="oahu.html" class="post-card__cta">Read more →</a>
             </div>
           </article>
 
@@ -374,7 +375,9 @@
     const searchResults = document.getElementById('search-results');
 
     // Post index — add entries here as you publish posts
-    const posts = [];
+    const posts = [
+      { title: 'Oʻahu', url: 'oahu.html', tag: 'Hawaii' }
+    ];
 
     function openSearch() {
       searchOverlay.classList.add('open');
