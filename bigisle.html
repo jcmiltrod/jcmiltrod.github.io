@@ -6,418 +6,647 @@
   <title>The Big Island — Today's Waves</title>
   <meta name="description" content="A day on the Big Island of Hawaiʻi: volcanoes, lava fields, and a green sand beach." />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Slideshow ── */
+    .slideshow {
+      position: relative;
+      margin: 2.5rem 0;
+      background: #111;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .slideshow__track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .slideshow__slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .slideshow__slide img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: contain;
+      background: #111;
+      display: block;
+    }
+    .slideshow__caption {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      background: rgba(0,0,0,0.5);
+      min-height: 2rem;
+      font-style: italic;
+    }
+    .slideshow__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--text-primary);
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter {
+      position: absolute;
+      bottom: 2.6rem;
+      right: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      background: rgba(0,0,0,0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2rem;
+    }
+
+    /* ── Video slideshow ── */
+    .video-slideshow {
+      margin: 2.5rem 0;
+    }
+    .video-slideshow__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .video-slideshow__counter {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .video-slideshow__nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .video-slideshow__btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .video-slideshow__btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+    .video-slideshow__track {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #111;
+    }
+    .video-slideshow__track iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── Single photo ── */
+    .post-photo {
+      margin: 2.5rem 0;
+    }
+    .post-photo img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+    }
+    .post-photo figcaption {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    /* ── Post meta ── */
+    .post-header .post-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="site-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Today's Waves</a>
-      <div class="nav-links">
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="destinations.html">Destinations</a>
         <div class="nav-dropdown">
-          <a href="#" class="nav-dropdown-toggle">Follow</a>
-          <div class="nav-dropdown-menu">
-            <a href="contact.html">Subscribe by email</a>
-          </div>
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Destinations
+          </button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
         </div>
-        <a href="#" class="nav-search-toggle" aria-label="Search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </a>
-      </div>
-    </div>
-    <!-- Search bar -->
-    <div class="nav-search-bar" id="searchBar">
-      <div class="nav-search-inner">
-        <input type="text" id="searchInput" placeholder="Search posts…" autocomplete="off" />
-        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
-      </div>
-      <div class="search-results" id="searchResults"></div>
-    </div>
-  </nav>
-
-  <!-- POST HEADER -->
-  <header class="post-header">
-    <div class="post-header-inner">
-      <div class="post-meta">
-        <span class="post-tag">Hawaii</span>
-        <span class="post-date">March 27, 2026</span>
-      </div>
-      <h1 class="post-title">The Big Island</h1>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
     </div>
   </header>
 
-  <!-- POST BODY -->
-  <main class="post-body">
-    <div class="post-content">
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <div class="container">
 
-      <p>After the hustle and bustle of Waikīkī and Honolulu, things slowed down a lot on the big island of Hawaiʻi. The big island is larger in area than all the other Hawaiian islands combined, but it's the second most-populated, so the pace of things felt a bit more relaxed to me there. Some interesting facts about Hawaiʻi are here on a <a href="https://files.hawaii.gov/dbedt/economic/library/facts/Facts_Figures_browsable.pdf" target="_blank" rel="noopener">state government page</a>.</p>
-
-      <p>The big island is also the largest island in the United States, and <a href="https://kauainownews.com/2024/12/02/the-big-island-hawaii-island-declared-largest-u-s-island-territory-by-worldatlas-and-its-still-growing/" target="_blank" rel="noopener">it's growing</a>, as volcanoes continue to erupt and lava adds to the land mass.</p>
-
-      <p>Here are some window seat-view photos taken during my flight from Honolulu to Hilo.</p>
-
-      <!-- SLIDESHOW 1: Flight photos -->
-      <div class="slideshow" data-index="0">
-        <div class="slideshow-track">
-          <div class="slideshow-slide active">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/maunakea.jpeg" alt="Mauna Kea" loading="lazy" />
-            <p class="slideshow-caption">Mauna Kea</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/hawaiicoast.jpeg" alt="River flowing to the sea" loading="lazy" />
-            <p class="slideshow-caption">River flowing to the sea</p>
-          </div>
+      <!-- Post Header -->
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Hawaii</span>
+          <span class="post-date">March 27–28, 2026</span>
         </div>
-        <button class="slideshow-btn slideshow-prev" aria-label="Previous">&#8592;</button>
-        <button class="slideshow-btn slideshow-next" aria-label="Next">&#8594;</button>
-        <div class="slideshow-counter"><span class="slideshow-current">1</span> / <span class="slideshow-total">2</span></div>
-      </div>
+        <h1>The Big Island</h1>
+      </header>
 
-      <p>I arrived in Hilo at about 7 a.m., rented a car, and proceeded to drive around the island for the rest of the day. My first stop was Hawaiʻi Volcanoes National Park, which includes two of the world's most active volcanoes, Kīlauea and Mauna Loa, according to the National Parks Service.</p>
+      <!-- Post Body -->
+      <article class="post-body">
 
-      <p>Mauna Loa is about 13,700 feet above sea level, but from the bottom of the ocean to its summit, it's like 30,000 feet tall, making it <a href="https://www.nps.gov/havo/learn/nature/mauna-loa.htm" target="_blank" rel="noopener">taller than Mt. Everest</a>.</p>
+        <p>After the hustle and bustle of Waikīkī and Honolulu, things slowed down a lot on the big island of Hawaiʻi. The big island is larger in area than all the other Hawaiian islands combined, but it's the second most-populated, so the pace of things felt a bit more relaxed to me there. Some interesting facts about Hawaiʻi are here on a <a href="https://files.hawaii.gov/dbedt/economic/library/facts/Facts_Figures_browsable.pdf" target="_blank" rel="noopener">state government page</a>.</p>
 
-      <p>The park is really neat, with lots of trails that bring you to very unique terrain. You can even take a trail out on the Kīlauea Iki Crater inside the Kīlauea caldera…</p>
+        <p>The big island is also the largest island in the United States, and <a href="https://kauainownews.com/2024/12/02/the-big-island-hawaii-island-declared-largest-u-s-island-territory-by-worldatlas-and-its-still-growing/" target="_blank" rel="noopener">it's growing</a>, as volcanoes continue to erupt and lava adds to the land mass.</p>
 
-      <!-- SLIDESHOW 2: Volcanoes National Park -->
-      <div class="slideshow" data-index="1">
-        <div class="slideshow-track">
-          <div class="slideshow-slide active">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/vnp1.jpeg" alt="Devastation Trail to Puʻupuaʻi Overlook" loading="lazy" />
-            <p class="slideshow-caption">Devastation Trail to Puʻupuaʻi Overlook</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/vnp2.jpeg" alt="Devastation Trail to Puʻupuaʻi Overlook" loading="lazy" />
-            <p class="slideshow-caption">Devastation Trail to Puʻupuaʻi Overlook</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/puupuai.jpeg" alt="Puʻupuaʻi Overlook viewing Kīlauea Iki Crater" loading="lazy" />
-            <p class="slideshow-caption">Puʻupuaʻi Overlook viewing Kīlauea Iki Crater</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/puupuai2.jpeg" alt="Puʻupuaʻi Overlook viewing Kīlauea Iki Crater" loading="lazy" />
-            <p class="slideshow-caption">Puʻupuaʻi Overlook viewing Kīlauea Iki Crater</p>
-          </div>
-        </div>
-        <button class="slideshow-btn slideshow-prev" aria-label="Previous">&#8592;</button>
-        <button class="slideshow-btn slideshow-next" aria-label="Next">&#8594;</button>
-        <div class="slideshow-counter"><span class="slideshow-current">1</span> / <span class="slideshow-total">4</span></div>
-      </div>
+        <p>Here are some window seat-view photos taken during my flight from Honolulu to Hilo.</p>
 
-      <p>This is a close up of the little volcanic rocks in various stages of meltage that you find along the Devastation Trail.</p>
-
-      <!-- PHOTO: Rocks -->
-      <div class="post-photo">
-        <img src="https://images.todayswaves.com/hawaii/bigisland/rocks.jpeg" alt="Volcanic rocks on Devastation Trail" loading="lazy" />
-      </div>
-
-      <p>And some more shots from around the park, including the Halemaʻumaʻu Crater within the Kīlauea summit.</p>
-
-      <!-- SLIDESHOW 3: Around the park -->
-      <div class="slideshow" data-index="2">
-        <div class="slideshow-track">
-          <div class="slideshow-slide active">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/halemaumau.jpeg" alt="Halemaʻumaʻu Crater" loading="lazy" />
-            <p class="slideshow-caption">Halemaʻumaʻu Crater</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/halemaumau2.jpeg" alt="Halemaʻumaʻu Crater" loading="lazy" />
-            <p class="slideshow-caption">Halemaʻumaʻu Crater</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/outpost.jpeg" alt="Outpost on Halemaʻumaʻu Crater" loading="lazy" />
-            <p class="slideshow-caption">Outpost on Halemaʻumaʻu Crater</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/ohia_lehua.jpeg" alt="Ohia lehua" loading="lazy" />
-            <p class="slideshow-caption">Ohia lehua</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/pink_knotweed.jpeg" alt="Pink knotweed" loading="lazy" />
-            <p class="slideshow-caption">Pink knotweed</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/vnptrail.jpeg" alt="Trail at the park" loading="lazy" />
-            <p class="slideshow-caption">Trail at the park</p>
-          </div>
-        </div>
-        <button class="slideshow-btn slideshow-prev" aria-label="Previous">&#8592;</button>
-        <button class="slideshow-btn slideshow-next" aria-label="Next">&#8594;</button>
-        <div class="slideshow-counter"><span class="slideshow-current">1</span> / <span class="slideshow-total">6</span></div>
-      </div>
-
-      <p>You can also drive down from the summits to the ocean, down to the <a href="https://www.nps.gov/havo/learn/nature/sea-arches.htm" target="_blank" rel="noopener">Hōlei Sea Arch</a>. It's a very curvy road to drive down, really fun. You drive through a massive lava field, so it's just a very unique environment to be in. And of course it's beautiful, like basically everywhere in Hawaiʻi.</p>
-
-      <!-- SLIDESHOW 4: Sea Arch Road & Lava Fields -->
-      <div class="slideshow" data-index="3">
-        <div class="slideshow-track">
-          <div class="slideshow-slide active">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/seaarchroad.jpeg" alt="Sea Arch Road" loading="lazy" />
-            <p class="slideshow-caption">Sea Arch Road</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/seaarchroad2.jpeg" alt="Sea Arch Road" loading="lazy" />
-            <p class="slideshow-caption">Sea Arch Road</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/seaarchroad3.jpeg" alt="Sea Arch Road" loading="lazy" />
-            <p class="slideshow-caption">Sea Arch Road</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/holeiseaarch.jpeg" alt="Hōlei Sea Arch" loading="lazy" />
-            <p class="slideshow-caption">Hōlei Sea Arch</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/holeiseaarch2.jpeg" alt="Hōlei Sea Arch" loading="lazy" />
-            <p class="slideshow-caption">Hōlei Sea Arch</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava3.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava4.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava5.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava6.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava7.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/lava8.jpeg" alt="Lava Field" loading="lazy" />
-            <p class="slideshow-caption">Lava Field</p>
-          </div>
-        </div>
-        <button class="slideshow-btn slideshow-prev" aria-label="Previous">&#8592;</button>
-        <button class="slideshow-btn slideshow-next" aria-label="Next">&#8594;</button>
-        <div class="slideshow-counter"><span class="slideshow-current">1</span> / <span class="slideshow-total">12</span></div>
-      </div>
-
-      <p>After the volcanoes, I went to <a href="https://en.wikipedia.org/wiki/Papak%C5%8Dlea_Beach" target="_blank" rel="noopener">Papakōlea Beach</a>, which the internet says is one of a very small number (2? 4?) of "green sand" beaches in the world. I got there a little late in the day and wasn't expecting it to be like a three-mile hike from the parking lot. There were locals with big 4x4s who would drive you to and from the beach, but I decided to hike it. And I was glad I did, it was a main highlight of my trip to Hawaiʻi. A really fun hike and then the beach was super neat. It was mostly cloudy, so not sure I got the full "green sand" effect, but you could definitely tell the sand had a unique quality.</p>
-
-      <!-- SLIDESHOW 5: Papakōlea Beach -->
-      <div class="slideshow" data-index="4">
-        <div class="slideshow-track">
-          <div class="slideshow-slide active">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach8.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach10.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach6.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach2.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach3.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach4.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleaplant.jpeg" alt="Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakolearoad.jpeg" alt="Road to Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Road to Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakolearoad2.jpeg" alt="Road to Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Road to Papakōlea Beach</p>
-          </div>
-          <div class="slideshow-slide">
-            <img src="https://images.todayswaves.com/hawaii/bigisland/papakolearoad11.jpeg" alt="Road to Papakōlea Beach" loading="lazy" />
-            <p class="slideshow-caption">Road to Papakōlea Beach</p>
-          </div>
-        </div>
-        <button class="slideshow-btn slideshow-prev" aria-label="Previous">&#8592;</button>
-        <button class="slideshow-btn slideshow-next" aria-label="Next">&#8594;</button>
-        <div class="slideshow-counter"><span class="slideshow-current">1</span> / <span class="slideshow-total">10</span></div>
-      </div>
-
-      <p>I got near the parking lot right around sunset, here's what that looked like.</p>
-
-      <!-- PHOTO: Sunset -->
-      <div class="post-photo">
-        <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleasundown.jpeg" alt="Sunset near Papakōlea Beach" loading="lazy" />
-      </div>
-
-      <p>And here are the waves of the day from around Papakōlea…</p>
-
-      <!-- VIDEO SLIDESHOW -->
-      <div class="video-slideshow" data-vindex="0">
-        <div class="video-slideshow-track">
-          <div class="video-slide active">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/gwdDQonmPb8"
-                title="Waves at Papakōlea"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
+        <!-- Slideshow 1: Flight photos -->
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/maunakea.jpeg" alt="Mauna Kea" loading="lazy" />
+              <div class="slideshow__caption">Mauna Kea</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/hawaiicoast.jpeg" alt="River flowing to the sea" loading="lazy" />
+              <div class="slideshow__caption">River flowing to the sea</div>
             </div>
           </div>
-          <div class="video-slide">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/PIIXbU0ZKl4"
-                title="Waves at Papakōlea"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 2</div>
+        </div>
+
+        <p>I arrived in Hilo at about 7 a.m., rented a car, and proceeded to drive around the island for the rest of the day. My first stop was Hawaiʻi Volcanoes National Park, which includes two of the world's most active volcanoes, Kīlauea and Mauna Loa, according to the National Parks Service.</p>
+
+        <p>Mauna Loa is about 13,700 feet above sea level, but from the bottom of the ocean to its summit, it's like 30,000 feet tall, making it <a href="https://www.nps.gov/havo/learn/nature/mauna-loa.htm" target="_blank" rel="noopener">taller than Mt. Everest</a>.</p>
+
+        <p>The park is really neat, with lots of trails that bring you to very unique terrain. You can even take a trail out on the Kīlauea Iki Crater inside the Kīlauea caldera…</p>
+
+        <!-- Slideshow 2: Volcanoes National Park -->
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/vnp1.jpeg" alt="Devastation Trail to Puʻupuaʻi Overlook" loading="lazy" />
+              <div class="slideshow__caption">Devastation Trail to Puʻupuaʻi Overlook</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/vnp2.jpeg" alt="Devastation Trail to Puʻupuaʻi Overlook" loading="lazy" />
+              <div class="slideshow__caption">Devastation Trail to Puʻupuaʻi Overlook</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/puupuai.jpeg" alt="Puʻupuaʻi Overlook viewing Kīlauea Iki Crater" loading="lazy" />
+              <div class="slideshow__caption">Puʻupuaʻi Overlook viewing Kīlauea Iki Crater</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/puupuai2.jpeg" alt="Puʻupuaʻi Overlook viewing Kīlauea Iki Crater" loading="lazy" />
+              <div class="slideshow__caption">Puʻupuaʻi Overlook viewing Kīlauea Iki Crater</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 4</div>
+        </div>
+
+        <p>This is a close up of the little volcanic rocks in various stages of meltage that you find along the Devastation Trail.</p>
+
+        <!-- Single photo: Rocks -->
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/hawaii/bigisland/rocks.jpeg" alt="Volcanic rocks on Devastation Trail" loading="lazy" />
+        </figure>
+
+        <p>And some more shots from around the park, including the Halemaʻumaʻu Crater within the Kīlauea summit.</p>
+
+        <!-- Slideshow 3: Around the park -->
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/halemaumau.jpeg" alt="Halemaʻumaʻu Crater" loading="lazy" />
+              <div class="slideshow__caption">Halemaʻumaʻu Crater</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/halemaumau2.jpeg" alt="Halemaʻumaʻu Crater" loading="lazy" />
+              <div class="slideshow__caption">Halemaʻumaʻu Crater</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/outpost.jpeg" alt="Outpost on Halemaʻumaʻu Crater" loading="lazy" />
+              <div class="slideshow__caption">Outpost on Halemaʻumaʻu Crater</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/ohia_lehua.jpeg" alt="Ohia lehua" loading="lazy" />
+              <div class="slideshow__caption">Ohia lehua</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/pink_knotweed.jpeg" alt="Pink knotweed" loading="lazy" />
+              <div class="slideshow__caption">Pink knotweed</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/vnptrail.jpeg" alt="Trail at the park" loading="lazy" />
+              <div class="slideshow__caption">Trail at the park</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 6</div>
+        </div>
+
+        <p>You can also drive down from the summits to the ocean, down to the <a href="https://www.nps.gov/havo/learn/nature/sea-arches.htm" target="_blank" rel="noopener">Hōlei Sea Arch</a>. It's a very curvy road to drive down, really fun. You drive through a massive lava field, so it's just a very unique environment to be in. And of course it's beautiful, like basically everywhere in Hawaiʻi.</p>
+
+        <!-- Slideshow 4: Sea Arch Road & Lava Fields -->
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/seaarchroad.jpeg" alt="Sea Arch Road" loading="lazy" />
+              <div class="slideshow__caption">Sea Arch Road</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/seaarchroad2.jpeg" alt="Sea Arch Road" loading="lazy" />
+              <div class="slideshow__caption">Sea Arch Road</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/seaarchroad3.jpeg" alt="Sea Arch Road" loading="lazy" />
+              <div class="slideshow__caption">Sea Arch Road</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/holeiseaarch.jpeg" alt="Hōlei Sea Arch" loading="lazy" />
+              <div class="slideshow__caption">Hōlei Sea Arch</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/holeiseaarch2.jpeg" alt="Hōlei Sea Arch" loading="lazy" />
+              <div class="slideshow__caption">Hōlei Sea Arch</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava3.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava4.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava5.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava6.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava7.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/lava8.jpeg" alt="Lava Field" loading="lazy" />
+              <div class="slideshow__caption">Lava Field</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 12</div>
+        </div>
+
+        <p>After the volcanoes, I went to <a href="https://en.wikipedia.org/wiki/Papak%C5%8Dlea_Beach" target="_blank" rel="noopener">Papakōlea Beach</a>, which the internet says is one of a very small number (2? 4?) of "green sand" beaches in the world. I got there a little late in the day and wasn't expecting it to be like a three-mile hike from the parking lot. There were locals with big 4x4s who would drive you to and from the beach, but I decided to hike it. And I was glad I did, it was a main highlight of my trip to Hawaiʻi. A really fun hike and then the beach was super neat. It was mostly cloudy, so not sure I got the full "green sand" effect, but you could definitely tell the sand had a unique quality.</p>
+
+        <!-- Slideshow 5: Papakōlea Beach -->
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach8.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach10.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach6.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach2.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach3.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleabeach4.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleaplant.jpeg" alt="Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakolearoad.jpeg" alt="Road to Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Road to Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakolearoad2.jpeg" alt="Road to Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Road to Papakōlea Beach</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/bigisland/papakolearoad11.jpeg" alt="Road to Papakōlea Beach" loading="lazy" />
+              <div class="slideshow__caption">Road to Papakōlea Beach</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 10</div>
+        </div>
+
+        <p>I got near the parking lot right around sunset, here's what that looked like.</p>
+
+        <!-- Single photo: Sunset -->
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/hawaii/bigisland/papakoleasundown.jpeg" alt="Sunset near Papakōlea Beach" loading="lazy" />
+        </figure>
+
+        <p>And here are the waves of the day from around Papakōlea…</p>
+
+        <!-- Video slideshow: Papakōlea waves -->
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/gwdDQonmPb8"
+              title="Waves at Papakōlea 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <p>So, I didn't spend much time on the big island, but I saw some incredible stuff.</p>
+
+      </article><!-- /.post-body -->
+
+    </div><!-- /.container -->
+
+    <!-- Subscribe -->
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+        .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+        @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+        #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+        .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+        .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent">
+                  <h4>follow today's waves</h4>
+                </div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <button class="slideshow-btn slideshow-prev" aria-label="Previous video">&#8592;</button>
-        <button class="slideshow-btn slideshow-next" aria-label="Next video">&#8594;</button>
-        <div class="slideshow-counter"><span class="slideshow-current">1</span> / <span class="slideshow-total">2</span></div>
+        <script>
+          function ml_webform_success_38569390() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-38569390 .row-success').show();
+            $('.ml-subscribe-form-38569390 .row-form').hide();
+          }
+        </script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
       </div>
+    </section>
 
-      <p>So, I didn't spend much time on the big island, but I saw some incredible stuff.</p>
-
-    </div><!-- /.post-content -->
   </main>
 
-  <!-- FOOTER -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="destinations.html">Destinations</a>
-      <a href="contact.html">Follow</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <p class="footer-copy">© 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        © 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
+        reproduced without permission. Other credited content belongs to its respective owners.
+      </p>
+    </div>
   </footer>
 
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts…" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
   <script>
-    // ─── PHOTO SLIDESHOWS ───────────────────────────────────────────────
-    document.querySelectorAll('.slideshow').forEach(function(ss) {
-      var slides = ss.querySelectorAll('.slideshow-slide');
-      var current = ss.querySelector('.slideshow-current');
-      var idx = 0;
-
-      function show(n) {
-        slides[idx].classList.remove('active');
-        idx = (n + slides.length) % slides.length;
-        slides[idx].classList.add('active');
-        if (current) current.textContent = idx + 1;
-      }
-
-      ss.querySelector('.slideshow-prev').addEventListener('click', function() { show(idx - 1); });
-      ss.querySelector('.slideshow-next').addEventListener('click', function() { show(idx + 1); });
+    // ── Nav toggle ──
+    const toggle = document.getElementById('nav-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
     });
 
-    // ─── VIDEO SLIDESHOWS ───────────────────────────────────────────────
-    document.querySelectorAll('.video-slideshow').forEach(function(vs) {
-      var slides = vs.querySelectorAll('.video-slide');
-      var current = vs.querySelector('.slideshow-current');
-      var idx = 0;
-
-      function show(n) {
-        // Pause current video by resetting src
-        var currentIframe = slides[idx].querySelector('iframe');
-        if (currentIframe) {
-          currentIframe.src = currentIframe.src;
+    // ── Destinations dropdown ──
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu    = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => {
+        const open = dropMenu.classList.toggle('open');
+        dropTrigger.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
+          dropMenu.classList.remove('open');
+          dropTrigger.setAttribute('aria-expanded', false);
         }
-        slides[idx].classList.remove('active');
-        idx = (n + slides.length) % slides.length;
-        slides[idx].classList.add('active');
-        if (current) current.textContent = idx + 1;
-      }
+      });
+    }
 
-      vs.querySelector('.slideshow-prev').addEventListener('click', function() { show(idx - 1); });
-      vs.querySelector('.slideshow-next').addEventListener('click', function() { show(idx + 1); });
-    });
-
-    // ─── SEARCH ─────────────────────────────────────────────────────────
-    var posts = [
-      { title: "Oʻahu", url: "oahu.html", tags: ["Hawaii"] },
-      { title: "The Big Island", url: "bigisle.html", tags: ["Hawaii"] }
+    // ── Search overlay ──
+    const searchToggle  = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose   = document.getElementById('search-close');
+    const searchInput   = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: 'Oʻahu', url: 'oahu.html', tag: 'Hawaii' },
+      { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' }
     ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (matches.length === 0) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
 
-    var searchToggle = document.querySelector('.nav-search-toggle');
-    var searchBar = document.getElementById('searchBar');
-    var searchInput = document.getElementById('searchInput');
-    var searchClose = document.getElementById('searchClose');
-    var searchResults = document.getElementById('searchResults');
+    // ── Slideshow factory ──
+    function initSlideshow(id) {
+      const track   = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides  = track.querySelectorAll('.slideshow__slide');
+      const total   = slides.length;
+      let current   = 0;
 
-    if (searchToggle) {
-      searchToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        searchBar.classList.toggle('active');
-        if (searchBar.classList.contains('active')) searchInput.focus();
-      });
-    }
-    if (searchClose) {
-      searchClose.addEventListener('click', function() {
-        searchBar.classList.remove('active');
-        searchInput.value = '';
-        searchResults.innerHTML = '';
-      });
-    }
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        var q = this.value.trim().toLowerCase();
-        searchResults.innerHTML = '';
-        if (!q) return;
-        var matches = posts.filter(function(p) {
-          return p.title.toLowerCase().includes(q) || p.tags.some(function(t) { return t.toLowerCase().includes(q); });
-        });
-        if (matches.length === 0) {
-          searchResults.innerHTML = '<p class="search-no-results">No posts found.</p>';
-        } else {
-          matches.forEach(function(p) {
-            var a = document.createElement('a');
-            a.href = p.url;
-            a.className = 'search-result-item';
-            a.textContent = p.title;
-            searchResults.appendChild(a);
-          });
-        }
+      function go(n) {
+        current = (n + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        counter.textContent = `${current + 1} / ${total}`;
+      }
+
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+
+      // Touch/swipe support
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend',   e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1);
       });
     }
 
-    // ─── NAV DROPDOWN ───────────────────────────────────────────────────
-    var dropdownToggle = document.querySelector('.nav-dropdown-toggle');
-    var dropdownMenu = document.querySelector('.nav-dropdown-menu');
-    if (dropdownToggle && dropdownMenu) {
-      dropdownToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdownMenu.classList.toggle('open');
-      });
-      document.addEventListener('click', function(e) {
-        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-          dropdownMenu.classList.remove('open');
-        }
-      });
+    initSlideshow('ss1');
+    initSlideshow('ss2');
+    initSlideshow('ss3');
+    initSlideshow('ss4');
+    initSlideshow('ss5');
+
+    // ── Video slideshow ──
+    const vs1Videos = [
+      'gwdDQonmPb8',
+      'PIIXbU0ZKl4'
+    ];
+    let vs1Current = 0;
+    const vs1Frame   = document.getElementById('vs1-frame');
+    const vs1Counter = document.getElementById('vs1-counter');
+
+    function vs1Go(n) {
+      vs1Current = (n + vs1Videos.length) % vs1Videos.length;
+      vs1Frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${vs1Videos[vs1Current]}" title="Waves at Papakōlea ${vs1Current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      vs1Counter.textContent = `${vs1Current + 1} / ${vs1Videos.length}`;
     }
+
+    document.getElementById('vs1-prev').addEventListener('click', () => vs1Go(vs1Current - 1));
+    document.getElementById('vs1-next').addEventListener('click', () => vs1Go(vs1Current + 1));
   </script>
 
 </body>
