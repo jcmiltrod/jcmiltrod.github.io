@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maui — Today's Waves</title>
+  <meta name="description" content="A big wave quest, more waterfalls and a mountaintop sunset on Maui." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Slideshow ── */
+    .slideshow {
+      position: relative;
+      margin: 2.5rem 0;
+      background: #111;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .slideshow__track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .slideshow__slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .slideshow__slide img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: contain;
+      background: #111;
+      display: block;
+    }
+    .slideshow__caption {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      background: rgba(0,0,0,0.5);
+      min-height: 2rem;
+      font-style: italic;
+    }
+    .slideshow__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--text-primary);
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter {
+      position: absolute;
+      bottom: 2.6rem;
+      right: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      background: rgba(0,0,0,0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2rem;
+    }
+
+    /* ── Video slideshow ── */
+    .video-slideshow {
+      margin: 2.5rem 0;
+    }
+    .video-slideshow__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .video-slideshow__counter {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .video-slideshow__nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .video-slideshow__btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .video-slideshow__btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+    .video-slideshow__track {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #111;
+    }
+    .video-slideshow__track iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── Single video embed ── */
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #111;
+      margin: 2.5rem 0;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── Single photo ── */
+    .post-photo {
+      margin: 2.5rem 0;
+    }
+    .post-photo img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+    }
+    .post-photo figcaption {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    /* ── Post meta ── */
+    .post-header .post-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Destinations
+          </button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <div class="container">
+
+      <!-- Post Header -->
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Hawaii</span>
+          <span class="post-date">March 28–April 1, 2026</span>
+        </div>
+        <h1>Maui</h1>
+      </header>
+
+      <!-- Post Body -->
+      <article class="post-body">
+
+        <p>I spent my final few days in Hawaiʻi on Maui, and it was every bit as epic as those on the big island and Oʻahu. As with the other islands, the recent big rains had caused a lot of damage on Maui and nearby Molokaʻi. And all the rivers were running above normal because of it, too.</p>
+
+        <p>As I mentioned in my first post, I got into watching surfing videos during the pandemic, but one of the first surfing films I ever saw that really captured my imagination was <a href="https://www.youtube.com/watch?v=ADy8f6t4Ri8" target="_blank" rel="noopener">Riding Giants</a>, which includes a lot about the Peʻahi wave, also known as Jaws. In big swells it can reach 60 to 70 feet in height. And people surf it.</p>
+
+        <p>So of course that was on my Maui to-see list. Like my earlier visit to Pipeline on Oʻahu, <a href="https://en.wikipedia.org/wiki/Pe%CA%BBahi,_Hawaii" target="_blank" rel="noopener">Peʻahi</a> was not big at all when I saw it, but it was still really cool to be there. You hike about a mile down a really deeply rutted dirt road with huge mud puddles to get to the cliffs overlooking the ocean, and then you can continue all the way down to the beach if you want to.</p>
+
+        <!-- Video slideshow: Peʻahi -->
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/kUfuHsS5_Q8"
+              title="Peʻahi video 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <p>And I never knew this, but there's a freshwater stream that runs down through a gorge into the sea right there, it's called the Uaoa stream.</p>
+
+        <!-- Single video: Uaoa stream -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/XmjLLQJwj94"
+            title="Uaoa stream"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>The hike was muddy and rocky but fine overall. In these pictures you can see some of the <a href="https://www.ctahr.hawaii.edu/invweed/WeedsHI/W_Furcraea_foetida.pdf" target="_blank" rel="noopener">furcraea foetida</a>, aka Mauritius hemp, that is one of many invasive species in Hawaiʻi.</p>
+
+        <!-- Slideshow 1: Uaoa -->
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/uaoa1.jpeg" alt="Uaoa stream right where it meets the ocean" loading="lazy" />
+              <div class="slideshow__caption">Uaoa stream right where it meets the ocean</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/uaoa2.jpeg" alt="Furcraea foetida" loading="lazy" />
+              <div class="slideshow__caption">Furcraea foetida</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/uaoa3.jpeg" alt="Uaoa stream running to the ocean" loading="lazy" />
+              <div class="slideshow__caption">Uaoa stream running to the ocean</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/uaoa4.jpeg" alt="Uaoa stream" loading="lazy" />
+              <div class="slideshow__caption">Uaoa stream</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 4</div>
+        </div>
+
+        <p>I stopped at a couple of other neat places as I drove around Maui, including the Hoʻokipa Beach overlook, where I saw a surfer and a bodyboarder doing their things.</p>
+
+        <!-- Single video: Hoʻokipa Beach -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/wcIP396JwXQ"
+            title="Hoʻokipa Beach"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>And Twin Falls, a private park that had three waterfalls (one of which was closed because of dangerous conditions).</p>
+
+        <!-- Slideshow 2: Twin Falls -->
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/twinfalls1.jpeg" alt="Twin Falls" loading="lazy" />
+              <div class="slideshow__caption">Twin Falls</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/twinfalls2.jpeg" alt="Twin Falls" loading="lazy" />
+              <div class="slideshow__caption">Twin Falls</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/twinfalls3.jpeg" alt="Twin Falls" loading="lazy" />
+              <div class="slideshow__caption">Twin Falls</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/twinfalls5.jpeg" alt="River in the Twin Falls park" loading="lazy" />
+              <div class="slideshow__caption">River in the Twin Falls park</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/twinfalls6.jpeg" alt="Another waterfall in the park" loading="lazy" />
+              <div class="slideshow__caption">Another waterfall in the park</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 5</div>
+        </div>
+
+        <p>Here's a little video of a section of the park.</p>
+
+        <!-- Single video: Twin Falls park -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/7T0DMEk_Fx4"
+            title="Twin Falls park"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>And then, last but very much not least, at the end of this day I visited <a href="https://www.nps.gov/hale/index.htm" target="_blank" rel="noopener">Haleakalā National Park</a>.</p>
+
+        <p>Here's a view from the road up to the summit.</p>
+
+        <!-- Single video: Road to summit -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/H9hevxW5jxk"
+            title="Road up to Haleakalā summit"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>At the top of the mountain — when the weather is clear — you have amazing views of the big island, Molokaʻi and Lanai.</p>
+
+        <!-- Single video: Summit views -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/TQBybXBVgtA"
+            title="Views from Haleakalā summit"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>Native Hawaiians historically trekked and still trek up to the top in order to teach and learn about astronomically-based navigation. And in modern times scientists have built several space observation posts there with all kinds of telescopes and other instruments.</p>
+
+        <!-- Slideshow 3: Haleakalā views -->
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala1.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala2.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala3.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala5.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala6.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala8.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala9.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala7.jpeg" alt="The view from the top" loading="lazy" />
+              <div class="slideshow__caption">The view from the top</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 8</div>
+        </div>
+
+        <p>And a really neat thing you can do at the summit is watch the sun rise or set. I just happened to be there a couple of hours before sundown, so I waited to see it, and it was sure worth it. We even got a "second sunset," where the sun looks like it goes down behind some clouds, but then reappears beneath them before it actually sets over the ocean.</p>
+
+        <!-- Slideshow 4: Haleakalā sunset -->
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala11.jpeg" alt="Haleakalā sunset" loading="lazy" />
+              <div class="slideshow__caption">Haleakalā sunset</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala12.jpeg" alt="Haleakalā second sunset" loading="lazy" />
+              <div class="slideshow__caption">Haleakalā second sunset</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/hawaii/maui/haleakala13.jpeg" alt="The sun sets on Haleakalā" loading="lazy" />
+              <div class="slideshow__caption">The sun sets on Haleakalā</div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 3</div>
+        </div>
+
+      </article><!-- /.post-body -->
+
+    </div><!-- /.container -->
+
+    <!-- Subscribe -->
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+        .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+        @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+        #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+        .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+        .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent">
+                  <h4>follow today's waves</h4>
+                </div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function ml_webform_success_38569390() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-38569390 .row-success').show();
+            $('.ml-subscribe-form-38569390 .row-form').hide();
+          }
+        </script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        © 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
+        reproduced without permission. Other credited content belongs to its respective owners.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts…" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    // ── Nav toggle ──
+    const toggle = document.getElementById('nav-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // ── Destinations dropdown ──
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu    = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => {
+        const open = dropMenu.classList.toggle('open');
+        dropTrigger.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
+          dropMenu.classList.remove('open');
+          dropTrigger.setAttribute('aria-expanded', false);
+        }
+      });
+    }
+
+    // ── Search overlay ──
+    const searchToggle  = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose   = document.getElementById('search-close');
+    const searchInput   = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: 'Oʻahu', url: 'oahu.html', tag: 'Hawaii' },
+      { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' },
+      { title: 'Maui', url: 'maui.html', tag: 'Hawaii' }
+    ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (matches.length === 0) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    // ── Slideshow factory ──
+    function initSlideshow(id) {
+      const track   = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides  = track.querySelectorAll('.slideshow__slide');
+      const total   = slides.length;
+      let current   = 0;
+
+      function go(n) {
+        current = (n + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        counter.textContent = `${current + 1} / ${total}`;
+      }
+
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+
+      // Touch/swipe support
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend',   e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1);
+      });
+    }
+
+    initSlideshow('ss1');
+    initSlideshow('ss2');
+    initSlideshow('ss3');
+    initSlideshow('ss4');
+
+    // ── Video slideshow: Peʻahi ──
+    const vs1Videos = [
+      'kUfuHsS5_Q8',
+      '-VjO6IlJexY'
+    ];
+    let vs1Current = 0;
+    const vs1Frame   = document.getElementById('vs1-frame');
+    const vs1Counter = document.getElementById('vs1-counter');
+
+    function vs1Go(n) {
+      vs1Current = (n + vs1Videos.length) % vs1Videos.length;
+      vs1Frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${vs1Videos[vs1Current]}" title="Peʻahi video ${vs1Current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      vs1Counter.textContent = `${vs1Current + 1} / ${vs1Videos.length}`;
+    }
+
+    document.getElementById('vs1-prev').addEventListener('click', () => vs1Go(vs1Current - 1));
+    document.getElementById('vs1-next').addEventListener('click', () => vs1Go(vs1Current + 1));
+  </script>
+
+</body>
+</html>
