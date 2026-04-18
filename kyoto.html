@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyoto — Today's Waves</title>
+  <meta name="description" content="Shrines, magical creatures and so many torii." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Slideshow ── */
+    .slideshow {
+      position: relative;
+      margin: 2.5rem 0;
+      background: #111;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .slideshow__track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .slideshow__slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .slideshow__slide img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: contain;
+      background: #111;
+      display: block;
+    }
+    .slideshow__caption {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      background: rgba(0,0,0,0.5);
+      min-height: 2rem;
+      font-style: italic;
+    }
+    .slideshow__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--text-primary);
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter {
+      position: absolute;
+      bottom: 2.6rem;
+      right: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      background: rgba(0,0,0,0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2rem;
+    }
+
+    /* ── Single photo ── */
+    .post-photo {
+      margin: 2.5rem 0;
+    }
+    .post-photo img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+    }
+    .post-photo figcaption {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    /* ── Single video embed ── */
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #111;
+      margin: 2.5rem 0;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── Post meta ── */
+    .post-header .post-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Destinations
+          </button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+    <div class="container">
+
+      <!-- Post Header -->
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Japan</span>
+          <span class="post-date">April 6, 2026</span>
+        </div>
+        <h1>Kyoto</h1>
+      </header>
+
+      <!-- Post Body -->
+      <article class="post-body">
+
+        <p>The first day trip I took was to Kyoto, which for about 1,100 years — up until the late 1800s, served as the emperor's home. It's definitely worth more than a day trip, but I did what I could this time. The petals were starting to fall from the cherry blossoms, so here are some of those drifting in some little waves in the Kamo River in Kyoto.</p>
+
+        <!-- Video: Cherry blossoms on the Kamo River -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Tsg0x54wNrQ"
+            title="Cherry blossom petals on the Kamo River, Kyoto"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>My main stop was Fushimi Inari Taisha, which is the head shrine for Inari Okami, a top deity of the native Japanese religion called Shinto. There's a lot more to learn about all that and if you're interested, you can <a href="https://inari.jp/en/" target="_blank" rel="noopener">start here</a>. But the short version is that the shrine was founded in 711 CE and is home to Inari Okami, "a deity who feeds, clothes and houses us and protects us so that all of us may live with abundance and pleasure" and "a deity who protects all people from the Emperor to the common people so that we all may live happily and with abundance," according to the shrine's website.</p>
+
+        <!-- Slideshow 1: Fushimi Inari main -->
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fimain1.jpeg" alt="Fushimi Inari Taisha" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fimain3.jpeg" alt="Fushimi Inari Taisha" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fimain4.jpeg" alt="Fushimi Inari Taisha" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fimain5.jpeg" alt="Fushimi Inari Taisha" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fimain6.jpeg" alt="Fushimi Inari Taisha" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 5</div>
+        </div>
+
+        <p>There are tens of thousands of other Inari shrines across Japan but this is the main one, apparently. And there are many shrines within this one.</p>
+
+        <!-- Slideshow 2: Shrines within the shrine -->
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fishrines1.jpeg" alt="Shrines at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fishrines2.jpeg" alt="Shrines at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fishrines3.jpeg" alt="Shrines at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fishrines4.jpeg" alt="Shrines at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fishrines5.jpeg" alt="Shrines at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 5</div>
+        </div>
+
+        <p>There are also thousands of torii, which are gates (very often red or red and black) that mark the entrance to a sacred place throughout the shrine.</p>
+
+        <!-- Slideshow 3: Torii gates -->
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fitorii1.jpeg" alt="Torii gates at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fitorii2.jpeg" alt="Torii gates at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fitorii3.jpeg" alt="Torii gates at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fitorii4.jpeg" alt="Torii gates at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fitorii6.jpeg" alt="Torii gates at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fitorii8.jpeg" alt="Torii gates at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 6</div>
+        </div>
+
+        <p>It's also home to a bamboo forest and beautiful gardens. Although you are supposed to watch out for wild boars…</p>
+
+        <!-- Slideshow 4: Bamboo and gardens -->
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/bamboo1.jpeg" alt="Bamboo forest at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/figarden.jpeg" alt="Gardens at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/boars1.jpeg" alt="Wild boar warning" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/boars2.jpeg" alt="Wild boar warning" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 4</div>
+        </div>
+
+        <p>Foxes are said to be messengers of Inari Okami. Not actual foxes, but spiritual ones, according to the shrine. There are statues of foxes all over the shrine and many of the tourist shops around it sell fox-themed items, including fox-face pastries and other sweets.</p>
+
+        <!-- Slideshow 5: Foxes -->
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fifox1.jpeg" alt="Fox statues at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fifox2.jpeg" alt="Fox statues at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fifox4.jpeg" alt="Fox statues at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fifox5.jpeg" alt="Fox statues at Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 4</div>
+        </div>
+
+        <p>The shrine is located at the base of Mt. Inari, or Inariyama, a small mountain you can climb to the top of. There used to be a temple at the top, but now there's a shrine to the temple that was once there. It's a very nice hike up there.</p>
+
+        <!-- Slideshow 6: Peak path -->
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/peakpath1.jpeg" alt="Hike up Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/peakpath2.jpeg" alt="Hike up Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/peakpath3.jpeg" alt="Hike up Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/peakpath4.jpeg" alt="Summit of Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/peakpath5.jpeg" alt="Hike up Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss6-counter">1 / 5</div>
+        </div>
+
+        <p>There are also lots of cool things to visit right around Fushimi Inari Taisha, including other shrines and temples and nice neighborhoods. I saw a burnt cherry tree that they are rehabilitating.</p>
+
+        <!-- Slideshow 7: Temples and surroundings -->
+        <div class="slideshow" id="ss7">
+          <div class="slideshow__track" id="ss7-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple2.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple5.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple6.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/burntcherry1.jpeg" alt="Burnt cherry tree being rehabilitated" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/burntcherry2.jpeg" alt="Burnt cherry tree being rehabilitated" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/burntcherry3.jpeg" alt="Burnt cherry tree being rehabilitated" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple8.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple9.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple12.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple14.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple15.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple16.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyototemple17.jpeg" alt="Temple near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss7-counter">1 / 13</div>
+        </div>
+
+        <p>There is some interesting coexistence between ancient and modern times. Here are some random shots from a little industrial area near the mountain, some anti-littering signs and a little collection of <a href="https://en.wikipedia.org/wiki/Japanese_raccoon_dog" target="_blank" rel="noopener">Tanuki</a>, which are magical versions of Japanese raccoon dogs.</p>
+
+        <!-- Slideshow 8: Neighborhood and odds and ends -->
+        <div class="slideshow" id="ss8">
+          <div class="slideshow__track" id="ss8-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/pipesbamboo5.jpeg" alt="Industrial area near Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/pipesbamboo4.jpeg" alt="Industrial area near Mt. Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/stuff.jpeg" alt="Around Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/tanuki.jpeg" alt="Tanuki" loading="lazy" />
+              <div class="slideshow__caption">Tanuki</div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/oldtruck.jpeg" alt="Old truck near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/cat.jpeg" alt="Cat near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyotovend.jpeg" alt="Vending machine in Kyoto" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/coolhouse.jpeg" alt="House near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/building.jpeg" alt="Building near Fushimi Inari" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyotopark.jpeg" alt="Park in Kyoto" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/kyotostreet.jpeg" alt="Street in Kyoto" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss8-counter">1 / 11</div>
+        </div>
+
+        <p>And then there is <a href="https://www.japan.travel/en/spot/1129/" target="_blank" rel="noopener">Fushimi Castle</a>, which is a 1960s construction of one that used to be in this location in Kyoto. It is really impressive, and it just lives in the neighborhood and towers over a nearby baseball/soccer field.</p>
+
+        <!-- Slideshow 9: Fushimi Castle -->
+        <div class="slideshow" id="ss9">
+          <div class="slideshow__track" id="ss9-track">
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fushimicastle1.jpeg" alt="Fushimi Castle" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fushimicastle3.jpeg" alt="Fushimi Castle" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fushimicastle5.jpeg" alt="Fushimi Castle" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fushimicastle7.jpeg" alt="Fushimi Castle" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+            <div class="slideshow__slide">
+              <img src="https://images.todayswaves.com/japan/kyoto/fushimicastle8.jpeg" alt="Fushimi Castle" loading="lazy" />
+              <div class="slideshow__caption"></div>
+            </div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss9-counter">1 / 5</div>
+        </div>
+
+        <p>I had a nice walk back to the train as the sun was going down.</p>
+
+        <!-- Single photo: Evening walk -->
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/japan/kyoto/kyotoevening.jpeg" alt="Kyoto at evening" loading="lazy" />
+        </figure>
+
+      </article><!-- /.post-body -->
+
+    </div><!-- /.container -->
+
+    <!-- Subscribe -->
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+        .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+        @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+        #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+        .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+        .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent">
+                  <h4>follow today's waves</h4>
+                </div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function ml_webform_success_38569390() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-38569390 .row-success').show();
+            $('.ml-subscribe-form-38569390 .row-form').hide();
+          }
+        </script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        © 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
+        reproduced without permission. Other credited content belongs to its respective owners.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts…" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    // ── Nav toggle ──
+    const toggle = document.getElementById('nav-toggle');
+    const nav    = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // ── Destinations dropdown ──
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu    = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => {
+        const open = dropMenu.classList.toggle('open');
+        dropTrigger.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
+          dropMenu.classList.remove('open');
+          dropTrigger.setAttribute('aria-expanded', false);
+        }
+      });
+    }
+
+    // ── Search overlay ──
+    const searchToggle  = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose   = document.getElementById('search-close');
+    const searchInput   = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    const posts = [
+      { title: 'Oʻahu', url: 'oahu.html', tag: 'Hawaii' },
+      { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' },
+      { title: 'Maui', url: 'maui.html', tag: 'Hawaii' },
+      { title: 'Kyoto', url: 'kyoto.html', tag: 'Japan' },
+    ];
+
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (matches.length === 0) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    // ── Slideshow factory ──
+    function initSlideshow(id) {
+      const track   = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides  = track.querySelectorAll('.slideshow__slide');
+      const total   = slides.length;
+      let current   = 0;
+
+      function go(n) {
+        current = (n + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        counter.textContent = `${current + 1} / ${total}`;
+      }
+
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+
+      // Touch/swipe support
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1);
+      });
+    }
+
+    initSlideshow('ss1');
+    initSlideshow('ss2');
+    initSlideshow('ss3');
+    initSlideshow('ss4');
+    initSlideshow('ss5');
+    initSlideshow('ss6');
+    initSlideshow('ss7');
+    initSlideshow('ss8');
+    initSlideshow('ss9');
+  </script>
+
+</body>
+</html>
