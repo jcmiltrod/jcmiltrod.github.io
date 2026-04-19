@@ -3,108 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Himeji &amp; Kobe — Today's Waves</title>
-  <meta name="description" content="The White Heron Castle and a stop in Kobe." />
+  <title>Himeji, Kobe &amp; Hiroshima — Today's Waves</title>
+  <meta name="description" content="The White Heron Castle, Kobe's Chinatown, the bullet train, and the Hiroshima Peace Memorial Museum." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Slideshow ── */
-    .slideshow {
-      position: relative;
-      margin: 2.5rem 0;
-      background: #111;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .slideshow__track {
-      display: flex;
-      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
-    }
-    .slideshow__slide {
-      min-width: 100%;
-      position: relative;
-    }
-    .slideshow__slide img {
-      width: 100%;
-      max-height: 540px;
-      object-fit: contain;
-      background: #111;
-      display: block;
-    }
-    .slideshow__caption {
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      color: var(--text-primary);
-      letter-spacing: 0.05em;
-      text-align: center;
-      padding: 0.6rem 1rem;
-      background: rgba(0,0,0,0.5);
-      min-height: 2rem;
-      font-style: italic;
-    }
-    .slideshow__btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.55);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--text-primary);
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      z-index: 10;
-    }
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
     .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
     .slideshow__btn--prev { left: 0.75rem; }
     .slideshow__btn--next { right: 0.75rem; }
-    .slideshow__counter {
-      position: absolute;
-      bottom: 2.6rem;
-      right: 0.9rem;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.45);
-      background: rgba(0,0,0,0.4);
-      padding: 0.2rem 0.5rem;
-      border-radius: 2rem;
-    }
-
-    /* ── Single photo ── */
-    .post-photo {
-      margin: 2.5rem 0;
-    }
-    .post-photo img {
-      width: 100%;
-      border-radius: var(--radius);
-      display: block;
-    }
-    .post-photo figcaption {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-      margin-top: 0.6rem;
-      text-align: center;
-    }
-
-    /* ── Post meta ── */
-    .post-header .post-date {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-photo figcaption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.05em; margin-top: 0.6rem; text-align: center; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="header-inner">
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -113,9 +35,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
-            Destinations
-          </button>
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
           <ul class="nav-dropdown__menu" role="menu">
             <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
             <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
@@ -133,63 +53,35 @@
     </div>
   </header>
 
-  <!-- ===================== MAIN ===================== -->
   <main>
     <div class="container">
 
-      <!-- Post Header -->
       <header class="post-header">
         <div class="post-card__meta">
           <span class="post-tag">Japan</span>
-          <span class="post-date">April 8, 2026</span>
+          <span class="post-date">April 8 &amp; 11, 2026</span>
         </div>
-        <h1>Himeji &amp; Kobe</h1>
+        <h1>Himeji, Kobe &amp; Hiroshima</h1>
       </header>
 
-      <!-- Post Body -->
       <article class="post-body">
 
         <h2>Himeji</h2>
 
-        <p>Another day trip took me to <a href="https://visit-himeji.com/en/sightseeing_category/the-castle/" target="_blank" rel="noopener">Himeji Castle</a>. A lot of the castles in Japan are rebuilds of ones that burned down or were destroyed in other ways in the past, like that one in Kyoto, and the one in Osaka, which was rebuilt in the 1930s.</p>
+        <p>A friend recommended I visit <a href="https://visit-himeji.com/en/sightseeing_category/the-castle/" target="_blank" rel="noopener">Himeji Castle</a> while I was in Osaka, since it was close.</p>
 
-        <p>But the one in Himeji stands more or less as it was built in the very early 1600s. It's known as the White Heron castle because of its exterior paint job. One interesting thing about Himeji is that while it has never been destroyed like other castles, it has been dismantled — <a href="https://www.himejicastle.jp/en/guide/history/" target="_blank" rel="noopener">yes, dismantled</a> — and put back together again as part of a restoration project.</p>
+        <p>Unlike some castles in Japan (like ones in Osaka and Kyoto) that were destroyed at some point in the past and rebuilt — sometimes multiple times — the one in Himeji stands more or less as it was built in the very early 1600s. It's known as the White Heron castle because of its exterior paint job. One interesting thing about Himeji is that while it has never been destroyed like other castles, it has been dismantled — <a href="https://www.himejicastle.jp/en/guide/history/" target="_blank" rel="noopener">yes, dismantled</a> — and put back together again as part of a restoration project.</p>
 
-        <!-- Slideshow 1: Exterior -->
         <div class="slideshow" id="ss1">
           <div class="slideshow__track" id="ss1-track">
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext1a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext2a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext3a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext4a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext5a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext6a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext8a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/ext9a.jpeg" alt="Himeji Castle exterior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext1a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext2a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext3a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext4a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext5a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext6a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext8a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/ext9a.jpeg" alt="Himeji Castle exterior" loading="lazy" /><div class="slideshow__caption"></div></div>
           </div>
           <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
           <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
@@ -198,41 +90,16 @@
 
         <p>It was really spectacular on a clear day with the cherry blossoms. And, you can walk through the main keep (you get a bag to put your shoes in and slippers if you need them) and other parts of the complex.</p>
 
-        <!-- Slideshow 2: Interior -->
         <div class="slideshow" id="ss2">
           <div class="slideshow__track" id="ss2-track">
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int1a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int2a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int3a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int4a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int5a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int6a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int7a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/int8a.jpeg" alt="Himeji Castle interior" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int1a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int2a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int3a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int4a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int5a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int6a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int7a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/int8a.jpeg" alt="Himeji Castle interior" loading="lazy" /><div class="slideshow__caption"></div></div>
           </div>
           <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
           <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
@@ -241,83 +108,102 @@
 
         <p>And there are lots of really beautiful gardens and areas with foliage, too. Himeji was really a highlight of the Japan trip.</p>
 
-        <!-- Slideshow 3: Gardens and grounds -->
         <div class="slideshow" id="ss3">
           <div class="slideshow__track" id="ss3-track">
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/bext1.jpeg" alt="Himeji Castle gardens" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/bext2.jpeg" alt="Himeji Castle gardens" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/bext3.jpeg" alt="Himeji Castle grounds" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/bint1.jpeg" alt="Himeji Castle grounds" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/gatou1.jpeg" alt="Himeji Castle gate" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/gatou2.jpeg" alt="Himeji Castle gate" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/himeji/shachi.jpeg" alt="Shachi on Himeji Castle" loading="lazy" />
-              <div class="slideshow__caption"></div>
-            </div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/bext1.jpeg" alt="Himeji Castle gardens" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/bext2.jpeg" alt="Himeji Castle gardens" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/bext3.jpeg" alt="Himeji Castle grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/bint1.jpeg" alt="Himeji Castle grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/gatou1.jpeg" alt="Himeji Castle gate" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/gatou2.jpeg" alt="Himeji Castle gate" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/himeji/shachi.jpeg" alt="Shachi on Himeji Castle" loading="lazy" /><div class="slideshow__caption"></div></div>
           </div>
           <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
           <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
           <div class="slideshow__counter" id="ss3-counter">1 / 7</div>
         </div>
 
+        <p>On the way back to the train station I noticed this restaurant … The Bon Marché used to be a department store in the Pacific Northwest (which was apparently inspired by Le Bon Marché in Paris). Anyway, the name lives on.</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/japan/himeji/thebon.jpeg" alt="The Bon Marché restaurant in Himeji" loading="lazy" />
         </figure>
 
         <h2>Kobe</h2>
 
         <p>And I went to Kobe, although that wasn't really a day trip, I just stopped off there on the way back from Himeji. I was really only there for about an hour, so unfortunately there's not much to report. But Kobe has a little Chinatown right near a train stop, so I got off there and walked around it and the nearby shōtengai and got some food. There was a line outside this pork bun place, so I figured it must be good, and it was. Ate them too fast to take a pic.</p>
 
-        <!-- Slideshow 4: Kobe Chinatown -->
         <div class="slideshow" id="ss4">
           <div class="slideshow__track" id="ss4-track">
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/kobe/nankinmachi.jpeg" alt="Nankinmachi" loading="lazy" />
-              <div class="slideshow__caption">Nankinmachi</div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/kobe/porkbuns.jpeg" alt="Pork buns place" loading="lazy" />
-              <div class="slideshow__caption">Pork buns place</div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/kobe/seianmongate.jpeg" alt="Seianmon Gate" loading="lazy" />
-              <div class="slideshow__caption">Seianmon Gate</div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/kobe/nankinmachi2.jpeg" alt="Nankinmachi" loading="lazy" />
-              <div class="slideshow__caption">Nankinmachi</div>
-            </div>
-            <div class="slideshow__slide">
-              <img src="https://images.todayswaves.com/japan/kobe/seianmongate2.jpeg" alt="Seianmon Gate" loading="lazy" />
-              <div class="slideshow__caption">Seianmon Gate</div>
-            </div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/kobe/nankinmachi.jpeg" alt="Nankinmachi" loading="lazy" /><div class="slideshow__caption">Nankinmachi</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/kobe/porkbuns.jpeg" alt="Pork buns place" loading="lazy" /><div class="slideshow__caption">Pork buns place</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/kobe/seianmongate.jpeg" alt="Seianmon Gate" loading="lazy" /><div class="slideshow__caption">Seianmon Gate</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/kobe/nankinmachi2.jpeg" alt="Nankinmachi" loading="lazy" /><div class="slideshow__caption">Nankinmachi</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/kobe/seianmongate2.jpeg" alt="Seianmon Gate" loading="lazy" /><div class="slideshow__caption">Seianmon Gate</div></div>
           </div>
           <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
           <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
           <div class="slideshow__counter" id="ss4-counter">1 / 5</div>
         </div>
 
-      </article><!-- /.post-body -->
+        <h2>Hiroshima</h2>
 
-    </div><!-- /.container -->
+        <p>Another day I took the Shinkansen, aka the bullet train, to Hiroshima to meet an old pal from Olympia and visit the Peace Memorial Museum. The train I took apparently reaches speeds of 300 km/h, or about 186 mph, during the trip. Here's a video of it pulling into the Hiroshima station.</p>
 
-    <!-- Subscribe -->
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/U74iYKb6D7Q"
+            title="Shinkansen bullet train arriving at Hiroshima station"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p>The Peace Memorial Museum advocates for the abolition of nuclear weapons. So I saw the Pearl Harbor memorial in Hawaii and the Hiroshima memorial within a couple of weeks of each other. There were way too many people packed into the museum the day we were there, but the effect of the exhibits was still very powerful.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/outline.jpeg" alt="Hiroshima Peace Memorial Museum exhibit" loading="lazy" /><div class="slideshow__caption">Piece of sidewalk and building that contains the residue of someone disintegrated by the explosion</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/trike.jpeg" alt="Hiroshima Peace Memorial Museum exhibit" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/glasses.jpeg" alt="Hiroshima Peace Memorial Museum exhibit" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/clothes.jpeg" alt="Hiroshima Peace Memorial Museum exhibit" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 4</div>
+        </div>
+
+        <p>Since World War II, Hiroshima has rebounded to become home to over a million people. And obviously the city had a long history before then, so there's an old castle there that we checked out. It's a rebuild, and looks different from Himeji's because it isn't covered in white plaster. We also took an hour-long archery class they offer on the grounds.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/castle.jpeg" alt="Hiroshima Castle" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/carp.jpeg" alt="Hiroshima Carp" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss6-counter">1 / 2</div>
+        </div>
+
+        <p>There was a Hiroshima Carp baseball game happening in the stadium right next to the castle while we were there and we could hear the crowd cheering and chanting the whole time. The game let out about the same time as I headed back to the train station so I walked back in a sea of baseball fans. Here's a manhole created to support the team, and some other nice ones from the city, as well as a couple of shots of the various rivers there.</p>
+
+        <div class="slideshow" id="ss7">
+          <div class="slideshow__track" id="ss7-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/manhole1.jpeg" alt="Hiroshima Carp manhole cover" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/manhole2.jpeg" alt="Hiroshima manhole cover" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/manhole3.jpeg" alt="Hiroshima manhole cover" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/enkoriver.jpeg" alt="Enk&#333; River, Hiroshima" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/hiroshima/kyobashiriver.jpeg" alt="Kyobashi River, Hiroshima" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss7-counter">1 / 5</div>
+        </div>
+
+      </article>
+
+    </div>
+
     <section class="subscribe-section" id="subscribe">
       <div class="subscribe-inner">
         <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
@@ -348,9 +234,7 @@
           <div class="ml-form-align-center">
             <div class="ml-form-embedWrapper embedForm">
               <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <div class="ml-form-embedContent">
-                  <h4>follow today's waves</h4>
-                </div>
+                <div class="ml-form-embedContent"><h4>follow today's waves</h4></div>
                 <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
                   <div class="ml-form-formContent">
                     <div class="ml-form-fieldRow ml-last-item">
@@ -367,10 +251,7 @@
                   <input type="hidden" name="ml-submit" value="1">
                   <div class="ml-form-embedSubmit">
                     <button type="submit" class="primary">subscribe</button>
-                    <button disabled="disabled" style="display: none;" type="button" class="loading">
-                      <div class="ml-form-embedSubmitLoad"></div>
-                      <span class="sr-only">Loading...</span>
-                    </button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
                   </div>
                   <input type="hidden" name="anticsrf" value="true">
                 </form>
@@ -398,7 +279,6 @@
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <nav class="footer-nav">
@@ -408,23 +288,21 @@
         <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
       </nav>
       <p class="footer-copy">
-        © 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
+        &copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be
         reproduced without permission. Other credited content belongs to its respective owners.
       </p>
     </div>
   </footer>
 
-  <!-- Search Overlay -->
   <div class="search-overlay" id="search-overlay" aria-hidden="true">
     <div class="search-overlay__inner">
-      <input type="search" class="search-input" id="search-input" placeholder="Search posts…" aria-label="Search posts" autocomplete="off" />
-      <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
     </div>
     <ul class="search-results" id="search-results"></ul>
   </div>
 
   <script>
-    // ── Nav toggle ──
     const toggle = document.getElementById('nav-toggle');
     const nav    = document.getElementById('site-nav');
     toggle.addEventListener('click', () => {
@@ -432,7 +310,6 @@
       toggle.setAttribute('aria-expanded', open);
     });
 
-    // ── Destinations dropdown ──
     const dropTrigger = document.querySelector('.nav-dropdown__trigger');
     const dropMenu    = document.querySelector('.nav-dropdown__menu');
     if (dropTrigger) {
@@ -448,7 +325,6 @@
       });
     }
 
-    // ── Search overlay ──
     const searchToggle  = document.getElementById('search-toggle');
     const searchOverlay = document.getElementById('search-overlay');
     const searchClose   = document.getElementById('search-close');
@@ -456,11 +332,12 @@
     const searchResults = document.getElementById('search-results');
 
     const posts = [
-      { title: 'Oʻahu', url: 'oahu.html', tag: 'Hawaii' },
+      { title: 'O\u02BBahu', url: 'oahu.html', tag: 'Hawaii' },
       { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' },
       { title: 'Maui', url: 'maui.html', tag: 'Hawaii' },
       { title: 'Kyoto', url: 'kyoto.html', tag: 'Japan' },
-      { title: 'Himeji & Kobe', url: 'himeji.html', tag: 'Japan' },
+      { title: 'Himeji, Kobe & Hiroshima', url: 'himeji.html', tag: 'Japan' },
+      { title: 'Nara', url: 'nara.html', tag: 'Japan' },
     ];
 
     function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
@@ -477,25 +354,20 @@
       matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
     });
 
-    // ── Slideshow factory ──
     function initSlideshow(id) {
       const track   = document.getElementById(id + '-track');
       const counter = document.getElementById(id + '-counter');
       const slides  = track.querySelectorAll('.slideshow__slide');
       const total   = slides.length;
       let current   = 0;
-
       function go(n) {
         current = (n + total) % total;
         track.style.transform = `translateX(-${current * 100}%)`;
         counter.textContent = `${current + 1} / ${total}`;
       }
-
       const wrap = document.getElementById(id);
       wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
       wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
-
-      // Touch/swipe support
       let startX = 0;
       track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
       track.addEventListener('touchend', e => {
@@ -508,6 +380,9 @@
     initSlideshow('ss2');
     initSlideshow('ss3');
     initSlideshow('ss4');
+    initSlideshow('ss5');
+    initSlideshow('ss6');
+    initSlideshow('ss7');
   </script>
 
 </body>
