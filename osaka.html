@@ -302,10 +302,16 @@
 
         <p>There are lots of cool places to visit within an easy train ride from Osaka. I hit a few of them and will cover them in separate posts.</p>
 
-        <!-- Single photo: Final -->
-        <figure class="post-photo">
-          <img src="https://images.todayswaves.com/japan/osaka/final.jpeg" alt="Osaka" loading="lazy" />
-        </figure>
+        <!-- Slideshow 10: Final -->
+        <div class="slideshow" id="ss10">
+          <div class="slideshow__track" id="ss10-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/osaka/final.jpeg" alt="Osaka" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/japan/osaka/final2.jpeg" alt="Osaka" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss10-counter">1 / 2</div>
+        </div>
 
       </article>
 
@@ -493,6 +499,7 @@
     initSlideshow('ss7');
     initSlideshow('ss8');
     initSlideshow('ss9');
+    initSlideshow('ss10');
   </script>
 
 </body>
