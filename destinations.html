@@ -182,15 +182,16 @@
 
           <article class="post-card">
             <div class="post-card__image">
-              <div class="img-placeholder">[ Photo ]</div>
+              <img src="https://images.todayswaves.com/china/beijing/gw6.jpeg" alt="Beijing" />
             </div>
             <div class="post-card__body">
               <div class="post-card__meta">
                 <span class="post-tag">China</span>
-                <span class="post-date">Coming soon</span>
+                <span class="post-date">April 15–27, 2026</span>
               </div>
-              <h3 class="post-card__title">Posts from China coming soon.</h3>
-              <p class="post-card__excerpt">90 days on the road. Dispatches to follow.</p>
+              <h3 class="post-card__title"><a href="beijing.html" style="color: inherit;">Beijing</a></h3>
+              <p class="post-card__excerpt">Made it to China! First stop, Beijing: Hutong, the Forbidden City, the Temple of Heaven, the Drum and Bell Towers, the Great Wall, and more.</p>
+              <a href="beijing.html" class="post-card__cta">Read more →</a>
             </div>
           </article>
 
@@ -279,13 +280,14 @@
     const searchResults = document.getElementById('search-results');
 
     const posts = [
-      { title: 'Oʻahu', url: 'oahu.html', tag: 'Hawaii' },
-      { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' },
-      { title: 'Maui', url: 'maui.html', tag: 'Hawaii' },
-      { title: 'Osaka', url: 'osaka.html', tag: 'Japan' },
-      { title: 'Kyoto', url: 'kyoto.html', tag: 'Japan' },
-      { title: 'Himeji, Kobe & Hiroshima', url: 'himeji.html', tag: 'Japan' },
-      { title: 'Nara', url: 'nara.html', tag: 'Japan' },
+      { title: 'Oʻahu',                   url: 'oahu.html',    tag: 'Hawaii' },
+      { title: 'The Big Island',           url: 'bigisle.html', tag: 'Hawaii' },
+      { title: 'Maui',                     url: 'maui.html',    tag: 'Hawaii' },
+      { title: 'Osaka',                    url: 'osaka.html',   tag: 'Japan'  },
+      { title: 'Kyoto',                    url: 'kyoto.html',   tag: 'Japan'  },
+      { title: 'Himeji, Kobe & Hiroshima', url: 'himeji.html',  tag: 'Japan'  },
+      { title: 'Nara',                     url: 'nara.html',    tag: 'Japan'  },
+      { title: 'Beijing',                  url: 'beijing.html', tag: 'China'  }
     ];
 
     function openSearch() {
