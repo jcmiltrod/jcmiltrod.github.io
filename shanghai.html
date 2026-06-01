@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shanghai — Today's Waves</title>
+  <meta name="description" content="Too much about trains, cool neighborhoods and parks, and propaganda posters." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">China</span>
+          <span class="post-date">April 27&ndash;May 2, 2026</span>
+        </div>
+        <h1>Shanghai</h1>
+      </header>
+      <article class="post-body">
+
+        <p>I took one of the fastest bullet trains in the world from Beijing to Shanghai. It was hitting around 350 kmph (217 mph) for much of the trip. As long as there&rsquo;s a good stretch of straightaway, of which there are plenty on that route, the train can do that speed. The route is about 1,320 km long (820 miles) and took about 4.5 hours. The train looked like this:</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/china/shanghai/train4.jpeg" alt="Beijing&ndash;Shanghai bullet train" loading="lazy" />
+        </figure>
+
+        <p>And here are a couple of videos from the window seat:</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/RcA8iN1nMbw" title="Bullet train window seat, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>Italy, Spain, France, Germany and of course Japan <a href="https://www.railway-technology.com/features/the-10-fastest-high-speed-trains-in-the-world/" target="_blank" rel="noopener">all have</a> steel-wheel bullet trains that can do between 320 kmph and 360 kmph. Meanwhile, back at the ranch &hellip; the fastest train in the U.S.A. is the Amtrak Acela, which <a href="https://www.amtrak.com/nextgen-acela" target="_blank" rel="noopener">tops out at</a> about 257 kmph (160 mph) on special track sections in New Jersey. As anyone who&rsquo;s ever taken it knows, you ain&rsquo;t going that fast for most of the trip. Not complaining! Glad the Acela exists. Just saying.</p>
+
+        <p>California <a href="https://hsr.ca.gov/" target="_blank" rel="noopener">says that</a>, despite a lot of problems, it is still working on a high-speed, nonstop train between Los Angeles and San Francisco. That train supposedly would do about 350 kmph, too.</p>
+
+        <p>Japan and China are working on the next generation of high speed trains that could use maglev technology and go even faster.</p>
+
+        <p>Sorry, this is just something I got curious about while taking a lot of trains, and that&rsquo;s all I&rsquo;ll bore you with for now, haha.</p>
+
+        <p>Anyway, here are some pix of Shanghai&rsquo;s skyline to start off. The lights on the highway change colors so it looks like Tron or something.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/hotel4.jpeg" alt="Shanghai skyline" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/hotel3.jpeg" alt="Shanghai skyline" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/hotel1.jpeg" alt="Shanghai skyline" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/hotel2.jpeg" alt="Shanghai skyline" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 4</div>
+        </div>
+
+        <p>I stayed in the <a href="https://en.wikipedia.org/wiki/Shanghai_French_Concession" target="_blank" rel="noopener">French Concession</a> district of Shanghai, which was created in the mid-1800s when France, Britain, Germany, Russia and Japan were carving up parts of China into spheres of influence. Today the area is a mix of hotels, apartments, little retail and food/drink shops, parks, big buildings, fancy big-name brand stores, bigger restaurants, mass transit, etc. Shanghai has the highest number of foreign residents of any city in China, so it feels pretty international in places.</p>
+
+        <p>Some photos from walking around:</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets4.jpeg" alt="Shanghai streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets8.jpeg" alt="Shanghai streets" loading="lazy" /><div class="slideshow__caption">I saw a couple of Lamborghinis, missed a shot of the all-purple one :(</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets9.jpeg" alt="Flowerbed in a park" loading="lazy" /><div class="slideshow__caption">Nice flowerbed in a park by my hotel</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets10.jpeg" alt="Shanghai streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets11.jpeg" alt="Xintiandi district" loading="lazy" /><div class="slideshow__caption">The Xintiandi district</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets12.jpeg" alt="Cat and chair" loading="lazy" /><div class="slideshow__caption">Cat and chair</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets13.jpeg" alt="Chinese band playing jazz" loading="lazy" /><div class="slideshow__caption">A Chinese band playing American jazz in front of a French-inspired building</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets15.jpeg" alt="Shanghai streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/streets16.jpeg" alt="The French Concession" loading="lazy" /><div class="slideshow__caption">The French Concession</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 9</div>
+        </div>
+
+        <p>And there was this place, which was like, a sunglasses store with an installation art component. Lots of people taking photos everywhere. I tried to find out who did the attached robotic heads, realistic old people and pastry workout equipment, but all I could find out was that it was the store&rsquo;s creative team.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/XTT7_qXv9cA" title="Shanghai sunglasses store installation art" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/haus1.jpeg" alt="Installation art" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/haus2.jpeg" alt="Installation art" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/haus3.jpeg" alt="Installation art" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/haus5.jpeg" alt="Installation art" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 4</div>
+        </div>
+
+        <p>There was a ton of good food in Shanghai (truth is, everywhere I&rsquo;ve been, there&rsquo;s been a ton of good food). Here&rsquo;s a little place I went to for lunch with some people I met.</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/lunch1.jpeg" alt="Lunch in Shanghai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/lunch2.jpeg" alt="Lunch in Shanghai" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 2</div>
+        </div>
+
+        <p>I hit this nice park near the mouth of the Yangtze River.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang1.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption">Binjiang Forest Park Phase II</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang2.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang4.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang5.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang12.jpeg" alt="Rose garden" loading="lazy" /><div class="slideshow__caption">They had a huge rose garden</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang7.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang8.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang9.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang10.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang11.jpeg" alt="Binjiang Forest Park" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/binjiang13.jpeg" alt="Manmade stream at Binjiang" loading="lazy" /><div class="slideshow__caption">There was this little manmade stream in the park and some other kayakers took this pic</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 11</div>
+        </div>
+
+        <p>Here are all the container ships milling around the mouth of the river and some fish in a little stream.</p>
+
+        <div class="video-slideshow" id="vs2">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs2-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs2-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs2-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs2-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/fOr-4E9k6hk" title="Container ships at the Yangtze River mouth, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>And I went to the Propaganda Poster Art Centre, which was a really interesting place. The posters were all created in China to address internal or external governmental priorities. They mostly dated from after the Chinese Communist Party&rsquo;s 1949 victory in the country&rsquo;s civil war, although there was a little bit of stuff from the Republic of China period (1912&ndash;1949). The art mostly addressed efforts at modernizing the country, and framed relationships with other countries (like the USA) and economic systems. My photo captions are not translations of the Chinese text.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/poster1.jpeg" alt="Propaganda poster" loading="lazy" /><div class="slideshow__caption">Celebrating the country&rsquo;s first successful hydrogen bomb test, 1967</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/poster2.jpeg" alt="Propaganda poster" loading="lazy" /><div class="slideshow__caption">Cultural Revolution-era modern dance art, 1970</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/poster3.jpeg" alt="Propaganda poster" loading="lazy" /><div class="slideshow__caption">USA trying to leverage its position in Taiwan to unsettle China, 1955</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/shanghai/poster5.jpeg" alt="Propaganda poster" loading="lazy" /><div class="slideshow__caption">Great Leap Forward-era exhortation to produce more and better steel, 1959</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss6-counter">1 / 4</div>
+        </div>
+
+      </article>
+    </div>
+
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#FFEED2 #FFEED2 #FFEED2 transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        #mlb2-38569390.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer h4,#mlb2-38569390.ml-form-embedContainer p,#mlb2-38569390.ml-form-embedContainer span,#mlb2-38569390.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper{background-color:#FFEED2;border-width:0px;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:400px;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody{padding:20px 20px 0 20px}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px 0}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4{color:#1ae456;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:28px;font-weight:400;margin:0 0 10px 0;text-align:center;word-break:break-word}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p{color:#17c1dc;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;margin:0 0 10px 0;text-align:left}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input{background-color:#ffffff!important;color:#333333!important;border-color:#cccccc;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin-bottom:0;margin-top:0;padding:10px 10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px 0;float:left;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button{background-color:#000000!important;border:none!important;border-radius:4px!important;box-shadow:none!important;color:#FFEED2!important;cursor:pointer;font-family:'Open Sans',Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333333!important}
+        .ml-error input,.ml-error textarea,.ml-error select{border-color:red!important}
+        .ml-error .label-description,.ml-error .label-description p,.ml-error label:first-child{color:#ff0000!important}
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent"><h4>follow today's waves</h4></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align:center;">You can unsubscribe anytime. For more details, review <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size:16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>function ml_webform_success_38569390(){var $=ml_jQuery||jQuery;$('.ml-subscribe-form-38569390 .row-success').show();$('.ml-subscribe-form-38569390 .row-form').hide();}</script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    const searchToggle = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: "O\u02BBahu", url: 'oahu.html', tag: 'Hawaii' },
+      { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' },
+      { title: 'Maui', url: 'maui.html', tag: 'Hawaii' },
+      { title: 'Osaka', url: 'osaka.html', tag: 'Japan' },
+      { title: 'Kyoto', url: 'kyoto.html', tag: 'Japan' },
+      { title: 'Himeji, Kobe & Hiroshima', url: 'himeji.html', tag: 'Japan' },
+      { title: 'Nara', url: 'nara.html', tag: 'Japan' },
+      { title: 'Beijing', url: 'beijing.html', tag: 'China' },
+      { title: 'Shanghai', url: 'shanghai.html', tag: 'China' },
+    ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (!matches.length) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, titleFn) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${titleFn(current)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+    initVideoSlideshow('vs1', ['RcA8iN1nMbw','6Bx-oeS_h-Y'], i => `Bullet train window seat, video ${i+1}`);
+    initVideoSlideshow('vs2', ['fOr-4E9k6hk','2dUq89hhDsc'], i => `Yangtze River mouth, video ${i+1}`);
+  </script>
+</body>
+</html>
