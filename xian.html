@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xi'an &amp; Chengdu — Today's Waves</title>
+  <meta name="description" content="Two cities, a necropolis, panda bears, and a giant Buddha." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .post-section-heading { font-size: 1.3rem; font-weight: 600; margin: 3rem 0 0.5rem; color: var(--text-primary); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">China</span>
+          <span class="post-date">May 2&ndash;10, 2026</span>
+        </div>
+        <h1>Xi&rsquo;an &amp; Chengdu</h1>
+      </header>
+      <article class="post-body">
+
+        <p>After Shanghai, I spent a couple of days in Xi&rsquo;an, the city that&rsquo;s near the mausoleum of Qin Shi Huang, who is credited as being the first leader to unify the various entities that would be considered China. Before his death in 210 BCE, he ordered the construction of a necropolis for himself. It contains the famous terracotta warriors and horses, but only a fraction of those have been unearthed and there are also musicians and acrobats and apparently it&rsquo;s like a whole underground city or palace (<a href="https://www.smithsonianmag.com/history/what-you-need-know-about-chinas-terra-cotta-warriors-first-qin-emperor-30942673/" target="_blank" rel="noopener">good article about it here</a>). They haven&rsquo;t excavated other parts of it because they&rsquo;re afraid they&rsquo;ll damage things, and are waiting for technology to improve.</p>
+
+        <p>It is a really interesting sight to see. For the biggest pit, they constructed an airplane hangar-sized building, reconstructed a lot of figures and then placed them in rows.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin2.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin3.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin8.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin11.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin12.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin15.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin18.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin19.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin20.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin21.jpeg" alt="Terracotta warriors" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/qin22.jpeg" alt="Qin Shi Huang" loading="lazy" /><div class="slideshow__caption">The big man himself, Qin Shi Huang</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 11</div>
+        </div>
+
+        <p>I was there during a &ldquo;Golden Week&rdquo; holiday, when much of the country gets a week off work, so the site was probably as busy as it gets. All the travel advice is, &ldquo;Never go anywhere famous during a Golden Week,&rdquo; because the number of domestic tourists skyrockets and sites get packed, but it was interesting to appreciate the stuff with everyone else. These videos sort of capture the crowd size, noise and chaos, but not really. All my days in pits of the punk rock variety paid off in terms of being squished and jostled and pushed around still having a good time.</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 3</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/zo1RdBEbPv8" title="Golden Week crowds at the terracotta warriors, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>There are four Golden Week holidays throughout the year, and this one is always around International Worker&rsquo;s Day on May 1. But I learned from locals that the workers who got May 1 off (it fell on a Friday this year) had to work a Saturday afterwards to make up for it, which &hellip; doesn&rsquo;t make any sense to me, lol.</p>
+
+        <p>Xi&rsquo;an itself is a neat town, and I stayed in the Muslim Quarter, which is a really old and crowded and busy part of the city. I had a great time just walking around there, looking at things and eating the street food. It&rsquo;s within the old city walls, which are still intact and upon which you can walk or rent a bicycle. I mostly rode a bike but also walked a bit of it. I was pretty used to Chinese people wanting to take pictures with me, one of my favorites happened in Xi&rsquo;an.</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/streets1.jpeg" alt="The little alley to my hostel" loading="lazy" /><div class="slideshow__caption">The little alley to my hostel</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/streets2.jpeg" alt="A hot pepper shop" loading="lazy" /><div class="slideshow__caption">A hot pepper shop</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/streets3.jpeg" alt="The Muslim Quarter" loading="lazy" /><div class="slideshow__caption">The Muslim Quarter</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/streets4.jpeg" alt="The Muslim Quarter" loading="lazy" /><div class="slideshow__caption">The Muslim Quarter</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/streets5.jpeg" alt="The Drum Tower" loading="lazy" /><div class="slideshow__caption">The Drum Tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/streets6.jpeg" alt="Lady with baby" loading="lazy" /><div class="slideshow__caption">This lady saw me walking around and wanted a picture of me holding her baby. I can&rsquo;t remember if the girl was hers or someone else&rsquo;s</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/xian/kitty.jpeg" alt="Kitty" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 7</div>
+        </div>
+
+        <p>I also went up to this hilltop park and got some nice views.</p>
+
+        <div class="video-slideshow" id="vs2">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs2-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs2-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs2-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs2-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/pg7fxRRXRj8" title="Xi'an hilltop park views, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>After Xi&rsquo;an, which is in Shaanxi province, I went to Chengdu, which is in Sichuan province. Chengdu has the reputation of being kind of a cool city, with a music scene and stuff. Honestly I had a sinus infection, though, so I didn&rsquo;t get out as much as I wanted.</p>
+
+        <p>But I did see a bunch of stuff, including People&rsquo;s Park, which is a really beautiful space with lots of trees and plants and flowers and little lakes and ponds and streams. It&rsquo;s also home to the <a href="https://en.wikipedia.org/wiki/Railway_Protection_Movement" target="_blank" rel="noopener">Railway Protection Movement</a> museum and a big monument to the people who died in that struggle.</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/park5.jpeg" alt="Railway Protection Movement monument" loading="lazy" /><div class="slideshow__caption">Railway Protection Movement monument</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/park4.jpeg" alt="Railway Protection Movement museum entrance" loading="lazy" /><div class="slideshow__caption">Railway Protection Movement museum entrance</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/park2.jpeg" alt="A bit of the park" loading="lazy" /><div class="slideshow__caption">A bit of the park</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/park3.jpeg" alt="Marriage notices at People's Park" loading="lazy" /><div class="slideshow__caption">One interesting thing at the park are these notices of availability for marriage. There is one section for men and one for women (blue and pink, obviously). Each paper has details about the person. And often their older relatives circulate among the notices to connect with the relatives of potential matches.</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/park1.jpeg" alt="The men's notice section" loading="lazy" /><div class="slideshow__caption">The men&rsquo;s notice section</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 5</div>
+        </div>
+
+        <p>And here are some photos from wandering around.</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets8.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets1.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets2.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets3.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets4.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets5.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets6.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets7.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets9.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/doggie.jpeg" alt="Dog in Chengdu" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/streets11.jpeg" alt="Chengdu streets" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 11</div>
+        </div>
+
+        <p>And Pandas! I went to the Chengdu Research Base of Giant Panda Breeding early in the morning because that&rsquo;s when pandas are most active, I heard. And I was not disappointed, I saw lots of pandas. The park was huge and I didn&rsquo;t see it all, but I saw enough pandas for one day, if such a thing can be true. And not just the black and white ones, the red ones, too. And peacocks.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda2.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda5.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda6.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda7.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda9.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda14.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda15.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda16.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/panda17.jpeg" alt="Giant panda" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 9</div>
+        </div>
+
+        <p>Panda vids</p>
+
+        <div class="video-slideshow" id="vs3">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs3-counter">1 / 6</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs3-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs3-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs3-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/OjDS3AIfStk" title="Panda video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>And I did a day trip from Chengdu to Leshan, which is home to the world&rsquo;s largest stone buddha. It&rsquo;s located at the confluence of the Min, Qingyi and Dadu rivers. Apparently the confluence was very dangerous for ships, so the Buddha was intended to help sailors get through safely. And in fact, the large amount of rock that went into the river during the carving of the Buddha changed the riverbed enough that the water was somewhat becalmed. Some sources say the Buddha was an artful way to execute the river control project.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan8.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan11.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan12.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan13.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan9.jpeg" alt="Inside a temple near the Buddha" loading="lazy" /><div class="slideshow__caption">From inside a temple near the Buddha</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan6.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan5.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan4.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan2.jpeg" alt="Near the Buddha park entrance" loading="lazy" /><div class="slideshow__caption">Near the Buddha park entrance</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan1.jpeg" alt="Entrance gate" loading="lazy" /><div class="slideshow__caption">Entrance gate</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/chengdu/leshan3.jpeg" alt="Leshan Giant Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss6-counter">1 / 11</div>
+        </div>
+
+        <p>And some faraway waves:</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/l9YXrxhb2eE" title="Waves at Leshan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+      </article>
+    </div>
+
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#FFEED2 #FFEED2 #FFEED2 transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        #mlb2-38569390.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer h4,#mlb2-38569390.ml-form-embedContainer p,#mlb2-38569390.ml-form-embedContainer span,#mlb2-38569390.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper{background-color:#FFEED2;border-width:0px;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:400px;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody{padding:20px 20px 0 20px}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px 0}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4{color:#1ae456;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:28px;font-weight:400;margin:0 0 10px 0;text-align:center;word-break:break-word}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p{color:#17c1dc;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;margin:0 0 10px 0;text-align:left}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input{background-color:#ffffff!important;color:#333333!important;border-color:#cccccc;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin-bottom:0;margin-top:0;padding:10px 10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px 0;float:left;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button{background-color:#000000!important;border:none!important;border-radius:4px!important;box-shadow:none!important;color:#FFEED2!important;cursor:pointer;font-family:'Open Sans',Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333333!important}
+        .ml-error input,.ml-error textarea,.ml-error select{border-color:red!important}
+        .ml-error .label-description,.ml-error .label-description p,.ml-error label:first-child{color:#ff0000!important}
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent"><h4>follow today's waves</h4></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align:center;">You can unsubscribe anytime. For more details, review <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size:16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>function ml_webform_success_38569390(){var $=ml_jQuery||jQuery;$('.ml-subscribe-form-38569390 .row-success').show();$('.ml-subscribe-form-38569390 .row-form').hide();}</script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    const searchToggle = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: "O\u02BBahu", url: 'oahu.html', tag: 'Hawaii' },
+      { title: 'The Big Island', url: 'bigisle.html', tag: 'Hawaii' },
+      { title: 'Maui', url: 'maui.html', tag: 'Hawaii' },
+      { title: 'Osaka', url: 'osaka.html', tag: 'Japan' },
+      { title: 'Kyoto', url: 'kyoto.html', tag: 'Japan' },
+      { title: 'Himeji, Kobe & Hiroshima', url: 'himeji.html', tag: 'Japan' },
+      { title: 'Nara', url: 'nara.html', tag: 'Japan' },
+      { title: 'Beijing', url: 'beijing.html', tag: 'China' },
+      { title: 'Shanghai', url: 'shanghai.html', tag: 'China' },
+      { title: "Xi'an & Chengdu", url: 'xian-chengdu.html', tag: 'China' },
+    ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (!matches.length) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['zo1RdBEbPv8', '-qFDIm1KawM', '2A755hIPvMU'], 'Golden Week crowds, video');
+    initVideoSlideshow('vs2', ['pg7fxRRXRj8', 'cZUq50O4jHQ'], "Xi'an hilltop park, video");
+    initVideoSlideshow('vs3', ['OjDS3AIfStk', 'nVewP2vQvkU', 'e8vWBWOba5U', 'YhTyTdDO6uY', 'DoRXkgfggOY', 'iyngKJyGlCs'], 'Panda video');
+  </script>
+</body>
+</html>
