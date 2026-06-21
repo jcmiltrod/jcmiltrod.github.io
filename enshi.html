@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enshi, Zhangjiajie &amp; Fenghuang — Today's Waves</title>
+  <meta name="description" content="A Grand Canyon, a Stone Forest, Karst Pillars and an Ancient River Town." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">China</span>
+          <span class="post-date">May 13&ndash;22, 2026</span>
+        </div>
+        <h1>Enshi, Zhangjiajie &amp; Fenghuang</h1>
+      </header>
+      <article class="post-body">
+
+        <p>While I&rsquo;ve been in China I&rsquo;ve been reading other people&rsquo;s online posts about where they&rsquo;ve visited and that&rsquo;s been helpful in determining destinations. I read about a less-visited city called Enshi in Hubei Province and decided to go there, and it turned out to be one of the highlights of my time in China, mostly because some locals decided to show me a good time, although the very green and mountainous scenery was wonderful, too.</p>
+
+        <p>Enshi is the capital of the Enshi Tujia and Miao Autonomous Prefecture, and was cool because it isn&rsquo;t really developed for tourism like the other places I went were. It&rsquo;s just like, a normal city. Cities in China are often referred to by tiers, so for example, Beijing and Shanghai are considered Tier 1, which means they&rsquo;ve got the largest and most developed economies and infrastructure and largest populations. But this tier system is not official, it&rsquo;s just something investors, analysts and other observers have come up with to rank cities&rsquo; economic/social status. Enshi is considered a Tier 5 city, which is the lowest ranking, but that just means it&rsquo;s smaller and less developed.</p>
+
+        <p>In fact it&rsquo;s beautiful and really interesting, here&rsquo;s a view from the top of the wall surrounding an ancient palace/temple complex:</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/g1FLKJczNog" title="View from Enshi Tusi Castle wall" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>The sights to see in Enshi mostly emphasize the local Tujia and Miao cultures&rsquo; heritage. During all the various dynasties &mdash; up to the early 20th century, these and other ethnic groups were woven into the fabric of the imperial ruling system by a delegation of power, called the tusi system. Through this system, the local leader, called a tusi, could collect taxes that went back to the emperor and rule their community fairly independently. Enshi was home to a Tujia tusi, and the complex that the video above was filmed at was the tusi&rsquo;s home over hundreds of years. I believe the complex has been mostly rebuilt and is not original, but it&rsquo;s a cool window into this history. There are lots of paintings and carvings and sculptures of the <a href="https://np.china-embassy.gov.cn/eng/Culture/Feature/200410/t20041027_1997761.htm" target="_blank" rel="noopener">White Tiger</a> all around the site. The White Tiger was an important symbol to the Ba people, which the Tujia people are considered to have descended from.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/tusicastle1.jpeg" alt="Tusi Castle" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/tusicastle2.jpeg" alt="Tusi Castle" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/whitetiger1.jpeg" alt="White Tiger carving" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/whitetiger2.jpeg" alt="White Tiger carving" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/whitetiger3.jpeg" alt="White Tiger carving" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 5</div>
+        </div>
+
+        <p>One night I went out to eat near my hotel, which for some unknown reason had decorated the room I was in with a giant Los Angeles skyline poster (pic below). A married couple was operating the restaurant I went to, and the husband and I were chatting and then he asked if I wanted to hang out. Actually he asked me if I wanted to drink corn liquor that night, lol, but I had been out all day and was not up for it. So we settled on dinner the next evening.</p>
+
+        <p>I went out and did some stuff the following day and the guy messaged me, asking me if I wanted to go swimming in the river that runs through the city before dinner. I said yes, of course, and met him and a few of his friends who are regular river swimmers. Nobody spoke English and I have no Chinese language skills, but they were super nice to me, and we communicated via translation apps. We swam in the river and then jumped off this ledge thing a bunch of times. It was super fun.</p>
+
+        <p>Then the one dude took me to his sister&rsquo;s tea shop and they treated me to a tea tasting of the green and black teas they grow in the Enshi area. It was so good.</p>
+
+        <p>Then a bunch more people all met us at this nice restaurant and again, they treated me to a huge feast. It was delicious and fun. The pitcher you see on the table is the corn liquor. I don&rsquo;t need to say more than that.</p>
+
+        <p>It ended up being so fun, and like I said, the people were just super nice to me. I got very lucky! These were all experiences I would not have had if it weren&rsquo;t for these people&rsquo;s friendliness. I wish I could put up the full pictures with their faces but I don&rsquo;t know if they&rsquo;d be cool with that, but you can at least see the thumbs ups.</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/dinner.jpeg" alt="Dinner in Enshi" loading="lazy" /><div class="slideshow__caption">Faces cut out for privacy, but trust me, everyone was smiling</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/dive1.jpeg" alt="Diving into the Qing River" loading="lazy" /><div class="slideshow__caption">Diving into the Qing River</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/dive2.jpeg" alt="Diving into the Qing River" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/laskyline.jpeg" alt="LA skyline poster in hotel room" loading="lazy" /><div class="slideshow__caption">Why? I dunno. It was a Super 8 though</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/streets1.jpeg" alt="The neighborhood around the hotel" loading="lazy" /><div class="slideshow__caption">The neighborhood around the hotel</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 5</div>
+        </div>
+
+        <p>Here&rsquo;s a video showing the clay pots they were making rice in. The rice also had these really good little potatoes in it.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/pqSSm5bSVwQ" title="Clay pot rice cooking in Enshi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>Enshi is also within easy driving distance of some really cool stuff, including the Enshi Grand Canyon, also called the Yunlong Ground Fissure, where you could visit both the bottom of the canyon and an area called Qixingzhai, aka Seven Star Village, in the mountains up above. There is also the Suobuya Stone Forest, which was apparently formed in the Ordovician Period, about 460 million years ago.</p>
+
+        <h2>Grand Canyon</h2>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon1.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon2.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon3.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon4.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon5.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon6.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon7.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/grandcanyon8.jpeg" alt="Enshi Grand Canyon" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 8</div>
+        </div>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/Y7gOX3PgDuM" title="Enshi Grand Canyon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h2>Qixingzhai</h2>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai1.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai2.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai3.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai4.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai5.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai7.jpeg" alt="The Incense Stick formation" loading="lazy" /><div class="slideshow__caption">This formation is called the Incense Stick</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai8.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qixingzhai9.jpeg" alt="Qixingzhai" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 8</div>
+        </div>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/Mu-9ZrNFZIs" title="Qixingzhai Seven Star Village" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h2>Suobuya Stone Forest</h2>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya1.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya2.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya3.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya4.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya5.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya6.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya7.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya8.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya9.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/suobuya10.jpeg" alt="Suobuya Stone Forest" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 10</div>
+        </div>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/qHgE7tMrGQ4" title="Suobuya Stone Forest" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h2>Zhangjiajie</h2>
+
+        <p>After Enshi I went to Zhangjiajie, which is in Hunan Province and is home to a big national park that features, among other things, massive karst pillars. The days I was there had heavy rain (there was <a href="https://www.theguardian.com/world/video/2026/may/21/torrential-rain-floods-southern-central-china-video" target="_blank" rel="noopener">bad flooding</a> around then in these areas), but there were enough bits of clearing that I could get some decent pix:</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie10.jpeg" alt="Zhangjiajie in rain" loading="lazy" /><div class="slideshow__caption">The two days I was here it rained and most of the time it looked like this</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie1.jpeg" alt="Zhangjiajie karst pillars" loading="lazy" /><div class="slideshow__caption">But I did get a couple of moments of clearing and could see stuff like this</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie2.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie3.jpeg" alt="Wild macaques" loading="lazy" /><div class="slideshow__caption">There were wild macaques</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie9.jpeg" alt="Slingshots for monkeys" loading="lazy" /><div class="slideshow__caption">And you could buy slingshots to shoot stuff at the monkeys if you wanted</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie4.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie5.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie6.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie7.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie8.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie12.jpeg" alt="Zhangjiajie" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie13.jpeg" alt="Spicy food sign" loading="lazy" /><div class="slideshow__caption">Spicy food is not popular with all tourists</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie14.jpeg" alt="Spicy food sign" loading="lazy" /><div class="slideshow__caption">No, really</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/zhangjiajie15.jpeg" alt="River brown with silt" loading="lazy" /><div class="slideshow__caption">Big river brown with silt and debris after all the heavy rain</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss6-counter">1 / 14</div>
+        </div>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/kWnMrb7eMHg" title="Zhangjiajie video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <h2>Fenghuang</h2>
+
+        <p>And then I spent a couple of days in Fenghuang. The Tuojiang River runs through the ancient part of town, which has been there since the very early 1700s. It&rsquo;s a huge tourist trap, but it&rsquo;s fun. The nightlife is kind of the draw, everything lights up and there are live music bars everywhere and lots and lots of street food vendors. It&rsquo;s a lot, but it&rsquo;s fun to be a part of it.</p>
+
+        <p>Fenghuang is the word for a mythological bird that seems to often be translated to &ldquo;phoenix,&rdquo; but as I understand, it doesn&rsquo;t have the &ldquo;rising from the ashes&rdquo; meaning. It&rsquo;s more of the king of the birds type thing, it rules over all the other kinds of birds, and symbolizes positive things.</p>
+
+        <div class="slideshow" id="ss7">
+          <div class="slideshow__track" id="ss7-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang1.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang2.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang3.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang4.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang5.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang6.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang7.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang8.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang9.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang10.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/fenghuang11.jpeg" alt="Fenghuang" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss7-counter">1 / 11</div>
+        </div>
+
+        <p>Qiliang Cave is also in Fenghuang, and I was lucky to go there on a day where I saw maybe 5 other tourists there. It&rsquo;s a really big cave with lots of cool sections. There&rsquo;s also a petting zoo right out front for some reason.</p>
+
+        <div class="slideshow" id="ss8">
+          <div class="slideshow__track" id="ss8-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang1.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang2.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang3.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang4.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang5.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang6.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang7.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang8.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang9.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang10.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang11.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang12.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang13.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang14.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/enshi/qiliang15.jpeg" alt="Qiliang Cave" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss8-counter">1 / 15</div>
+        </div>
+
+      </article>
+    </div>
+
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#FFEED2 #FFEED2 #FFEED2 transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        #mlb2-38569390.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer h4,#mlb2-38569390.ml-form-embedContainer p,#mlb2-38569390.ml-form-embedContainer span,#mlb2-38569390.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper{background-color:#FFEED2;border-width:0px;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:400px;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody{padding:20px 20px 0 20px}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px 0}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4{color:#1ae456;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:28px;font-weight:400;margin:0 0 10px 0;text-align:center;word-break:break-word}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p{color:#17c1dc;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;margin:0 0 10px 0;text-align:left}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input{background-color:#ffffff!important;color:#333333!important;border-color:#cccccc;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin-bottom:0;margin-top:0;padding:10px 10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px 0;float:left;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button{background-color:#000000!important;border:none!important;border-radius:4px!important;box-shadow:none!important;color:#FFEED2!important;cursor:pointer;font-family:'Open Sans',Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333333!important}
+        .ml-error input,.ml-error textarea,.ml-error select{border-color:red!important}
+        .ml-error .label-description,.ml-error .label-description p,.ml-error label:first-child{color:#ff0000!important}
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent"><h4>follow today's waves</h4></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align:center;">You can unsubscribe anytime. For more details, review <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite&rsquo;s Privacy Policy</a>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size:16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>function ml_webform_success_38569390(){var $=ml_jQuery||jQuery;$('.ml-subscribe-form-38569390 .row-success').show();$('.ml-subscribe-form-38569390 .row-form').hide();}</script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    const searchToggle = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: "O\u02BBahu",                        url: 'oahu.html',       tag: 'Hawaii' },
+      { title: 'The Big Island',                     url: 'bigisle.html',    tag: 'Hawaii' },
+      { title: 'Maui',                               url: 'maui.html',       tag: 'Hawaii' },
+      { title: 'Osaka',                              url: 'osaka.html',      tag: 'Japan'  },
+      { title: 'Kyoto',                              url: 'kyoto.html',      tag: 'Japan'  },
+      { title: 'Himeji, Kobe & Hiroshima',           url: 'himeji.html',     tag: 'Japan'  },
+      { title: 'Nara',                               url: 'nara.html',       tag: 'Japan'  },
+      { title: 'Beijing',                            url: 'beijing.html',    tag: 'China'  },
+      { title: 'Shanghai',                           url: 'shanghai.html',   tag: 'China'  },
+      { title: "Xi\u2019an & Chengdu",               url: 'xian.html',       tag: 'China'  },
+      { title: 'Huanglong & Jiuzhaigou',             url: 'huanglong.html',  tag: 'China'  },
+      { title: 'Enshi, Zhangjiajie & Fenghuang',    url: 'enshi.html',      tag: 'China'  },
+    ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (!matches.length) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6','ss7','ss8'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['kWnMrb7eMHg', 'q8dmDpqMN7M'], 'Zhangjiajie video');
+  </script>
+</body>
+</html>
