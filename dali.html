@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dali, Lijiang &amp; Kunming — Today's Waves</title>
+  <meta name="description" content="Lakes, a complete circular rainbow, and scooters." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">China</span>
+          <span class="post-date">May 28&ndash;June 3, 2026</span>
+        </div>
+        <h1>Dali, Lijiang &amp; Kunming</h1>
+      </header>
+      <article class="post-body">
+
+        <p>After Chongqing I did a few days in Yunnan province, hitting Dali and Lijiang, which have some wonderful natural scenery, and Kunming, which is the provincial capital and a very nice city. I think Yunnan in general is exceptionally beautiful.</p>
+
+        <h2>Dali</h2>
+
+        <p>Dali is the seat of the Dali Bai Autonomous Prefecture (home to the Bai ethnic minority) and is home to Erhai Lake, which will get us back on track with the wave theme:</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/zqUP9FCHCqs" title="Erhai Lake waves" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>I stayed in the Dali old town, which is a little bit out of the main town. It&rsquo;s a pretty small place, but very fun to wander around, and tons of good food made by street vendors.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/dali1.jpeg" alt="Wenxian Tower" loading="lazy" /><div class="slideshow__caption">This is the Wenxian Tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/dali2.jpeg" alt="A door at the tower" loading="lazy" /><div class="slideshow__caption">A door at the tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/dali3.jpeg" alt="Street decoration" loading="lazy" /><div class="slideshow__caption">Just some decoration at the end of a street</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/dali4.jpeg" alt="Outdoor market" loading="lazy" /><div class="slideshow__caption">Outdoor market</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/dali5.jpeg" alt="Lady roasting peppers" loading="lazy" /><div class="slideshow__caption">This lady was roasting peppers and made me some food with them</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/church1.jpeg" alt="Catholic church in Dali old town" loading="lazy" /><div class="slideshow__caption">A Catholic church in Dali old town</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/church2.jpeg" alt="Inside the church" loading="lazy" /><div class="slideshow__caption">The inside</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss1-counter">1 / 7</div>
+        </div>
+
+        <p>Erhai Lake definitely has a &ldquo;get away from it all&rdquo; vibe.</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai3.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai4.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai2.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai6.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai5.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai7.jpeg" alt="Butterfly in the mud" loading="lazy" /><div class="slideshow__caption">A cool butterfly chilling in the mud</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai8.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai9.jpeg" alt="Erhai Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/erhai10.jpeg" alt="Street by the lake" loading="lazy" /><div class="slideshow__caption">A street in the area right by the lake</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss2-counter">1 / 9</div>
+        </div>
+
+        <p>And here&rsquo;s another couple of videos, one more of the lake and then one of the big farming area that&rsquo;s right on the lakeshore, they had a wide diversity of crops they were growing, from corn to greens to tubers to all kind of other stuff.</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/xjbt9bLXwCU" title="Erhai Lake and farmland, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <h2>Lijiang</h2>
+
+        <p>Another really beautiful spot in a mountainous area, really clean air and pretty scenery everywhere. I was also able to rent a scooter with some hostel buddies and that was very fun. There are also some pictures in here of Beiyue Temple, an important religious site for the Naxi ethnic group.</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang9.jpeg" alt="Lijiang ancient town at night" loading="lazy" /><div class="slideshow__caption">Lijiang ancient town at night</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang10.jpeg" alt="The mountain" loading="lazy" /><div class="slideshow__caption">The mountain</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang11.jpeg" alt="The scooter" loading="lazy" /><div class="slideshow__caption">The scooter</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang1.jpeg" alt="Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang2.jpeg" alt="Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang5.jpeg" alt="Beiyue Temple grounds" loading="lazy" /><div class="slideshow__caption">The grounds of Beiyue Temple</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang6.jpeg" alt="Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang7.jpeg" alt="Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang8.jpeg" alt="Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss3-counter">1 / 9</div>
+        </div>
+
+        <p>Here&rsquo;s an awesome tea/coffee shop where I passed a rainy afternoon with the hostel folks.</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang3.jpeg" alt="Tea shop in Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/lijiang4.jpeg" alt="Tea shop in Lijiang" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss4-counter">1 / 2</div>
+        </div>
+
+        <p>And one day when I was there, I was out and there was a full circle rainbow in the sky. I had never seen one of these before, I&rsquo;m not sure I even knew they could be like this. My camera couldn&rsquo;t capture it in its full glory, but it had all the colors and was quite vivid. I tried to do a little editing as you&rsquo;ll see in the last pic, but still couldn&rsquo;t get it.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/rainbow2.jpeg" alt="Full circle rainbow" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/rainbow1.jpeg" alt="Full circle rainbow" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/rainbow3.jpeg" alt="Full circle rainbow, edited" loading="lazy" /><div class="slideshow__caption">This is the edited version</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss5-counter">1 / 3</div>
+        </div>
+
+        <h2>Kunming</h2>
+
+        <p>As I mentioned, Kunming is the capital of Yunnan Province, and turned out to be one of my favorite cities I visited in China. It&rsquo;s got about 8.5 million people but it doesn&rsquo;t feel huge. Kunming was also a key strategic city in WWII, like Chongqing, and was actually the headquarters of the Flying Tigers.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/kunming2.jpeg" alt="Sunset from the hostel roof" loading="lazy" /><div class="slideshow__caption">Sunset from the hostel roof</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/kunming1.jpeg" alt="Funny sign" loading="lazy" /><div class="slideshow__caption">Speed limit, no horns, no smoking and no &hellip; dying?</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/kunming3.jpeg" alt="Kite at Dianchi" loading="lazy" /><div class="slideshow__caption">Kite at Dianchi</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/kunming4.jpeg" alt="Another kite" loading="lazy" /><div class="slideshow__caption">Another kite</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/kunming5.jpeg" alt="Kunming" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/china/dali/kunming6.jpeg" alt="Funny hostel sign" loading="lazy" /><div class="slideshow__caption">Funny sign about toilet use at the hostel</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
+          <div class="slideshow__counter" id="ss6-counter">1 / 6</div>
+        </div>
+
+        <p>There&rsquo;s a big lake in Kunming called Dianchi where I spent some time.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/-5l6LwiBeKo" title="Dianchi Lake in Kunming" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+      </article>
+    </div>
+
+    <section class="subscribe-section" id="subscribe">
+      <div class="subscribe-inner">
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#FFEED2 #FFEED2 #FFEED2 transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite}@keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        #mlb2-38569390.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer h4,#mlb2-38569390.ml-form-embedContainer p,#mlb2-38569390.ml-form-embedContainer span,#mlb2-38569390.ml-form-embedContainer button{text-transform:none!important;letter-spacing:normal!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper{background-color:#FFEED2;border-width:0px;border-color:transparent;border-radius:4px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:400px;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody{padding:20px 20px 0 20px}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent{text-align:left;margin:0 0 20px 0}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4{color:#1ae456;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:28px;font-weight:400;margin:0 0 10px 0;text-align:center;word-break:break-word}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p,#mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p{color:#17c1dc;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;margin:0 0 10px 0;text-align:left}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input{background-color:#ffffff!important;color:#333333!important;border-color:#cccccc;border-radius:4px!important;border-style:solid!important;border-width:1px!important;font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin-bottom:0;margin-top:0;padding:10px 10px!important;width:100%!important;box-sizing:border-box!important;max-width:100%!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px 0;float:left;width:100%}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button{background-color:#000000!important;border:none!important;border-radius:4px!important;box-shadow:none!important;color:#FFEED2!important;cursor:pointer;font-family:'Open Sans',Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;line-height:21px!important;height:auto;padding:10px!important;width:100%!important;box-sizing:border-box!important}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
+        #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#333333!important}
+        .ml-error input,.ml-error textarea,.ml-error select{border-color:red!important}
+        .ml-error .label-description,.ml-error .label-description p,.ml-error label:first-child{color:#ff0000!important}
+        </style>
+        <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent"><h4>follow today's waves</h4></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent default privacy-policy">
+                      <p style="text-align:center;">You can unsubscribe anytime. For more details, review <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite&rsquo;s Privacy Policy</a>.</p>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">subscribe</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <h4>hey!</h4>
+                  <p><strong><span style="font-size:16px;">thank you for subscribing to today's waves!</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>function ml_webform_success_38569390(){var $=ml_jQuery||jQuery;$('.ml-subscribe-form-38569390 .row-success').show();$('.ml-subscribe-form-38569390 .row-form').hide();}</script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    const searchToggle = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: "O\u02BBahu",                        url: 'oahu.html',        tag: 'Hawaii' },
+      { title: 'The Big Island',                     url: 'bigisle.html',     tag: 'Hawaii' },
+      { title: 'Maui',                               url: 'maui.html',        tag: 'Hawaii' },
+      { title: 'Osaka',                              url: 'osaka.html',       tag: 'Japan'  },
+      { title: 'Kyoto',                              url: 'kyoto.html',       tag: 'Japan'  },
+      { title: 'Himeji, Kobe & Hiroshima',           url: 'himeji.html',      tag: 'Japan'  },
+      { title: 'Nara',                               url: 'nara.html',        tag: 'Japan'  },
+      { title: 'Beijing',                            url: 'beijing.html',     tag: 'China'  },
+      { title: 'Shanghai',                           url: 'shanghai.html',    tag: 'China'  },
+      { title: "Xi\u2019an & Chengdu",               url: 'xian.html',        tag: 'China'  },
+      { title: 'Huanglong & Jiuzhaigou',             url: 'huanglong.html',   tag: 'China'  },
+      { title: 'Enshi, Zhangjiajie & Fenghuang',    url: 'enshi.html',       tag: 'China'  },
+      { title: 'Chongqing',                          url: 'chongqing.html',   tag: 'China'  },
+      { title: 'Dali, Lijiang & Kunming',            url: 'dali.html',        tag: 'China'  },
+    ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (!matches.length) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['xjbt9bLXwCU', '8_kDEZtla2U'], 'Erhai Lake and farmland, video');
+  </script>
+</body>
+</html>
