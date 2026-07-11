@@ -52,29 +52,36 @@
     const dropTrigger = document.querySelector('.nav-dropdown__trigger');
     const dropMenu = document.querySelector('.nav-dropdown__menu');
     if (dropTrigger && dropMenu) {
-      dropTrigger.addEventListener('click', () => {
+      dropTrigger.addEventListener('click', e => {
+        e.stopPropagation();
         const open = dropMenu.classList.toggle('open');
         dropTrigger.setAttribute('aria-expanded', open);
       });
+
+      // Close dropdown when clicking outside
       document.addEventListener('click', e => {
-        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
+        if (!e.target.closest('.nav-dropdown')) {
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
         }
       });
 
-      // Handle anchor links on destinations page
-      document.querySelectorAll('.nav-dropdown__menu a').forEach(link => {
+      // Handle menu item clicks
+      dropMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', e => {
+          e.stopPropagation();
           const href = link.getAttribute('href');
-          if (href && href.startsWith('destinations.html#') && window.location.pathname.endsWith('destinations.html')) {
+          dropMenu.classList.remove('open');
+          dropTrigger.setAttribute('aria-expanded', false);
+
+          // If already on destinations.html, scroll to anchor
+          if (href.includes('#') && window.location.pathname.endsWith('destinations.html')) {
             e.preventDefault();
             const id = href.split('#')[1];
             const target = document.getElementById(id);
             if (target) target.scrollIntoView({ behavior: 'smooth' });
-            dropMenu.classList.remove('open');
-            dropTrigger.setAttribute('aria-expanded', false);
           }
+          // Otherwise let the link navigate normally
         });
       });
     }
