@@ -71,12 +71,14 @@
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
           const section = link.getAttribute('data-section');
-          const target = document.getElementById(section);
-          if (target) {
-            // Already on destinations page — just scroll
-            target.scrollIntoView({ behavior: 'smooth' });
+
+          // If already on destinations page, click the matching filter button
+          const filterBtn = document.querySelector(`.dest-filter__btn[data-dest="${section}"]`);
+          if (filterBtn) {
+            filterBtn.click();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           } else {
-            // Navigate to destinations page and scroll after load
+            // Navigate to destinations page with hash
             window.location.href = 'destinations.html#' + section;
           }
         });
