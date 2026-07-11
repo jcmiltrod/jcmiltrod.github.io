@@ -140,33 +140,8 @@
 <body>
 
   <!-- ===================== HEADER ===================== -->
-  <header class="site-header">
-    <div class="header-inner">
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
-            Destinations
-          </button>
-          <ul class="nav-dropdown__menu" role="menu">
-            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
-            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
-            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
-            <li><a href="destinations.html#china" role="menuitem">China</a></li>
-          </ul>
-        </div>
-        <a href="index.html#subscribe">Subscribe</a>
-        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
+  <script src="nav.js"></script>
 
   <!-- ===================== MAIN ===================== -->
   <main>
@@ -180,7 +155,7 @@
           <span class="post-date">April 15–27, 2026</span>
         </div>
         <h1>Beijing</h1>
-        <p class="post-subtitle">Made it to China! First stop, Beijing: Hutong, the Forbidden City, the Temple of Heaven, the Drum and Bell Towers, the Great Wall, and more.</p>
+        <p class="post-subtitle">First stop in China: Beijing. Based in the hutong district with visits to the Forbidden City, the Temple of Heaven, the Drum and Bell Towers, the Great Wall, and more.</p>
       </header>
 
       <!-- Post Body -->
@@ -196,7 +171,7 @@
 
         <p>As far as where to actually go, I started with the help of a few friends who've been here and who shared their thoughts and favorite destinations, so I had some good ideas about places to aim for.</p>
 
-        <p>In Beijing I stayed near the old center of the city, the hutong district, which surrounds the former imperial areas like the Forbidden City, Drum and Bell Towers, and other sites. <a href="https://en.wikipedia.org/wiki/Hutong" target="_blank" rel="noopener">Hutong</a> date to the late 1200s, during the Yuan dynasty (when the Mongols were in charge). The area is mainly one to two story homes, with a few bigger buildings sprinkled in. There are hotels mixed into the residential areas though so that's where I was at. This area used to take up more space in the city but a lot was razed for new development in the 20th century. The remaining neighborhoods have some kind of protected status.</p>
+        <p>In Beijing I stayed near the old center of the city, the hutong district, which surrounds the former imperial areas like the Forbidden City, Drum and Bell Towers, and other sites. <a href="https://en.wikipedia.org/wiki/Hutong" target="_blank" rel="noopener">Hutong</a> date to the late 1200s, during the Mongolian Yuan dynasty. The area is mainly one to two story homes, with a few bigger buildings sprinkled in. There are hotels mixed into the residential areas though so that's where I was at. This area used to take up more space in the city but a lot was razed for new development in the 20th century. The remaining neighborhoods have some kind of protected status.</p>
 
         <p>I was glad I picked this area, not just for its proximity to the main things I wanted to see, but because it had a pretty lively street life. I was there for 11 days so I feel like I got a bit of the vibe.</p>
 
@@ -265,7 +240,7 @@
 
         <h2>Forbidden City</h2>
 
-        <p>The existing <a href="https://en.wikipedia.org/wiki/Forbidden_City" target="_blank" rel="noopener">Forbidden City</a> was constructed between 1406 and 1420. But some buildings were rebuilt or drastically repaired after fires, wars and other events. I don't usually go for group tours, but I did for this because I wanted to hear the tour guide's comments, and I'm glad I did, it was interesting.</p>
+        <p>The existing Forbidden City was constructed between 1406 and 1420. But some buildings were rebuilt or drastically repaired after fires, wars and other events. I don't usually go for group tours, but I did for this because I wanted to hear the tour guide's comments, and I'm glad I did, it was interesting.</p>
 
         <!-- Slideshow 2: Forbidden City -->
         <div class="slideshow" id="ss2">
@@ -598,86 +573,6 @@
           <div class="slideshow__counter" id="ss7-counter">1 / 15</div>
         </div>
 
-        <h2>Last Couple of Things</h2>
-
-        <p>And if you lasted this far, here are just a few shots I took at the National Natural History Museum of China and the Military Museum of the Chinese People's Revolution. The military museum was immense, I couldn't do it all. But the natural history one was tiny.</p>
-        
-<!-- Slideshow 8: Museums -->
-<div class="slideshow" id="ss8">
-  <div class="slideshow__track" id="ss8-track">
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum1.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum2.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum3.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum4.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum5.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum6.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/museum7.jpeg" alt="National Natural History Museum of China" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil1.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil2.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil3.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil4.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil5.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil6.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil7.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil8.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil9.jpeg" alt="Military Museum of the Chinese People's Revolution" loading="lazy" />
-      <div class="slideshow__caption"></div>
-    </div>
-    <div class="slideshow__slide">
-      <img src="https://images.todayswaves.com/china/beijing/mil10.jpeg" alt="Classic cars in the aircraft hall" loading="lazy" />
-      <div class="slideshow__caption">For some reason they had a bunch of classic cars in the big room with all the aircraft, including this old Chevy</div>
-    </div>
-  </div>
-  <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous">&#8592;</button>
-  <button class="slideshow__btn slideshow__btn--next" aria-label="Next">&#8594;</button>
-  <div class="slideshow__counter" id="ss8-counter">1 / 17</div>
-</div>
       </article><!-- /.post-body -->
 
     </div><!-- /.container -->
@@ -790,29 +685,6 @@
 
   <script>
     // ── Nav toggle ──
-    const toggle = document.getElementById('nav-toggle');
-    const nav    = document.getElementById('site-nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    // ── Destinations dropdown ──
-    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
-    const dropMenu    = document.querySelector('.nav-dropdown__menu');
-    if (dropTrigger) {
-      dropTrigger.addEventListener('click', () => {
-        const open = dropMenu.classList.toggle('open');
-        dropTrigger.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', e => {
-        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
-          dropMenu.classList.remove('open');
-          dropTrigger.setAttribute('aria-expanded', false);
-        }
-      });
-    }
-
     // ── Search overlay ──
     const searchToggle  = document.getElementById('search-toggle');
     const searchOverlay = document.getElementById('search-overlay');
@@ -873,7 +745,6 @@
     initSlideshow('ss5');
     initSlideshow('ss6');
     initSlideshow('ss7');
-    initSlideshow('ss8');
 
     // ── Video slideshow: Walking around ──
     const vs1Videos = [
