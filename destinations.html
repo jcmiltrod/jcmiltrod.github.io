@@ -398,27 +398,16 @@
     });
 
     // Auto-filter from hash (e.g. destinations.html#japan)
-    if (window.location.hash) {
-      const dest = window.location.hash.replace('#', '');
-      const btn  = document.querySelector(`.dest-filter__btn[data-dest="${dest}"]`);
+    // Runs on initial load AND whenever the hash changes without a full page reload
+    // (e.g. clicking a different Destinations dropdown item while already on this page).
+    function applyFilterFromHash() {
+      const dest = window.location.hash ? window.location.hash.replace('#', '') : 'all';
+      const btn  = document.querySelector(`.dest-filter__btn[data-dest="${dest}"]`)
+                || document.querySelector('.dest-filter__btn[data-dest="all"]');
       if (btn) btn.click();
     }
-
-    // Fix dropdown navigation when already on destinations.html
-    document.querySelectorAll('.nav-dropdown__menu a').forEach(link => {
-      link.addEventListener('click', e => {
-        const href = link.getAttribute('href');
-        if (href && href.includes('#')) {
-          const dest = href.split('#')[1];
-          const filterBtn = document.querySelector(`.dest-filter__btn[data-dest="${dest}"]`);
-          if (filterBtn) {
-            e.preventDefault();
-            filterBtn.click();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        }
-      });
-    });
+    applyFilterFromHash();
+    window.addEventListener('hashchange', applyFilterFromHash);
 
     // Search overlay
     const toggle = document.getElementById('nav-toggle');
