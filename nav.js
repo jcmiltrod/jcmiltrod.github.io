@@ -31,12 +31,14 @@
     </div>
   </header>`;
 
-  function initNav() {
-    const placeholder = document.getElementById('site-header');
-    if (!placeholder) return;
-
+  // Inject nav immediately — script tag is at top of body so DOM is ready here
+  const placeholder = document.getElementById('site-header');
+  if (placeholder) {
     placeholder.outerHTML = navHTML;
+  }
 
+  // Attach event listeners after full DOM is ready
+  window.addEventListener('DOMContentLoaded', function () {
     // Nav toggle (mobile)
     const toggle = document.getElementById('nav-toggle');
     const siteNav = document.getElementById('site-nav');
@@ -71,24 +73,15 @@
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
           const section = link.getAttribute('data-section');
-
-          // If already on destinations page, click the matching filter button
           const filterBtn = document.querySelector(`.dest-filter__btn[data-dest="${section}"]`);
           if (filterBtn) {
             filterBtn.click();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           } else {
-            // Navigate to destinations page with hash
             window.location.href = 'destinations.html#' + section;
           }
         });
       });
     }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNav);
-  } else {
-    initNav();
-  }
+  });
 })();
