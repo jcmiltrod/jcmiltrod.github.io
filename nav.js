@@ -74,20 +74,24 @@
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
 
-          // If link contains an anchor, always scroll on destinations page
+          // If link contains an anchor, check if target exists on this page
           if (href.includes('#')) {
             const id = href.split('#')[1];
             const target = document.getElementById(id);
             if (target) {
+              // Target exists on this page — scroll to it
               e.preventDefault();
               target.scrollIntoView({ behavior: 'smooth' });
             } else {
-              // Target section not on this page — navigate normally
+              // Target not on this page — navigate normally
               window.location.href = href;
             }
           }
+          // No anchor — let the link navigate normally
         });
       });
+    }
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNav);
