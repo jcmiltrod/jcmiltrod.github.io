@@ -404,6 +404,22 @@
       if (btn) btn.click();
     }
 
+    // Fix dropdown navigation when already on destinations.html
+    document.querySelectorAll('.nav-dropdown__menu a').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href && href.includes('#')) {
+          const dest = href.split('#')[1];
+          const filterBtn = document.querySelector(`.dest-filter__btn[data-dest="${dest}"]`);
+          if (filterBtn) {
+            e.preventDefault();
+            filterBtn.click();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
     // Search overlay
     const toggle = document.getElementById('nav-toggle');
     const nav = document.getElementById('site-nav');
