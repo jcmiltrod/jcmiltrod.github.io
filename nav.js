@@ -74,18 +74,20 @@
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
 
-          // If already on destinations.html, scroll to anchor
-          if (href.includes('#') && window.location.pathname.endsWith('destinations.html')) {
-            e.preventDefault();
+          // If link contains an anchor, always scroll on destinations page
+          if (href.includes('#')) {
             const id = href.split('#')[1];
             const target = document.getElementById(id);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              // Target section not on this page — navigate normally
+              window.location.href = href;
+            }
           }
-          // Otherwise let the link navigate normally
         });
       });
-    }
-  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initNav);
