@@ -3,8 +3,7 @@
 // This file is loaded by every page on the site.
 
 (function () {
-  const navHTML = `
-  <header class="site-header">
+  const navInner = `
     <div class="header-inner">
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -28,53 +27,51 @@
           </svg>
         </button>
       </nav>
-    </div>
-  </header>`;
+    </div>`;
 
-  // Inject nav synchronously using insertAdjacentHTML to avoid DOM disruption
-  const placeholder = document.getElementById('site-header');
+  // Fill the placeholder div and give it the site-header class
+  // This avoids any DOM replacement which disrupts iOS Safari touch events
+  var placeholder = document.getElementById('site-header');
   if (placeholder) {
-    placeholder.insertAdjacentHTML('beforebegin', navHTML);
-    placeholder.remove();
+    placeholder.className = 'site-header';
+    placeholder.innerHTML = navInner;
   }
 
-  // Attach event listeners after full DOM is ready
-  window.addEventListener('DOMContentLoaded', function () {
-    // Nav toggle (mobile)
-    const toggle = document.getElementById('nav-toggle');
-    const siteNav = document.getElementById('site-nav');
+  // Attach event listeners after DOM is ready
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var siteNav = document.getElementById('site-nav');
     if (toggle && siteNav) {
-      toggle.addEventListener('click', () => {
-        const open = siteNav.classList.toggle('open');
+      toggle.addEventListener('click', function () {
+        var open = siteNav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open);
       });
     }
 
-    // Destinations dropdown
-    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
-    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    var dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    var dropMenu = document.querySelector('.nav-dropdown__menu');
     if (dropTrigger && dropMenu) {
-      dropTrigger.addEventListener('click', e => {
+      dropTrigger.addEventListener('click', function (e) {
         e.stopPropagation();
-        const open = dropMenu.classList.toggle('open');
+        var open = dropMenu.classList.toggle('open');
         dropTrigger.setAttribute('aria-expanded', open);
       });
 
-      document.addEventListener('click', e => {
+      document.addEventListener('click', function (e) {
         if (!e.target.closest('.nav-dropdown')) {
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
         }
       });
 
-      dropMenu.querySelectorAll('a[data-section]').forEach(link => {
-        link.addEventListener('click', e => {
+      dropMenu.querySelectorAll('a[data-section]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
-          const section = link.getAttribute('data-section');
-          const filterBtn = document.querySelector(`.dest-filter__btn[data-dest="${section}"]`);
+          var section = link.getAttribute('data-section');
+          var filterBtn = document.querySelector('.dest-filter__btn[data-dest="' + section + '"]');
           if (filterBtn) {
             filterBtn.click();
             window.scrollTo({ top: 0, behavior: 'smooth' });
