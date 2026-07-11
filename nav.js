@@ -62,6 +62,21 @@
           dropTrigger.setAttribute('aria-expanded', false);
         }
       });
+
+      // Handle anchor links on destinations page
+      document.querySelectorAll('.nav-dropdown__menu a').forEach(link => {
+        link.addEventListener('click', e => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('destinations.html#') && window.location.pathname.endsWith('destinations.html')) {
+            e.preventDefault();
+            const id = href.split('#')[1];
+            const target = document.getElementById(id);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            dropMenu.classList.remove('open');
+            dropTrigger.setAttribute('aria-expanded', false);
+          }
+        });
+      });
     }
   }
 
