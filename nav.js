@@ -31,7 +31,7 @@
     </div>
   </header>`;
 
-  // Inject nav immediately — script tag is at top of body so DOM is ready here
+  // Inject nav into placeholder div synchronously
   const placeholder = document.getElementById('site-header');
   if (placeholder) {
     placeholder.outerHTML = navHTML;
