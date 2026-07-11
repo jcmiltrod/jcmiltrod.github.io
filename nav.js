@@ -15,10 +15,10 @@
           <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
           <ul class="nav-dropdown__menu" role="menu">
             <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
-            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
-            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
-            <li><a href="destinations.html#china" role="menuitem">China</a></li>
-            <li><a href="destinations.html#southkorea" role="menuitem">South Korea</a></li>
+            <li><a href="destinations.html" data-section="hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html" data-section="japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html" data-section="china" role="menuitem">China</a></li>
+            <li><a href="destinations.html" data-section="southkorea" role="menuitem">South Korea</a></li>
           </ul>
         </div>
         <a href="index.html#subscribe">Subscribe</a>
@@ -35,7 +35,6 @@
     const placeholder = document.getElementById('site-header');
     if (!placeholder) return;
 
-    // Inject the nav
     placeholder.outerHTML = navHTML;
 
     // Nav toggle (mobile)
@@ -58,7 +57,6 @@
         dropTrigger.setAttribute('aria-expanded', open);
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', e => {
         if (!e.target.closest('.nav-dropdown')) {
           dropMenu.classList.remove('open');
@@ -66,28 +64,21 @@
         }
       });
 
-      // Handle menu item clicks
-      dropMenu.querySelectorAll('a').forEach(link => {
+      dropMenu.querySelectorAll('a[data-section]').forEach(link => {
         link.addEventListener('click', e => {
+          e.preventDefault();
           e.stopPropagation();
-          const href = link.getAttribute('href');
           dropMenu.classList.remove('open');
           dropTrigger.setAttribute('aria-expanded', false);
-
-          // If link contains an anchor, check if target exists on this page
-          if (href.includes('#')) {
-            const id = href.split('#')[1];
-            const target = document.getElementById(id);
-            if (target) {
-              // Target exists on this page — scroll to it
-              e.preventDefault();
-              target.scrollIntoView({ behavior: 'smooth' });
-            } else {
-              // Target not on this page — navigate normally
-              window.location.href = href;
-            }
+          const section = link.getAttribute('data-section');
+          const target = document.getElementById(section);
+          if (target) {
+            // Already on destinations page — just scroll
+            target.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            // Navigate to destinations page and scroll after load
+            window.location.href = 'destinations.html#' + section;
           }
-          // No anchor — let the link navigate normally
         });
       });
     }
