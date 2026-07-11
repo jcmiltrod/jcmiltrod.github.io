@@ -3,7 +3,7 @@
 // This file is loaded by every page on the site.
 
 (function () {
-  const nav = `
+  const navHTML = `
   <header class="site-header">
     <div class="header-inner">
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -31,29 +31,43 @@
     </div>
   </header>`;
 
-  document.getElementById('site-header').outerHTML = nav;
+  function initNav() {
+    const placeholder = document.getElementById('site-header');
+    if (!placeholder) return;
 
-  // Nav toggle (mobile)
-  const toggle = document.getElementById('nav-toggle');
-  const siteNav = document.getElementById('site-nav');
-  toggle.addEventListener('click', () => {
-    const open = siteNav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
+    // Inject the nav
+    placeholder.outerHTML = navHTML;
 
-  // Destinations dropdown
-  const dropTrigger = document.querySelector('.nav-dropdown__trigger');
-  const dropMenu = document.querySelector('.nav-dropdown__menu');
-  if (dropTrigger) {
-    dropTrigger.addEventListener('click', () => {
-      const open = dropMenu.classList.toggle('open');
-      dropTrigger.setAttribute('aria-expanded', open);
-    });
-    document.addEventListener('click', e => {
-      if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
-        dropMenu.classList.remove('open');
-        dropTrigger.setAttribute('aria-expanded', false);
-      }
-    });
+    // Nav toggle (mobile)
+    const toggle = document.getElementById('nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+    if (toggle && siteNav) {
+      toggle.addEventListener('click', () => {
+        const open = siteNav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // Destinations dropdown
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger && dropMenu) {
+      dropTrigger.addEventListener('click', () => {
+        const open = dropMenu.classList.toggle('open');
+        dropTrigger.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) {
+          dropMenu.classList.remove('open');
+          dropTrigger.setAttribute('aria-expanded', false);
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+  } else {
+    initNav();
   }
 })();
