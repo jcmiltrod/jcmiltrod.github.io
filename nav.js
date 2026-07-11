@@ -31,10 +31,11 @@
     </div>
   </header>`;
 
-  // Inject nav into placeholder div synchronously
+  // Inject nav synchronously using insertAdjacentHTML to avoid DOM disruption
   const placeholder = document.getElementById('site-header');
   if (placeholder) {
-    placeholder.outerHTML = navHTML;
+    placeholder.insertAdjacentHTML('beforebegin', navHTML);
+    placeholder.remove();
   }
 
   // Attach event listeners after full DOM is ready
