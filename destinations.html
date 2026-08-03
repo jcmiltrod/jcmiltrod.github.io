@@ -409,6 +409,7 @@
         destGroups.forEach(group => {
           group.style.display = (dest === 'all' || group.dataset.dest === dest) ? '' : 'none';
         });
+        history.replaceState(null, '', dest === 'all' ? 'destinations.html' : `#${dest}`);
       });
     });
 
