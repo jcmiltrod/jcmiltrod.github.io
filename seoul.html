@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seoul — Today's Waves</title>
+  <meta name="description" content="On to Korea: the rainy season, the DMZ and lots of kimchi" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-photo figcaption { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.05em; margin-top: 0.6rem; text-align: center; font-style: italic; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+            <li><a href="destinations.html#southkorea" role="menuitem">South Korea</a></li>
+          </ul>
+        </div>
+        <a href="index.html#subscribe">Subscribe</a>
+        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">South Korea</span>
+          <span class="post-date">July 8&ndash;22, 2026</span>
+        </div>
+        <h1>Seoul</h1>
+      </header>
+      <article class="post-body">
+
+        <p>After almost three months in China, I flew to Seoul to spend some time and start a visit through the Republic of Korea, aka South Korea. And I have to say, I immediately really liked the city and ended up spending two weeks there. There&rsquo;s a lot to see and do, it&rsquo;s in a beautiful area, the food is amazing and it&rsquo;s just a nice place to spend time. Even though it rained a lot when I was there, I had to really roust myself to get going on the rest of the trip, haha.</p>
+
+        <p>I stayed in the Jonggak section of town, which has a lot of bars and restaurants and is near a lot of historic sites. Of course the public transportation there is great so anything you want to do is easily accessible via subway and/or bus.</p>
+
+        <p>Here are some shots from the area:</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets9.jpeg" alt="Entrance to the Jonggak Avenue of Youth" loading="lazy" /><div class="slideshow__caption">Entrance to the Jonggak Avenue of Youth</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets11.jpeg" alt="A tiger lily after a rain" loading="lazy" /><div class="slideshow__caption">A tiger lily after a rain</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/cone.jpeg" alt="A sculpture called Spring" loading="lazy" /><div class="slideshow__caption">A sculpture called Spring</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets1.jpeg" alt="A market" loading="lazy" /><div class="slideshow__caption">A market</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss1-counter">1 / 4</span>
+        </div>
+
+        <p>And one of the really wonderful perks of staying in this area is Cheonggyecheon, a little stream that runs through the Jongno section, which is where Jonggak is.</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/stream1.jpeg" alt="Cheonggyecheon stream" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/crane.jpeg" alt="A white crane fishing in the stream" loading="lazy" /><div class="slideshow__caption">There are tons of white cranes that fish in the stream</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/stream2.jpeg" alt="Cheonggyecheon stream" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss2-counter">1 / 3</span>
+        </div>
+
+        <p>And some videos, including a buzzing cicada. They have been so loud all over the country. Cool underwater grass waving&hellip;</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 3</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/2QfdRJxnCCM" title="Cheonggyecheon, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>Right nearby Jongno are a couple of historic palaces, Deoksugung and Gyeonghuigung.</p>
+
+        <p>I went to Deoksugung first, and the grounds are also home to Dondeokjeon Hall, which houses some art exhibits. When I was there, they had one called, &ldquo;Banhwa: Blossoms of Auspicious Wishes&rdquo; which featured some cultural items exchanged between France and Korea. Banhwa are tree-shaped objects that were created with precious items like gold and jewels. Apparently the ones on display are replicas because the originals are too fragile to transport from France. But they were recreated by master craftspeople so they look awesome.</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/banhwa1.jpeg" alt="Banhwa exhibit at Dondeokjeon Hall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/banhwa2.jpeg" alt="Banhwa exhibit at Dondeokjeon Hall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/deoksugung1.jpeg" alt="Deoksugung grounds" loading="lazy" /><div class="slideshow__caption">Deoksugung grounds</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/deoksugung2.jpeg" alt="Deoksugung palace" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/deoksugung3.jpeg" alt="Deoksugung palace" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss3-counter">1 / 5</span>
+        </div>
+
+        <p>Then right outside Deoksugung there&rsquo;s a nice neighborhood to walk around in, and as I was doing that, I spotted this really mind-bending sculpture. It&rsquo;s called Jangdokdae and it was created by Yi Hwan-kwon. Jangdokdae is the space where they put jangdok, which are clay pots that are used to store kimchi (which I am eating so much of here) and other fermented food. So the people kind of look like those jars? It&rsquo;s really disorienting to see it in person, I don&rsquo;t know if this picture can fully communicate it:</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/korea/seoul/streets2.jpeg" alt="Jangdokdae sculpture by Yi Hwan-kwon" loading="lazy" />
+        </figure>
+
+        <p>Gyeonghuigung is a bigger palace and is located right at the foot of this mountain, it&rsquo;s really a beautiful spot. So you&rsquo;re on the grounds there and it&rsquo;s all historic buildings and stuff, but you&rsquo;re also right in the middle of Seoul, so you can see big buildings. Apparently it&rsquo;s free admission if you dress up in Hanbok, the traditional Korean clothes, so you see tons of people of all backgrounds who&rsquo;ve rented those outfits walking around (I didn&rsquo;t, haha).</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/gyeonghuigung4.jpeg" alt="Gyeonghuigung palace grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/gyeonghuigung1.jpeg" alt="Gyeonghuigung palace grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/gyeonghuigung2.jpeg" alt="Gyeonghuigung palace grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/gyeonghuigung3.jpeg" alt="Gyeonghuigung palace grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/gyeonghuigung5.jpeg" alt="Irworobongdo throne room motif" loading="lazy" /><div class="slideshow__caption">This is irworobongdo, a throne room motif commonly used during the Joseon era that depicts a sun, moon, streams and five mountain peaks</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/gyeonghuigung6.jpeg" alt="Gyeonghuigung palace grounds" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss4-counter">1 / 6</span>
+        </div>
+
+        <p>And of course Seoul is not too far from <a href="https://en.wikipedia.org/wiki/Korean_Demilitarized_Zone" target="_blank" rel="noopener">the demilitarized zone</a> on the border with the Democratic People&rsquo;s Republic of Korea, aka North Korea, so I took a tour to visit that. It was really great, there was a North Korean defector who was on the bus with us up to the DMZ, and she told us her story and answered questions during the ride.</p>
+
+        <p>Unfortunately they do not allow photos at most of the places, like at the observation deck where you can see North Korea or in <a href="https://en.wikipedia.org/wiki/Third_Tunnel_of_Aggression" target="_blank" rel="noopener">the tunnel</a> we got to tour. They have found four tunnels that extend from the north into the south, and they think there are more that they haven&rsquo;t found yet, according to the tour guide, a suspicion that&rsquo;s <a href="https://edition.cnn.com/2014/10/02/world/asia/north-korea-dmz-tunnels" target="_blank" rel="noopener">been reported elsewhere</a> as well.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/dmz3.jpeg" alt="At the DMZ" loading="lazy" /><div class="slideshow__caption">You gotta photograph what you can at the DMZ</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/dmz1.jpeg" alt="At the DMZ" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/dmz2.jpeg" alt="At the DMZ" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/dmz4.jpeg" alt="North Korean money for sale at the DMZ" loading="lazy" /><div class="slideshow__caption">You can buy North Korean money at the DMZ</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/dmz5.jpeg" alt="At the DMZ" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss5-counter">1 / 5</span>
+        </div>
+
+        <p>Back in Seoul, I visited the National Museum of Korea, which has some really great artifacts dating back to the stone age on the Korean peninsula.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/natmus3.jpeg" alt="National Museum of Korea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/natmus2.jpeg" alt="National Museum of Korea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/natmus1.jpeg" alt="National Museum of Korea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/natmus4.jpeg" alt="National Museum of Korea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/natmus5.jpeg" alt="Irworobongdo painting at the National Museum of Korea" loading="lazy" /><div class="slideshow__caption">Another irworobongdo painting</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss6-counter">1 / 5</span>
+        </div>
+
+        <p>And here are some more street shots from around town, including the very tall Lotte World Tower, the distinctive Seoul Tower, a street protest, and more.</p>
+
+        <div class="slideshow" id="ss7">
+          <div class="slideshow__track" id="ss7-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets5.jpeg" alt="Bosingak Pavilion bell tower" loading="lazy" /><div class="slideshow__caption">Bosingak Pavilion, a bell tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/lwtower1.jpeg" alt="Lotte World Tower" loading="lazy" /><div class="slideshow__caption">Lotte World Tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/lwtower2.jpeg" alt="View from Lotte World Tower" loading="lazy" /><div class="slideshow__caption">A view from the tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/seoultower2.jpeg" alt="Seoul Tower" loading="lazy" /><div class="slideshow__caption">Seoul Tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/seoultower1.jpeg" alt="View from Seoul Tower" loading="lazy" /><div class="slideshow__caption">View from the Seoul Tower</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets3.jpeg" alt="A street in Insadong" loading="lazy" /><div class="slideshow__caption">A street in Insadong</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets6.jpeg" alt="A camouflage tree in Seoul" loading="lazy" /><div class="slideshow__caption">Another camouflage tree like the one I saw in Guilin, China</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets7.jpeg" alt="A street protest in Seoul" loading="lazy" /><div class="slideshow__caption">I believe this was a protest by labor unions for a fair living wage?</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/korea/seoul/streets8.jpeg" alt="A street in Jonggak" loading="lazy" /><div class="slideshow__caption">More from Jonggak</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss7-counter">1 / 9</span>
+        </div>
+
+        <p>Seoul is built on the Han River in the midst of many mountains. The Seoul Tower is at the top of one called Namsan, for instance. So I went up there and also hiked up one called Muaksan to a site called the East Beacon Mound, which is where they used to signal to other outlook posts with fires. Here&rsquo;s the view from Muaksan, and then from Namsan. I have to note, there are so many dragonflies in Seoul, and every other place I&rsquo;ve been in Korea so far!</p>
+
+        <div class="video-slideshow" id="vs2">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs2-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs2-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs2-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs2-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/VCcWfW2g6_U" title="Muaksan and Namsan views, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>Here&rsquo;s a view coming down off Muaksan:</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/korea/seoul/streets10.jpeg" alt="View coming down off Muaksan" loading="lazy" />
+        </figure>
+
+        <p>And to close out, here&rsquo;s a video of one of the stormwater runoff collection points into Cheonggyecheon.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/0hfgLZMZNEw" title="Cheonggyecheon stormwater runoff" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+      </article>
+
+      <!-- Subscribe -->
+      <section class="subscribe-section" id="subscribe">
+        <div class="subscribe-inner">
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+          <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+            .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+            .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+          </style>
+
+          <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>follow today's waves</h4>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                      <div class="ml-form-embedPermissionsContent default privacy-policy">
+                        <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">subscribe</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>hey!</h4>
+                    <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_38569390() {
+              var $ = ml_jQuery || jQuery;
+              $('.ml-subscribe-form-38569390 .row-success').show();
+              $('.ml-subscribe-form-38569390 .row-form').hide();
+            }
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-overlay__inner">
+      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    const searchToggle = document.getElementById('search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const posts = [
+      { title: "O\u02BBahu",                                  url: 'oahu.html',           tag: 'Hawaii' },
+      { title: 'The Big Island',                              url: 'bigisle.html',         tag: 'Hawaii' },
+      { title: 'Maui',                                        url: 'maui.html',            tag: 'Hawaii' },
+      { title: 'Osaka',                                       url: 'osaka.html',           tag: 'Japan'  },
+      { title: 'Kyoto',                                       url: 'kyoto.html',           tag: 'Japan'  },
+      { title: 'Himeji, Kobe & Hiroshima',                    url: 'himeji.html',          tag: 'Japan'  },
+      { title: 'Nara',                                        url: 'nara.html',            tag: 'Japan'  },
+      { title: 'Beijing',                                     url: 'beijing.html',         tag: 'China'  },
+      { title: 'Shanghai',                                    url: 'shanghai.html',        tag: 'China'  },
+      { title: "Xi\u2019an & Chengdu",                        url: 'xian.html',            tag: 'China'  },
+      { title: 'Huanglong & Jiuzhaigou',                      url: 'huanglong.html',       tag: 'China'  },
+      { title: 'Enshi, Zhangjiajie & Fenghuang',             url: 'enshi.html',           tag: 'China'  },
+      { title: 'Chongqing',                                   url: 'chongqing.html',       tag: 'China'  },
+      { title: 'Dali, Lijiang & Kunming',                     url: 'dali.html',            tag: 'China'  },
+      { title: 'Huangguoshu, Anshun, Guiyang & Guilin',      url: 'huanggoushu.html',     tag: 'China'  },
+      { title: 'Xiamen & Shantou',                            url: 'xiamen.html',          tag: 'China'  },
+      { title: 'Shenzhen & Guangzhou',                        url: 'shenzhen.html',        tag: 'China'  },
+      { title: 'Hong Kong',                                   url: 'hongkong.html',        tag: 'China'  },
+      { title: 'Seoul',                                       url: 'seoul.html',           tag: 'South Korea' },
+    ];
+    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
+    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
+    searchToggle.addEventListener('click', openSearch);
+    searchClose.addEventListener('click', closeSearch);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+      if (!q) return;
+      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      if (!matches.length) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
+      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
+    });
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6','ss7'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['2QfdRJxnCCM', 'xDjR64Oe5vc', 'R4DiL5NQZzw'], 'Cheonggyecheon, video');
+    initVideoSlideshow('vs2', ['VCcWfW2g6_U', 'DuZx4Jq0D8M'], 'Muaksan and Namsan, video');
+  </script>
+</body>
+</html>
