@@ -11,10 +11,10 @@
 // no need to edit index.html or any individual post page ever again.
 
 const DESTINATIONS = [
-  { slug: 'hawaii',     label: 'Hawaii' },
-  { slug: 'japan',      label: 'Japan' },
-  { slug: 'china',      label: 'China' },
   { slug: 'southkorea', label: 'South Korea' },
+  { slug: 'china',      label: 'China' },
+  { slug: 'japan',      label: 'Japan' },
+  { slug: 'hawaii',     label: 'Hawaii' },
 ];
 
 // Build the "Destinations" dropdown in the header nav (present on every page)
