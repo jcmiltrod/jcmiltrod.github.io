@@ -752,6 +752,44 @@ main { flex: 1; }
   border: 0;
 }
 
+/* Audio embed (e.g. Voice Memos clips) */
+.audio-embed {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 2.5rem 0;
+  padding: 1rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.audio-embed__icon {
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(212,169,106,0.12);
+  color: var(--accent-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.audio-embed__body { flex: 1; min-width: 0; }
+.audio-embed__caption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+}
+.audio-embed audio {
+  width: 100%;
+  height: 2.25rem;
+  accent-color: var(--accent-warm);
+}
+
 /* Post nav (prev/next) */
 .post-nav {
   display: grid;
