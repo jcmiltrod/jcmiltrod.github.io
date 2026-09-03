@@ -50,11 +50,6 @@
           </ul>
         </div>
         <a href="index.html#subscribe">Subscribe</a>
-        <button class="nav-search-btn" id="search-toggle" aria-label="Search">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="24" y1="24" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
       </nav>
     </div>
   </header>
@@ -279,14 +274,6 @@
     </div>
   </footer>
 
-  <div class="search-overlay" id="search-overlay" aria-hidden="true">
-    <div class="search-overlay__inner">
-      <input type="search" class="search-input" id="search-input" placeholder="Search posts&hellip;" aria-label="Search posts" autocomplete="off" />
-      <button class="search-close" id="search-close" aria-label="Close search">&#x2715;</button>
-    </div>
-    <ul class="search-results" id="search-results"></ul>
-  </div>
-
   <script src="nav.js"></script>
   <script>
     const toggle = document.getElementById('nav-toggle');
@@ -299,41 +286,6 @@
       dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
       document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
     }
-
-        const searchToggle = document.getElementById('search-toggle');
-    const searchOverlay = document.getElementById('search-overlay');
-    const searchClose = document.getElementById('search-close');
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const posts = [
-      { title: "O\u02BBahu",                        url: 'oahu.html',        tag: 'Hawaii' },
-      { title: 'The Big Island',                     url: 'bigisle.html',     tag: 'Hawaii' },
-      { title: 'Maui',                               url: 'maui.html',        tag: 'Hawaii' },
-      { title: 'Osaka',                              url: 'osaka.html',       tag: 'Japan'  },
-      { title: 'Kyoto',                              url: 'kyoto.html',       tag: 'Japan'  },
-      { title: 'Himeji, Kobe & Hiroshima',           url: 'himeji.html',      tag: 'Japan'  },
-      { title: 'Nara',                               url: 'nara.html',        tag: 'Japan'  },
-      { title: 'Beijing',                            url: 'beijing.html',     tag: 'China'  },
-      { title: 'Shanghai',                           url: 'shanghai.html',    tag: 'China'  },
-      { title: "Xi\u2019an & Chengdu",               url: 'xian.html',        tag: 'China'  },
-      { title: 'Huanglong & Jiuzhaigou',             url: 'huanglong.html',   tag: 'China'  },
-      { title: 'Enshi, Zhangjiajie & Fenghuang',    url: 'enshi.html',       tag: 'China'  },
-      { title: 'Chongqing',                          url: 'chongqing.html',   tag: 'China'  },
-      { title: 'Dali, Lijiang & Kunming',            url: 'dali.html',        tag: 'China'  },
-    ];
-    function openSearch() { searchOverlay.classList.add('open'); searchOverlay.setAttribute('aria-hidden', false); searchInput.value = ''; searchResults.innerHTML = ''; searchInput.focus(); }
-    function closeSearch() { searchOverlay.classList.remove('open'); searchOverlay.setAttribute('aria-hidden', true); }
-    searchToggle.addEventListener('click', openSearch);
-    searchClose.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.trim().toLowerCase();
-      searchResults.innerHTML = '';
-      if (!q) return;
-      const matches = posts.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
-      if (!matches.length) { searchResults.innerHTML = '<li class="search-results__empty">No posts found.</li>'; return; }
-      matches.forEach(p => { const li = document.createElement('li'); li.innerHTML = `<a href="${p.url}"><span class="search-results__tag">${p.tag}</span>${p.title}</a>`; searchResults.appendChild(li); });
-    });
 
     function initSlideshow(id) {
       const track = document.getElementById(id + '-track');
