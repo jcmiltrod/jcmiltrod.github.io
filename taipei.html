@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taipei — Today's Waves</title>
+  <meta name="description" content="Hungry ghosts, night markets and bitter tea" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-photo figcaption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; margin-top: 0.6rem; text-align: center; font-style: italic; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu">
+            <li><a href="destinations.html" role="menuitem">All Destinations</a></li>
+            <li><a href="destinations.html#taiwan" role="menuitem">Taiwan</a></li>
+            <li><a href="destinations.html#southkorea" role="menuitem">South Korea</a></li>
+            <li><a href="destinations.html#china" role="menuitem">China</a></li>
+            <li><a href="destinations.html#japan" role="menuitem">Japan</a></li>
+            <li><a href="destinations.html#hawaii" role="menuitem">Hawaii</a></li>
+          </ul>
+        </div>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Taiwan</span>
+          <span class="post-date">August 21&ndash;28, 2026</span>
+        </div>
+        <h1>Taipei</h1>
+      </header>
+      <article class="post-body">
+
+        <p>When I went to Vietnam in 2015, I traveled on a Taiwanese airline and sat next to this Taiwanese guy who really talked up Taiwan, aka the Republic of China, as a great place to visit. That always stuck in my head so I was excited to get to go there.</p>
+
+        <p>And lucky for me, when I was in <a href="https://todayswaves.com/dali.html" target="_blank" rel="noopener">Lijiang, China</a> I met this really nice couple &mdash; he is Taiwanese and she is mainland Chinese &mdash; who live in Taiwan and wanted to show me around. So basically I got to travel with some friends for a bit on their home turf, which was awesome. Here is the view from my hostel looking out onto the Dongmen Market.</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/taiwan/taipei/streets3.jpeg" alt="View of the Dongmen Market from a hostel window" loading="lazy" />
+          <figcaption>The Dongmen Market on Linyi St.</figcaption>
+        </figure>
+
+        <p>And a video walking through it:</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/NWe6yGnWm4c" title="Dongmen Market walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>I was in Taipei for about a week and spent the time reading my Taiwan history book and going around seeing sites and eating food. The first thing I learned is that Taiwan is the home to <a href="https://en.wikipedia.org/wiki/Austronesian_peoples" target="_blank" rel="noopener">Austronesian people</a> who eventually settled in many more places from Africa to Polynesia. Parts of Taiwan were colonized by Spain and Holland during the mid-1600s, then mainland Chinese, led by <a href="https://todayswaves.com/xiamen.html" target="_blank" rel="noopener">Koxinga</a> aka Zheng Chenggong, forced out the Dutch and many more people from southern China migrated there.</p>
+
+        <p>Here are some pictures from walking around:</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/streets2.jpeg" alt="A lucky cat statue" loading="lazy" /><div class="slideshow__caption">Never seen a lucky cat that worked out</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/streets4.jpeg" alt="A 7-Eleven in Taipei" loading="lazy" /><div class="slideshow__caption">A picturesque 7-Eleven</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/streets5.jpeg" alt="A street in Taipei" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/streets6.jpeg" alt="A street in Taipei" loading="lazy" /><div class="slideshow__caption">There are a lot of earthquakes in Taiwan</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/streets1.jpeg" alt="A building in the neighborhood" loading="lazy" /><div class="slideshow__caption">A building in my neighborhood</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/streets7.jpeg" alt="An alley in Taipei" loading="lazy" /><div class="slideshow__caption">A nice alley</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/shrine1.jpeg" alt="A shrine in Taipei" loading="lazy" /><div class="slideshow__caption">A shrine</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/dadaocheng2.jpeg" alt="The Dadaocheng neighborhood" loading="lazy" /><div class="slideshow__caption">The Dadaocheng neighborhood</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss1-counter">1 / 8</span>
+        </div>
+
+        <p>Of course, what I mostly knew about Taiwan before I went was that it&rsquo;s where the nationalists fled when the communists defeated them in 1949, and the Chinese Communist Party considers it part of China and wants to bring it under its control. And that the <a href="https://www.congress.gov/crs-product/IF10275" target="_blank" rel="noopener">USA&rsquo;s commitment</a> to protect Taiwan has evolved over the years.</p>
+
+        <p>The majority of people now in Taiwan are Han Chinese, and they speak and write traditional Chinese, in contrast to the People&rsquo;s Republic of China, where the CCP simplified written Chinese. So if you&rsquo;re using a translation app, you have to switch to &ldquo;traditional&rdquo; Chinese if you go to Taiwan. The people on Taiwan also didn&rsquo;t go through the Great Leap Forward or Cultural Revolution, so there are some cultural differences from the mainland.</p>
+
+        <p>When I was there, it was the <a href="https://en.wikipedia.org/wiki/Ghost_Festival" target="_blank" rel="noopener">Ghost Festival</a>, a Daoist-Buddhist tradition where you put food and incense on a table outside for ghosts who come out of the underworld for one lunar month. The idea is that the ghosts that are roaming around either don&rsquo;t have descendants to pay homage to them or have descendants who&rsquo;ve forgotten or neglected them, so everyone pitches in to help feed and entertain those spirits.</p>
+
+        <p>Here are a few pictures of the storefront offerings:</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/ghost1.jpeg" alt="Ghost Festival storefront offerings" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/ghost2.jpeg" alt="Ghost Festival storefront offerings" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/ghost3.jpeg" alt="Ghost Festival storefront offerings" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss2-counter">1 / 3</span>
+        </div>
+
+        <p>Modern Taiwan was also shaped by the Japanese, who occupied it from 1895 to 1945 and developed infrastructure like the national railways and other things, then the nationalists who arrived and took over. The leader of the nationalists at that time was Chiang Kai Shek, and they spared no expense in honoring him after he died. I went to his monument in Taipei, which resembles but is quite a bit larger than the Temple of Heaven in Beijing.</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks10.jpeg" alt="The Chiang Kai-shek Memorial Hall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks8.jpeg" alt="The Chiang Kai-shek Memorial Hall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks9.jpeg" alt="The Chiang Kai-shek Memorial Hall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks7.jpeg" alt="The Chiang Kai-shek Memorial Hall" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss3-counter">1 / 4</span>
+        </div>
+
+        <p>There is all kinds of Chiang Kai Shek memorabilia and lots of exhibits about his leadership and contributions to Taiwan.</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks1.jpeg" alt="A wax statue of Chiang Kai-shek" loading="lazy" /><div class="slideshow__caption">The generalissimo himself, in wax</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks11.jpeg" alt="Chiang Kai-shek exhibit" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks2.jpeg" alt="Chiang Kai-shek's Cadillacs" loading="lazy" /><div class="slideshow__caption">His Cadillacs</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks3.jpeg" alt="Chiang Kai-shek's Cadillacs from the other side" loading="lazy" /><div class="slideshow__caption">From the other side</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss4-counter">1 / 4</span>
+        </div>
+
+        <p>But his dictatorial reign, facilitated by his Kuomintang Party (which still exists), is also remembered as an oppressive period when free speech and criticism of the government was not tolerated. So, in the memorial building, there&rsquo;s a big section dedicated to Taiwanese people&rsquo;s fight to win free speech and a democratic government. It makes for an interesting contrast, to walk across the hall from the hagiography of the Chiang Kai Shek section to where they recreated the burned out office of <a href="https://en.wikipedia.org/wiki/Cheng_Nan-jung" target="_blank" rel="noopener">Cheng Nan-jung</a>, a newspaper publisher who lit himself on fire in his newsroom rather than be arrested for &ldquo;insurrection&rdquo; related to his publication of a proposed new Taiwanese constitution.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks6.jpeg" alt="The recreated office of Cheng Nan-jung" loading="lazy" /><div class="slideshow__caption">The recreated office of Cheng Nan-jung</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks4.jpeg" alt="Exhibit on Taiwan's fight for free speech" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/cks5.jpeg" alt="Exhibit on Taiwan's fight for free speech" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss5-counter">1 / 3</span>
+        </div>
+
+        <p>The KMT was in charge of the government in mainland China since the 1920s, so when the communists ousted them in 1949, they fled to Taiwan with massive amounts of gold, silver and cash from China and most of the most culturally valuable artifacts from the Palace Museum, among other things.</p>
+
+        <p>You can go to the Palace Museum in Beijing, it&rsquo;s in the Forbidden City complex, but Taipei has its own Palace Museum with all the good stuff. Here is a bit of what was on display when I was there. It&rsquo;s a really big <a href="https://www.npm.gov.tw/Articles.aspx?sno=03012532&amp;l=2" target="_blank" rel="noopener">museum</a>, you could spend all day there and exhaust yourself.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace11.jpeg" alt="The jadeite cabbage with insects" loading="lazy" /><div class="slideshow__caption">The famous jadeite cabbage with insects carving is one of the three most important pieces in the museum</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace12.jpeg" alt="An artifact at the Palace Museum" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace13.jpeg" alt="Interlocking yellow jade rings" loading="lazy" /><div class="slideshow__caption">Interlocking yellow jade rings</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace15.jpeg" alt="An exquisite jade carving" loading="lazy" /><div class="slideshow__caption">Another exquisite carving</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace14.jpeg" alt="An artifact at the Palace Museum" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace8.jpeg" alt="A piece of coral" loading="lazy" /><div class="slideshow__caption">A cool piece of coral</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace4.jpeg" alt="A bronze lotus with buddhas" loading="lazy" /><div class="slideshow__caption">A bronze lotus with buddhas seated in the center</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace5.jpeg" alt="A large bronze buddha" loading="lazy" /><div class="slideshow__caption">A large bronze buddha</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/palace3.jpeg" alt="The entrance to the Palace Museum" loading="lazy" /><div class="slideshow__caption">The entrance to the Palace Museum</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss6-counter">1 / 9</span>
+        </div>
+
+        <p>Night markets are a big thing in Taiwan, so I went to three different ones in Taipei. They vary in size and selection but basically there are food stalls with all kinds of different stuff, from scallion-egg pancakes to these peanut ice cream roll things they make with cilantro (so good). One of my favorite things I found there was bitter tea, this very bitter herbal concoction you are supposed to drink after you eat all that hot, greasy street food. It&rsquo;s supposed to cool you down, and it definitely works&hellip; And the markets usually have a section with carnival-type games, like shoot the balloon, throw the ring around the bottle, etc. And the markets generally happen every night.</p>
+
+        <div class="slideshow" id="ss7">
+          <div class="slideshow__track" id="ss7-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/nitemark6.jpeg" alt="Shilin Night Market" loading="lazy" /><div class="slideshow__caption">The first night market I went to, called Shilin</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/nitemark7.jpeg" alt="Inside Shilin Night Market with friends" loading="lazy" /><div class="slideshow__caption">Inside with my friends</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/nitemark1.jpeg" alt="Ningxia Night Market" loading="lazy" /><div class="slideshow__caption">The Ningxia Night Market</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/nitemark2.jpeg" alt="Peanut ice cream roll stall" loading="lazy" /><div class="slideshow__caption">The peanut ice cream roll place</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/nitemark3.jpeg" alt="Making the peanut ice cream roll" loading="lazy" /><div class="slideshow__caption">Making the thing</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/nitemark5.jpeg" alt="Linjiang Night Market" loading="lazy" /><div class="slideshow__caption">The Linjiang Night Market</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss7-counter">1 / 6</span>
+        </div>
+
+        <p>Here&rsquo;s a video of the Ningxia Night Market:</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/PcDL6pP70KE" title="Ningxia Night Market" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>One day I went to the Taipei 101 building, which is a big skyscraper with an observation deck. The coolest thing about this place was the <a href="https://en.wikipedia.org/wiki/Tuned_mass_damper" target="_blank" rel="noopener">Tuned Mass Damper</a> that&rsquo;s open to the public. It&rsquo;s a giant metal ball that helps reduce sway in the building in high winds or earthquakes.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/fm4HR92sw08" title="Taipei 101 Tuned Mass Damper" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>And some stills:</p>
+
+        <div class="slideshow" id="ss8">
+          <div class="slideshow__track" id="ss8-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/t101f.jpeg" alt="Taipei 101" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/t101e.jpeg" alt="Taipei 101" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/t101d.jpeg" alt="Taipei 101" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/t101c.jpeg" alt="Taipei 101" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/t101a.jpeg" alt="Taipei 101" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/taiwan/taipei/t101b.jpeg" alt="Taipei 101" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss8-counter">1 / 6</span>
+        </div>
+
+        <p>I thought there was a nice sunset the last night I was there.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/n7WpHgpU2UE" title="Sunset in Taipei" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>Then I saw this funny road worker(s) situation.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/p4_Xvi87tIs" title="Road workers in Taipei" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+      </article>
+
+      <!-- Subscribe -->
+      <section class="subscribe-section" id="subscribe">
+        <div class="subscribe-inner">
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+          <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+            .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+            .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+          </style>
+
+          <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>follow today's waves</h4>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                      <div class="ml-form-embedPermissionsContent default privacy-policy">
+                        <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">subscribe</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>hey!</h4>
+                    <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_38569390() {
+              var $ = ml_jQuery || jQuery;
+              $('.ml-subscribe-form-38569390 .row-success').show();
+              $('.ml-subscribe-form-38569390 .row-form').hide();
+            }
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6','ss7','ss8'].forEach(initSlideshow);
+  </script>
+</body>
+</html>
