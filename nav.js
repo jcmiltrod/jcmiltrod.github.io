@@ -11,6 +11,7 @@
 // no need to edit index.html or any individual post page ever again.
 
 const DESTINATIONS = [
+  { slug: 'philippines', label: 'Philippines' },
   { slug: 'taiwan',     label: 'Taiwan' },
   { slug: 'southkorea', label: 'South Korea' },
   { slug: 'china',      label: 'China' },
