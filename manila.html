@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manila &amp; Boracay — Today's Waves</title>
+  <meta name="description" content="Jeepneys, trikes, speedboats, busy streets and new great food" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu"></ul>
+        </div>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Philippines</span>
+          <span class="post-date">September 13&ndash;21, 2026</span>
+        </div>
+        <h1>Manila &amp; Boracay</h1>
+      </header>
+      <article class="post-body">
+
+        <h2>Manila</h2>
+
+        <p>There are something like 7,600 islands in the archipelago that is the Republic of the Philippines, but I&rsquo;ll only be hitting 6-8 of them. I started out in the capital city of Manila, which is on the largest and most populous island of Luzon. It was a little weird &mdash; and nice &mdash; being in a place where English is so widely spoken. Like I said before, my translation apps have been great and have enabled lots of interactions I would not otherwise have been able to enjoy, but it just wasn&rsquo;t the same as being able to casually shoot the breeze with people.</p>
+
+        <p>Manila has street life that I really hadn&rsquo;t seen in Japan, China, Korea or Taiwan and it was a rush to start visiting there. Especially in China, the streets can get pretty crowded with cars and scooters and people and there is a lot going on &hellip; but Manila seemed to have even more. I stayed in the <a href="https://en.wikipedia.org/wiki/San_Andres,_Manila" target="_blank" rel="noopener">San Andreas district</a>, which is one of the most densely populated parts of the metro Manila area, so I think I got a good taste of the city.</p>
+
+        <p>Here&rsquo;s a video slideshow of some of the street action, including <a href="https://en.wikipedia.org/wiki/Motorized_tricycle_(Philippines)" target="_blank" rel="noopener">trike</a> and <a href="https://en.wikipedia.org/wiki/Jeepney" target="_blank" rel="noopener">jeepney</a> rides I took.</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 5</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/uB9q9dGk4lk" title="Manila street action, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>There are lots of vehicles like jeepneys running on old diesel engines so the air quality can get pretty gnarly at street level (see <a href="https://www.tiktok.com/@missg267_photography24/video/7442901619513036050" target="_blank" rel="noopener">this video</a> for an example).</p>
+
+        <p>Spain colonized the Philippines from about 1565 to 1898, when it signed the Treaty of Paris, ending the Spanish-American war and ceding the Philippines to the Americans. Native and mestizo Filipinos waged protests against their exploitation over the centuries and in the mid-1890s they fought their own revolution, but the Spanish didn&rsquo;t leave until after the Treaty of Paris was signed. Then the Japanese occupied the country until 1946, when Filipinos finally got their independence.</p>
+
+        <p>In the book I read, the Spaniards never wanted the native population to learn Spanish, but the Americans were happy to make English the next main language after Tagalog. There are <a href="https://en.wikipedia.org/wiki/Languages_of_the_Philippines" target="_blank" rel="noopener">scores of other languages</a> still spoken on the different islands.</p>
+
+        <p>Here are a few photos from Intramuros, the walled section of Manila built by the Spanish. There are also some shots of a dungeon at Ft. Santiago, which is inside the walls. The underground space was originally used by the Spanish to store ammunition but it was too damp so they built a new place and used it as a prison. Then the Japanese also used it that way during World War II.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros1.jpeg" alt="Intramuros, the walled section of Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros2.jpeg" alt="Intramuros, the walled section of Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros3.jpeg" alt="Intramuros, the walled section of Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros4.jpeg" alt="The Ft. Santiago dungeon in Intramuros" loading="lazy" /><div class="slideshow__caption">The Ft. Santiago dungeon</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros5.jpeg" alt="Intramuros, the walled section of Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros6.jpeg" alt="Intramuros, the walled section of Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/intramuros7.jpeg" alt="The Manila Cathedral in Intramuros" loading="lazy" /><div class="slideshow__caption">The Manila Cathedral</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss1-counter">1 / 7</span>
+        </div>
+
+        <p>And some street shots:</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/zoo.jpeg" alt="The Manila Zoo" loading="lazy" /><div class="slideshow__caption">The Manila Zoo</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/streets1.jpeg" alt="A street in Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/streets2.jpeg" alt="A little church near the hostel in Manila" loading="lazy" /><div class="slideshow__caption">A little church by my hostel</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/streets3.jpeg" alt="A street in Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/streets4.jpeg" alt="A street in Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/streets5.jpeg" alt="Manila Chinatown" loading="lazy" /><div class="slideshow__caption">Manila Chinatown</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/streets6.jpeg" alt="A street in Manila" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/museum1.jpeg" alt="A painting at the National Museum in Manila" loading="lazy" /><div class="slideshow__caption">A painting at the National Museum</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/museum2.jpeg" alt="A piece at the National Museum depicting Filipino victims of the Japanese occupation" loading="lazy" /><div class="slideshow__caption">Another piece at the National Museum of the Filipino victims of the Japanese occupation</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss2-counter">1 / 9</span>
+        </div>
+
+        <h2>Boracay</h2>
+
+        <p>My next destination was a change in gears, to say the least. I went to Boracay island, which is known for its really nice, long white sand beaches. I happened to get great weather and I went swimming in the ocean every morning. It was a very relaxing type of a place, so it was cool to spend a few days there.</p>
+
+        <p>Here&rsquo;s my boat ride to the island and the aforementioned amazing beach:</p>
+
+        <div class="video-slideshow" id="vs2">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs2-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs2-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs2-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs2-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/bo6NImIToxo" title="Boat ride to Boracay, video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>And a few photos from walking around:</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/beach1.jpeg" alt="A beach in Boracay" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/beach2.jpeg" alt="A beach in Boracay" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/beach3.jpeg" alt="A beach in Boracay" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/beach4.jpeg" alt="A fruit shake vendor in Boracay" loading="lazy" /><div class="slideshow__caption">This lady had the best fruit shakes</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/beach5.jpeg" alt="A beach in Boracay" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/street1.jpeg" alt="A street in Boracay" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/street3.jpeg" alt="A questionable sign in Boracay" loading="lazy" /><div class="slideshow__caption">Is that what I think it is?</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/philippines/manila/street4.jpeg" alt="A close-up of the sign in Boracay" loading="lazy" /><div class="slideshow__caption">Yes, it is</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss3-counter">1 / 8</span>
+        </div>
+
+      </article>
+
+      <!-- Subscribe -->
+      <section class="subscribe-section" id="subscribe">
+        <div class="subscribe-inner">
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+          <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+            .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+            .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+          </style>
+
+          <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>follow today's waves</h4>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                      <div class="ml-form-embedPermissionsContent default privacy-policy">
+                        <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">subscribe</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>hey!</h4>
+                    <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_38569390() {
+              var $ = ml_jQuery || jQuery;
+              $('.ml-subscribe-form-38569390 .row-success').show();
+              $('.ml-subscribe-form-38569390 .row-form').hide();
+            }
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['uB9q9dGk4lk', '54JbIOz95FQ', '5zoOjaSCMRc', 'mGHaFS4DiOg', '4d1ycUhnXcg'], 'Manila street action, video');
+    initVideoSlideshow('vs2', ['bo6NImIToxo', '7ZB4s8veU7g'], 'Boat ride to Boracay, video');
+  </script>
+</body>
+</html>
