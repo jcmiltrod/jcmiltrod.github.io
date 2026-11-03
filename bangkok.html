@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bangkok — Today's Waves</title>
+  <meta name="description" content="Lots of wats, a morning ritual, and … are lizards squirrels?" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-photo figcaption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; margin-top: 0.6rem; text-align: center; font-style: italic; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu"></ul>
+        </div>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Thailand</span>
+          <span class="post-date">October 9&ndash;15 and 24&ndash;26, 2026</span>
+        </div>
+        <h1>Bangkok</h1>
+      </header>
+      <article class="post-body">
+
+        <p>I got to Thailand at the end of the rainy season, I just missed some bad flooding in Bangkok and things were mostly dry when I arrived, thankfully. Taking the metro into the city from the airport, I had a good feeling about the city, one of those things that&rsquo;s kind of hard to describe. It felt lively, open and fun, I would say. And after a few days there, I think I wasn&rsquo;t too far off.</p>
+
+        <p>I stayed in three different neighborhoods in Bangkok, to get a little variety, and I like this picture I got of the moon coming up in the Khaosan Road area (please ignore the light streak).</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/thailand/bangkok/khaosan1.JPEG" alt="The moon coming up over the Khaosan Road area in Bangkok" loading="lazy" />
+        </figure>
+
+        <p>Right off the bat, one interesting fact about Thailand is that it was never colonized. The British colonized areas to the west, the French colonized areas to the east, and the Dutch and Spanish colonized areas to the south but Thailand managed to stay independent throughout those hundreds of years. There were lots of reasons for that, I recommend <a href="https://www.cambridge.org/core/books/history-of-thailand/E1F24670B23A167D93376E39EB2D1206" target="_blank" rel="noopener">this book</a> if you want to learn more.</p>
+
+        <p>And well before the colonization era, the area near what&rsquo;s now Bangkok, along the Chao Phraya River, established itself as a vital hub for trade throughout Asia.</p>
+
+        <p>Anyway, the first morning I was in Bangkok I took a walk down to Benjakitti Park, which has a really big lake with walking/jogging/biking paths all around it and some nice trees and greenery.</p>
+
+        <p>I spotted this monitor lizard swimming around. I suppose being impressed by this is like the tourists who come to New York City and are mesmerized by squirrels running around in parks; it&rsquo;s something totally normal to locals but I was like, &ldquo;Wow, look at that!&rdquo; But you know, being easily impressed is part of the fun of traveling, haha.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/Y-L_irdYGF8" title="A monitor lizard swimming in Benjakitti Park" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>One thing I noticed pretty quickly were these little spirit houses, called <a href="https://en.wikipedia.org/wiki/Spirit_house" target="_blank" rel="noopener">san phra phum</a>, that are all over the place. They are supposed to <a href="https://www.scmp.com/magazines/post-magazine/travel/article/3273205/what-are-thailands-colourful-spirit-houses-and-how-are-they-set-bangkoks-famous-erawan-shrine-humble" target="_blank" rel="noopener">shelter and appease</a> a land spirit.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/minishrine1.JPEG" alt="A spirit house in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/minishrine2.JPEG" alt="A spirit house in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/minishrine3.JPEG" alt="A spirit house in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss1-counter">1 / 3</span>
+        </div>
+
+        <p>One of the big tourist attractions is the Grand Palace, where the kings and queens of Thailand have lived since 1782. The monarchy of Thailand has an interesting history, as the monarchs there still have quite a bit of power and <a href="https://en.wikipedia.org/wiki/L%C3%A8se-majest%C3%A9_in_Thailand" target="_blank" rel="noopener">it&rsquo;s a crime to insult them</a>. Actually the entire modern history of Thai government is interesting, they&rsquo;ve had 20 constitutions so far and multiple military coups d&rsquo;état, the most recent having occurred in 2014.</p>
+
+        <p>So, here&rsquo;s a little video of the Grand Palace:</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/e3QjqymyDnI" title="The Grand Palace in Bangkok" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>And some photos.</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/grandpalace1.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/grandpalace2.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/grandpalace3.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/grandpalace4.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/grandpalace5.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/mural1.JPEG" alt="There is a really huge mural that goes around a building inside the palace grounds" loading="lazy" /><div class="slideshow__caption">There is a really huge mural that goes around a building inside the palace grounds</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/mural2.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/mural3.JPEG" alt="The Grand Palace in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss2-counter">1 / 8</span>
+        </div>
+
+        <p>There are a lot of wats, or temples, in Bangkok, some more extravagant than others. They&rsquo;re mostly Buddhist, but as I understand it, the term &ldquo;wat&rdquo; can be more broadly interpreted to mean general houses of worship.</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watarun2.JPEG" alt="Wat Arun, aka the Temple of Dawn" loading="lazy" /><div class="slideshow__caption">Wat Arun, aka the Temple of Dawn</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watarun1.JPEG" alt="Wat Arun from another angle" loading="lazy" /><div class="slideshow__caption">Wat Arun from another angle</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/alleywat.JPEG" alt="One of the more humble wats (temple)" loading="lazy" /><div class="slideshow__caption">One of the more humble wats (temple)</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/wathualamphong.JPEG" alt="Wat Hua Lamphong" loading="lazy" /><div class="slideshow__caption">Wat Hua Lamphong</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss3-counter">1 / 4</span>
+        </div>
+
+        <p>And one of the big ones is Wat Pho, also known as the Temple of the Reclining Buddha. The Buddha is 46 meters (151 feet) long, and 15 meters (49 feet) tall.</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho9.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho1.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho2.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho3.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho4.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho5.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho6.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho7.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho8.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho10.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho11.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/watpho12.JPEG" alt="Wat Pho, the Temple of the Reclining Buddha" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss4-counter">1 / 12</span>
+        </div>
+
+        <p>Buddhism is very important in Thailand and one thing I saw happening and then learned about is that, every morning at dawn, local monks leave their monasteries and go around the locals to get food. This ritual is called tak bat, and the monks each have a bowl, and they don&rsquo;t ask for anything, people already know they&rsquo;re coming and have food out for them. Then, after the monks get their food, they will chant a blessing to the person. Interestingly, there is a push <a href="https://www.bangkokpost.com/life/social-and-lifestyle/3289194/a-change-in-tradition" target="_blank" rel="noopener">to give the monks healthier food</a>.</p>
+
+        <p>Here are some pictures of some monks in Bangkok getting food and returning to Wat Bowaniwet Wihan Ratchaworawihan, where they live.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/monks1.JPEG" alt="Monks collecting alms in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/monks2.JPEG" alt="Monks collecting alms in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/monks3.JPEG" alt="Monks collecting alms in Bangkok" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss5-counter">1 / 3</span>
+        </div>
+
+        <p>And finally, here are some photos from walking around Bangkok, including of the National Theater, where I saw a fantastic <a href="https://en.wikipedia.org/wiki/Khon" target="_blank" rel="noopener">Khon</a> performance of the <a href="https://en.wikipedia.org/wiki/Ramakien" target="_blank" rel="noopener">Ramakien</a> epic. No cameras were allowed during the show, but I got a couple before it started.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/theater1.JPEG" alt="The curtain and stage at the National Theater" loading="lazy" /><div class="slideshow__caption">The curtain and stage at the National Theater</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/theater2.JPEG" alt="The musicians" loading="lazy" /><div class="slideshow__caption">The musicians</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/tuktuks.JPEG" alt="Tuk tuks near the Grand Palace" loading="lazy" /><div class="slideshow__caption">Tuk tuks near the Grand Palace</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/khaosan2.JPEG" alt="Khaosan Road area" loading="lazy" /><div class="slideshow__caption">Khaosan Road area</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/peacock.JPEG" alt="I never saw a peacock in a big city alley before" loading="lazy" /><div class="slideshow__caption">I never saw a peacock in a big city alley before</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/chinatown1.JPEG" alt="Chinatown" loading="lazy" /><div class="slideshow__caption">Chinatown</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/chinatown2.JPEG" alt="Chinatown" loading="lazy" /><div class="slideshow__caption">Chinatown</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/dragon.JPEG" alt="Chinatown" loading="lazy" /><div class="slideshow__caption">Chinatown</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/streets1.JPEG" alt="Near the Grand Palace" loading="lazy" /><div class="slideshow__caption">Near the Grand Palace</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/bangkok/riverbuildings.JPEG" alt="A couple of modern buildings on the Chao Phraya River" loading="lazy" /><div class="slideshow__caption">A couple of modern buildings on the Chao Phraya River</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss6-counter">1 / 10</span>
+        </div>
+
+      </article>
+
+      <!-- Subscribe -->
+      <section class="subscribe-section" id="subscribe">
+        <div class="subscribe-inner">
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+          <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+            .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+            .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+          </style>
+
+          <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>follow today's waves</h4>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                      <div class="ml-form-embedPermissionsContent default privacy-policy">
+                        <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">subscribe</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>hey!</h4>
+                    <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_38569390() {
+              var $ = ml_jQuery || jQuery;
+              $('.ml-subscribe-form-38569390 .row-success').show();
+              $('.ml-subscribe-form-38569390 .row-form').hide();
+            }
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6'].forEach(initSlideshow);
+
+  </script>
+</body>
+</html>
