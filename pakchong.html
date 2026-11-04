@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pak Chong &amp; Chanthaburi — Today's Waves</title>
+  <meta name="description" content="I didn&rsquo;t see a single elephant, but I did see a million bats." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-photo figcaption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; margin-top: 0.6rem; text-align: center; font-style: italic; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu"></ul>
+        </div>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Thailand</span>
+          <span class="post-date">October 21&ndash;24 and October 26&ndash;November 4, 2026</span>
+        </div>
+        <h1>Pak Chong &amp; Chanthaburi</h1>
+      </header>
+      <article class="post-body">
+
+        <p>I heard about this national park where wild Asian elephants roam, so I decided I would go and hopefully see some. The park is called Khao Yai National Park and it&rsquo;s near a town called Pak Chong that&rsquo;s northeast of Bangkok. There are a bunch of cool species that live there, from elephants to different kinds of gibbons to gaur to leopard cats.</p>
+
+        <p>I got pretty excited about seeing some wild elephants roaming in the forested hills there, but, alas, it was not to be. The park is 2,166 square km (836 square miles), and although there are supposedly 140&ndash;200 elephants there, the roads and observation points are pretty minimal so you have to be kind of lucky. There are some spots with good odds, like a big salt lick and a large pond they frequent, but I went to both the day I was there and saw no elephants, just the big trails they made.</p>
+
+        <p>I did see a solitary deer that was frolicking by itself at the salt lick, though. It was pretty funny, it was just getting its salt or whatever and running around and kicking its heels. I dunno, maybe there&rsquo;s something else at the salt lick besides salt that the animals like?</p>
+
+        <p>And I did see this hornbill flying &hellip; I was lucky to see a couple, people don&rsquo;t always see them at the park, either.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/myscZoyDnFM" title="A hornbill flying in Khao Yai National Park" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>Here are some shots of the salt lick and some other parts of the park.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakpark3.JPEG" alt="The salt lick" loading="lazy" /><div class="slideshow__caption">The salt lick</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakpark2.JPEG" alt="The trail to the salt lick" loading="lazy" /><div class="slideshow__caption">The trail to the salt lick</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakpark4.JPEG" alt="Haew Suwat Waterfall" loading="lazy" /><div class="slideshow__caption">Haew Suwat Waterfall</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakpark5.JPEG" alt="Green thing" loading="lazy" /><div class="slideshow__caption">Green thing</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss1-counter">1 / 4</span>
+        </div>
+
+        <p>Anyway, it was OK that I didn&rsquo;t see the elephants, I realized that it really doesn&rsquo;t happen every day there. You can pay for a tour where the guides are in communication with park staff so if there are elephants in the area, you have a better chance, although there are still no guarantees. But I wanted to take a scooter so I could explore the park at my own pace, so you know, trade-offs.</p>
+
+        <p>I did see some cool stuff, though, like this wildly expressive pileated gibbon.</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 2</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/gJMLM32uJTU" title="Pileated gibbon video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>Here&rsquo;s the closest I got to seeing elephants, lol.</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/thailand/pakchong/pakpark1.JPEG" alt="The closest I got to seeing elephants in Khao Yai National Park" loading="lazy" />
+        </figure>
+
+        <p>I also got bitten by a leech at Khao Yai, that was a first! I thought they hung out in the water, but no, in this forest they cling to leaves and branches, waiting for something with blood to pass by and then they latch on.</p>
+
+        <p>Now, having been disappointed by the elephants, I was determined to catch some other wildlife things, and I heard there was a place you could go and watch at least one million <a href="https://www.thainationalparks.com/species/wrinkle-lipped-free-tailed-bat" target="_blank" rel="noopener">wrinkle-lipped free-tailed bats</a> fly out of their mountainside cave at dusk. So I took my scooter and made the trip.</p>
+
+        <p>The ride itself was interesting, you go through all these back roads in the rural area outside the city of Pak Chong, which isn&rsquo;t huge to begin with. Getting to the cave was really scenic and cool, and coming back in the dark was a whole other adventure, haha.</p>
+
+        <p>And the bats came through like heroes. Check them out. It took like 15&ndash;20 minutes for all the bats to fly out, that&rsquo;s how many there are. It was really neat to watch it. And the night I was there, there was a beautiful sunset and an almost full moon was out, so it was extra cool. They&rsquo;re kind of far away so you can&rsquo;t hear much but the soft whoosh of millions of wings flapping, and the occasional chirp.</p>
+
+        <div class="video-slideshow" id="vs2">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs2-counter">1 / 3</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs2-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs2-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs2-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/JIbCJireQPE" title="Bats emerging from the cave video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>There are other things around Pak Chong that are interesting, too, so I checked out some of those.</p>
+
+        <p>This mountainside Buddha at Wat Thep Phithak Punnaram was pretty cool. There was a big thunderstorm while I was there, so all the roosters and peacocks that live there congregated with us people under the sheltered area.</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/tpp1.JPEG" alt="Wat Thep Phithak Punnaram" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/tpp2.JPEG" alt="Wat Thep Phithak Punnaram" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/tpp3.JPEG" alt="Wat Thep Phithak Punnaram" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/tpp4.JPEG" alt="Wat Thep Phithak Punnaram" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/tpp5.JPEG" alt="Wat Thep Phithak Punnaram" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss2-counter">1 / 5</span>
+        </div>
+
+        <p>And a couple of shots of things in the city of Pak Chong.</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakchong2.JPEG" alt="This lady was making food and people were lining up for it" loading="lazy" /><div class="slideshow__caption">This lady was making food and people were lining up for it</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakchong1.JPEG" alt="A street scene in Pak Chong" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakchong3.JPEG" alt="I guess I did see a couple of elephants" loading="lazy" /><div class="slideshow__caption">I guess I did see a couple of elephants</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakchong4.JPEG" alt="This reminded me of my old motorcycle" loading="lazy" /><div class="slideshow__caption">This reminded me of my old motorcycle</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/pakchong5.JPEG" alt="A big old Cadillac in downtown Pak Chong" loading="lazy" /><div class="slideshow__caption">A big old Cadillac in downtown Pak Chong</div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss3-counter">1 / 5</span>
+        </div>
+
+        <p>Then I went to a town called Chanthaburi, which is near the southeast coast. It&rsquo;s a little river town, so it was nice to walk along the river in the mornings and evenings. There were quite a few wats and some shrines that weren&rsquo;t the traditional Thai Buddhist ones, they are more Chinese influenced and apparently are a blend of Chinese folk religions, Buddhism, Taoism and animism.</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi2.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi3.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi4.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi5.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi12.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi13.JPEG" alt="A Catholic church in the mix, too" loading="lazy" /><div class="slideshow__caption">A Catholic church in the mix, too</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi6.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi7.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi8.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi9.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi10.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi11.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/chanthaburi1.JPEG" alt="Chanthaburi" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss4-counter">1 / 13</span>
+        </div>
+
+        <p>And I did make it to the beach at the end of the trip, so here are the obligatory beach shots.</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/beach1.JPEG" alt="The beach" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/beach2.JPEG" alt="The beach" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/thailand/pakchong/beach3.JPEG" alt="The beach" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss5-counter">1 / 3</span>
+        </div>
+
+      </article>
+
+      <!-- Subscribe -->
+      <section class="subscribe-section" id="subscribe">
+        <div class="subscribe-inner">
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+          <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+            .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+            .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+          </style>
+
+          <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>follow today's waves</h4>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                      <div class="ml-form-embedPermissionsContent default privacy-policy">
+                        <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">subscribe</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>hey!</h4>
+                    <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_38569390() {
+              var $ = ml_jQuery || jQuery;
+              $('.ml-subscribe-form-38569390 .row-success').show();
+              $('.ml-subscribe-form-38569390 .row-form').hide();
+            }
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['gJMLM32uJTU', 'H2-xyZHFsnM'], 'Pileated gibbon video');
+    initVideoSlideshow('vs2', ['JIbCJireQPE', 'SdGiGm-n4bQ', 'im04WVHAgRk'], 'Bats emerging from the cave video');
+
+  </script>
+</body>
+</html>
