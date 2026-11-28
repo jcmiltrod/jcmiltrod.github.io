@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siem Reap &amp; Stung Treng — Today's Waves</title>
+  <meta name="description" content="Mind-blowing ruins, hero rats and floating villages." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow { position: relative; margin: 2.5rem 0; background: #111; border-radius: var(--radius); overflow: hidden; }
+    .slideshow__track { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .slideshow__slide { min-width: 100%; position: relative; }
+    .slideshow__slide img { width: 100%; max-height: 540px; object-fit: contain; background: #111; display: block; }
+    .slideshow__caption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; text-align: center; padding: 0.6rem 1rem; background: rgba(0,0,0,0.5); min-height: 2rem; font-style: italic; }
+    .slideshow__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); width: 2.4rem; height: 2.4rem; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10; }
+    .slideshow__btn:hover { background: rgba(0,0,0,0.85); }
+    .slideshow__btn--prev { left: 0.75rem; }
+    .slideshow__btn--next { right: 0.75rem; }
+    .slideshow__counter { position: absolute; bottom: 2.6rem; right: 0.9rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.4); padding: 0.2rem 0.5rem; border-radius: 2rem; }
+    .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; margin: 2.5rem 0; }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-slideshow { margin: 2.5rem 0; }
+    .video-slideshow__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-slideshow__counter { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted); }
+    .video-slideshow__nav { display: flex; gap: 0.5rem; }
+    .video-slideshow__btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); width: 2rem; height: 2rem; border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+    .video-slideshow__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+    .video-slideshow__track { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); background: #111; }
+    .video-slideshow__track iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .post-photo { margin: 2.5rem 0; }
+    .post-photo img { width: 100%; border-radius: var(--radius); display: block; }
+    .post-photo figcaption { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); letter-spacing: 0.05em; margin-top: 0.6rem; text-align: center; font-style: italic; }
+    .post-header .post-date { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Destinations</button>
+          <ul class="nav-dropdown__menu" role="menu"></ul>
+        </div>
+        <a href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <header class="post-header">
+        <div class="post-card__meta">
+          <span class="post-tag">Cambodia</span>
+          <span class="post-date">November 10&ndash;16, 2026</span>
+        </div>
+        <h1>Siem Reap &amp; Stung Treng</h1>
+      </header>
+      <article class="post-body">
+
+        <p>The <a href="https://en.wikipedia.org/wiki/Khmer_Empire" target="_blank" rel="noopener">Khmer empire</a> for centuries was centered in <a href="https://en.wikipedia.org/wiki/Angkor" target="_blank" rel="noopener">Angkor</a>, on the northern shores of Tonlé Sap Lake (which is part of the Mekong river system). After the last king there decided to relocate to Phnom Penh, the site, which <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1964867/" target="_blank" rel="noopener">has been called</a> &ldquo;the most extensive urban complex of the preindustrial world&rdquo; and was home to an estimated 1 million people, became mostly abandoned and eventually reclaimed by Mother Nature.</p>
+
+        <p>When the <a href="https://en.wikipedia.org/wiki/French_protectorate_of_Cambodia" target="_blank" rel="noopener">French arrived</a> in the 1860s, they cleared the temple of <a href="https://en.wikipedia.org/wiki/Angkor_Wat" target="_blank" rel="noopener">Angkor Wat</a> and a few other sites, but there are more than 200 temples and major buildings that comprise the city, so there are still lots of untouched ruins or ones you can visit but are overgrown with trees and vines and stuff.</p>
+
+        <p>One of the most touristy, but most impressive things you can do at Angkor is visit the main building at sunrise. Siem Reap is the biggest city close to there, so most people get tours that leave at like, 4:30 a.m. in order to get there before the sun comes up. It&rsquo;s totally worth it.</p>
+
+        <div class="slideshow" id="ss1">
+          <div class="slideshow__track" id="ss1-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw1.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw2.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw3.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw5.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw6.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw7.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw8.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw9.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw10.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw11.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw12.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw13.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/aw14.JPEG" alt="Angkor Wat" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss1-counter">1 / 13</span>
+        </div>
+
+        <p>Like I said, Angkor was huge, occupying an area of somewhere between 390 and 1,160 square miles (1,000 to 3,000 square km) so you&rsquo;d have to spend a ton of time there if you wanted to see everything. I took a tour that also hit the temples of Ta Prohm, Bayon and Banteay Kdei.</p>
+
+        <p>Here&rsquo;s Ta Prohm:</p>
+
+        <div class="slideshow" id="ss2">
+          <div class="slideshow__track" id="ss2-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/tp1.JPEG" alt="Ta Prohm" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/tp2.JPEG" alt="Ta Prohm" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/tp3.JPEG" alt="Ta Prohm" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/tp4.JPEG" alt="Ta Prohm" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/tp5.JPEG" alt="Ta Prohm" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/tp6.JPEG" alt="Ta Prohm" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss2-counter">1 / 6</span>
+        </div>
+
+        <p>Bayon:</p>
+
+        <div class="slideshow" id="ss3">
+          <div class="slideshow__track" id="ss3-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/b1.JPEG" alt="Bayon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/b2.JPEG" alt="Bayon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/b3.JPEG" alt="Bayon" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/b6.JPEG" alt="Bayon" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss3-counter">1 / 4</span>
+        </div>
+
+        <p>Banteay Kdei:</p>
+
+        <div class="slideshow" id="ss4">
+          <div class="slideshow__track" id="ss4-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bk1.JPEG" alt="Banteay Kdei" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bk2.JPEG" alt="Banteay Kdei" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bk3.JPEG" alt="Banteay Kdei" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bk4.JPEG" alt="Banteay Kdei" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bk5.JPEG" alt="Banteay Kdei" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss4-counter">1 / 5</span>
+        </div>
+
+        <p>A day or two later I rented a motorbike and went to a really cool overgrown temple, Beng Mealea, by myself.</p>
+
+        <p>Here&rsquo;s that one:</p>
+
+        <div class="slideshow" id="ss5">
+          <div class="slideshow__track" id="ss5-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm1.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm2.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm3.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm4.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm5.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm6.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm7.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm8.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm9.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm10.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm11.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm12.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm13.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/bm14.JPEG" alt="Beng Mealea" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss5-counter">1 / 14</span>
+        </div>
+
+        <p>After Beng Mealea I decided to ride the motorbike to the Phnom Kulen waterfall that wasn&rsquo;t too far away.</p>
+
+        <div class="slideshow" id="ss6">
+          <div class="slideshow__track" id="ss6-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/pk1.JPEG" alt="Phnom Kulen waterfall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/pk2.JPEG" alt="Phnom Kulen waterfall" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/pk3.JPEG" alt="Phnom Kulen waterfall" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss6-counter">1 / 3</span>
+        </div>
+
+        <p>Then after the waterfall I took the bike around the Phnom Kulen National Park, which was a very neat ride with some great views like this one.</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/rISYizE5Mrg" title="A view from the ride around Phnom Kulen National Park" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>Cambodia suffers from a huge amount of <a href="https://en.wikipedia.org/wiki/Land_mines_in_Cambodia" target="_blank" rel="noopener">land mines</a> that were placed in the ground from the 1970s through the 1990s in its various internal conflicts as well as conflicts with Thailand and Vietnam. While I was in Siem Reap, I visited a site operated by a mine-clearing non-governmental organization known by its Dutch acronym APOPO. The interesting thing about <a href="https://apopo.org/" target="_blank" rel="noopener">APOPO</a> is they train southern giant pouched rats to recognize smells &mdash; including those of explosives inside land mines, tuberculosis and illegally trafficked animals &mdash; and help human handlers identify the exact location of the mine.</p>
+
+        <p>At this site, you can see a demonstration of how one of these &ldquo;hero rats&rdquo; does its work and even hold one. They&rsquo;re very big!</p>
+
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/xy2xm4uCud0" title="A hero rat demonstration at the APOPO site in Siem Reap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <p>Siem Reap even has a little monument to the hero rats:</p>
+
+        <figure class="post-photo">
+          <img src="https://images.todayswaves.com/cambodia/siemreap/herorat.JPEG" alt="A monument to the hero rats in Siem Reap" loading="lazy" />
+        </figure>
+
+        <p>And one of the last days I was there I took a tour through a part of <a href="https://en.wikipedia.org/wiki/Tonle_Sap" target="_blank" rel="noopener">Tonlé Sap</a>, also known as Cambodia&rsquo;s Great Lake, where people live. They build houses on tall stilts (which is very common throughout Cambodia) and thus use boats during the rainy season when the water in the lake is deep, and can climb down and walk on land when the rain stops and the lake dries up.</p>
+
+        <div class="slideshow" id="ss7">
+          <div class="slideshow__track" id="ss7-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/fv4.JPEG" alt="A village on Tonlé Sap Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/fv5.JPEG" alt="A village on Tonlé Sap Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/fv6.JPEG" alt="A village on Tonlé Sap Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/fv7.JPEG" alt="A village on Tonlé Sap Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/fv8.JPEG" alt="A village on Tonlé Sap Lake" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss7-counter">1 / 5</span>
+        </div>
+
+        <p>Here are some vids from that:</p>
+
+        <div class="video-slideshow" id="vs1">
+          <div class="video-slideshow__header">
+            <span class="video-slideshow__counter" id="vs1-counter">1 / 3</span>
+            <div class="video-slideshow__nav">
+              <button class="video-slideshow__btn" id="vs1-prev" aria-label="Previous video">&#8592;</button>
+              <button class="video-slideshow__btn" id="vs1-next" aria-label="Next video">&#8594;</button>
+            </div>
+          </div>
+          <div class="video-slideshow__track" id="vs1-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/h4UZvYqW3VM" title="Tonlé Sap tour video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <p>My next big destination was Banlung in northeastern Cambodia, but first I stopped in Stung Treng, which is at the confluence of the Mekong and Sekong rivers. It&rsquo;s a smaller town and not much is going on, but it is famous for being the birthplace of Sinn Sisamouth, a 1960s singer who is believed to have been killed by the Khmer Rouge. He was a big name in his time, and his (and others&rsquo;) music has been remembered in the excellent compilation <a href="https://en.wikipedia.org/wiki/Cambodian_Rocks" target="_blank" rel="noopener"><em>Cambodian Rocks</em></a> and the documentary <a href="https://en.wikipedia.org/wiki/Don%27t_Think_I%27ve_Forgotten" target="_blank" rel="noopener"><em>Don&rsquo;t Think I&rsquo;ve Forgotten</em></a>.</p>
+
+        <div class="slideshow" id="ss8">
+          <div class="slideshow__track" id="ss8-track">
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st3.JPEG" alt="Stung Treng" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st6.JPEG" alt="Stung Treng" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st4.JPEG" alt="A bridge" loading="lazy" /><div class="slideshow__caption">A bridge</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st5.JPEG" alt="Sinn Sisamouth&rsquo;s family home" loading="lazy" /><div class="slideshow__caption">Sinn Sisamouth&rsquo;s family home</div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st1.JPEG" alt="Stung Treng" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st2.JPEG" alt="Stung Treng" loading="lazy" /><div class="slideshow__caption"></div></div>
+            <div class="slideshow__slide"><img src="https://images.todayswaves.com/cambodia/siemreap/st7.JPEG" alt="Stung Treng" loading="lazy" /><div class="slideshow__caption"></div></div>
+          </div>
+          <button class="slideshow__btn slideshow__btn--prev" aria-label="Previous photo">&#8592;</button>
+          <button class="slideshow__btn slideshow__btn--next" aria-label="Next photo">&#8594;</button>
+          <span class="slideshow__counter" id="ss8-counter">1 / 7</span>
+        </div>
+
+      </article>
+
+      <!-- Subscribe -->
+      <section class="subscribe-section" id="subscribe">
+        <div class="subscribe-inner">
+          <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1773740");</style>
+          <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #FFEED2 #FFEED2 #FFEED2 transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-38569390.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer h4, #mlb2-38569390.ml-form-embedContainer p, #mlb2-38569390.ml-form-embedContainer span, #mlb2-38569390.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper { background-color: #FFEED2; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent h4 { color: #1ae456; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 400; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p, #mlb2-38569390.ml-form-embedContainer .ml-form-successBody .ml-form-successContent p { color: #17c1dc; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; margin: 0 0 10px 0; text-align: left; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #cccccc; border-radius: 4px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button { background-color: #000000 !important; border: none !important; border-radius: 4px !important; box-shadow: none !important; color: #FFEED2 !important; cursor: pointer; font-family: 'Open Sans', Arial, Helvetica, sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-38569390.ml-form-embedContainer .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #333333 !important; }
+            .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+            .ml-error .label-description, .ml-error .label-description p, .ml-error label:first-child { color: #ff0000 !important; }
+          </style>
+
+          <div id="mlb2-38569390" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38569390">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>follow today's waves</h4>
+                  </div>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow ml-last-item">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="email" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedPermissions">
+                      <div class="ml-form-embedPermissionsContent default privacy-policy">
+                        <p style="text-align: center;">You can unsubscribe anytime. For more details, review <span><a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank">MailerLite's Privacy Policy</a></span>.</p>
+                      </div>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">subscribe</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>hey!</h4>
+                    <p><strong><span style="font-size: 16px;">thank you for subscribing to today's waves!</span></strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function ml_webform_success_38569390() {
+              var $ = ml_jQuery || jQuery;
+              $('.ml-subscribe-form-38569390 .row-success').show();
+              $('.ml-subscribe-form-38569390 .row-form').hide();
+            }
+          </script>
+          <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+          <script>fetch("https://assets.mailerlite.com/jsonp/2198186/forms/182161668057335427/takel")</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="https://www.subscribepage.io/fN1ygi" target="_blank" rel="noopener">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Juan-Carlos Rodriguez. All original content on this site is my work and may not be reproduced without permission. Other credited content belongs to its respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+
+    const dropTrigger = document.querySelector('.nav-dropdown__trigger');
+    const dropMenu = document.querySelector('.nav-dropdown__menu');
+    if (dropTrigger) {
+      dropTrigger.addEventListener('click', () => { const open = dropMenu.classList.toggle('open'); dropTrigger.setAttribute('aria-expanded', open); });
+      document.addEventListener('click', e => { if (!dropTrigger.closest('.nav-dropdown').contains(e.target)) { dropMenu.classList.remove('open'); dropTrigger.setAttribute('aria-expanded', false); } });
+    }
+
+    function initSlideshow(id) {
+      const track = document.getElementById(id + '-track');
+      const counter = document.getElementById(id + '-counter');
+      const slides = track.querySelectorAll('.slideshow__slide');
+      const total = slides.length;
+      let current = 0;
+      function go(n) { current = (n + total) % total; track.style.transform = `translateX(-${current * 100}%)`; counter.textContent = `${current + 1} / ${total}`; }
+      const wrap = document.getElementById(id);
+      wrap.querySelector('.slideshow__btn--prev').addEventListener('click', () => go(current - 1));
+      wrap.querySelector('.slideshow__btn--next').addEventListener('click', () => go(current + 1));
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => { const diff = startX - e.changedTouches[0].clientX; if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1); });
+    }
+    ['ss1','ss2','ss3','ss4','ss5','ss6','ss7','ss8'].forEach(initSlideshow);
+
+    function initVideoSlideshow(id, videoIds, label) {
+      let current = 0;
+      const frame = document.getElementById(id + '-frame');
+      const counter = document.getElementById(id + '-counter');
+      function go(n) {
+        current = (n + videoIds.length) % videoIds.length;
+        frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoIds[current]}" title="${label} ${current + 1}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        counter.textContent = `${current + 1} / ${videoIds.length}`;
+      }
+      document.getElementById(id + '-prev').addEventListener('click', () => go(current - 1));
+      document.getElementById(id + '-next').addEventListener('click', () => go(current + 1));
+    }
+
+    initVideoSlideshow('vs1', ['h4UZvYqW3VM', 'p8x82phRkuw', 'tOI4AuTy3e8'], 'Tonlé Sap tour video');
+
+  </script>
+</body>
+</html>
